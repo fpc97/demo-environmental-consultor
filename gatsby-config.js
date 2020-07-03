@@ -71,7 +71,12 @@ module.exports = {
     },
 
     // Netlify things
-    'gatsby-plugin-netlify-identity-widget',
+    {
+      resolve: 'gatsby-plugin-netlify-identity-widget',
+      options: {
+        container: '/admin/'
+      }
+    },
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
