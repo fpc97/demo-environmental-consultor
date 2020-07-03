@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: pages
+    label: Pages
+    files:
+      - file: src/pages/about-us/index.md
+        label: "About Us"
+        name: "about-us"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-us-page"}
+          - {label: "Introduction", name: introduction, widget: text, hint: "Texto introductorio. Puede ser dejado en blanco"}
+          - label: "Team Members"
+            name: team-members
+            widget: list
+            hint: "Lista con todos los colaboradores"
+            fields:
+              - {label: "Name", name: "nombre", widget: string, required: true}
+              - {label: "Position", name: "position", widget: string, required: true}
+              - {label: "Description", name: "description", widget: text, required: true}
+              - label: "Social media"
+                name: "social-media"
+                widget: list
+                field: {label: "Social media link", name: social-media-link, widget: string, pattern: ['www', 'It needs to be an URL']}
+              - {label: "Photo", name: "photo", widget: file, default: 'static/img/persona-avatar.jpg'}
