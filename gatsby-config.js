@@ -72,12 +72,6 @@ module.exports = {
 
     // Netlify things
     {
-      resolve: 'gatsby-plugin-netlify-identity-widget',
-      options: {
-        container: 'head'
-      }
-    },
-    {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`
