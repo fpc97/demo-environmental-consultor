@@ -1,0 +1,32 @@
+$colors: (
+    theme: hsl(213, 100%, 23%),
+    theme-light: hsl(215, 100%, 25%),
+    dd-highlight: #EEF1F5,
+    dd-highlight2: hsl(214, 78%, 36%),
+    link: hsl(0, 0%, 100%),
+    link-hover: hsl(244, 100%, 87%),
+    red-secondary: hsl(5, 100%, 59%),
+    grey-link: hsl(212, 14%, 36%)
+);
+
+$breakpoints: (
+    w-max: 1920px,
+    w-big: 1280px,
+    w-mid: 760px,
+    w-sml: 400px,
+    w-min: 200px,
+    h-max: 1080px,
+    h-big: 720px,
+    h-min: 400px,
+    nav: 900px
+);
+
+$general-padding: 2rem;
+
+@function col($col) {
+    @return map-get($colors, $col)
+};
+
+@function breakpoint($bk) {
+    @return map-get($breakpoints, $bk)
+};

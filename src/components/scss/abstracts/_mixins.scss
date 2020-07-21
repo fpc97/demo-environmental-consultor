@@ -1,0 +1,29 @@
+@mixin clearfix{
+    &::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin logo-height($mult){
+    height: 5rem * $mult;
+    @media(min-width: breakpoint(w-sml)) {
+        height: 8rem;
+    }
+}
+@mixin logo-width($mult){
+    width: 5rem * $mult;
+    @media(min-width: breakpoint(w-sml)) {
+        width: 8rem;
+    }
+}
+
+@mixin invisible{
+    position: absolute;
+    left: -99999999999px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    font-size: 20px;
+}

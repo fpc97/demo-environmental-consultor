@@ -1,0 +1,86 @@
+.header{
+    padding: 0 $general-padding;
+
+    color: white;
+
+    //margin-top: 2rem;
+    //margin-top: calc(12vh - 3rem);
+
+    // Wrapper
+    max-width: 1920px;
+    margin: calc(12vh - 3rem) auto 0;
+    
+    &__h2{
+        font-size: 3rem;
+        font-size: calc(12.5vw + .6rem);
+
+        line-height: 100%;
+
+        margin-top: 2rem;
+        font-family: "Raleway", serif;
+        font-weight: 100;
+
+        &--first{
+            letter-spacing: .2rem;
+            letter-spacing: calc(3.3vw - .36rem);
+        }
+        &--last{
+            letter-spacing: .8rem;
+            letter-spacing: calc(5.6vw - .3rem);
+        }
+        
+        @media(min-width: breakpoint(w-mid)) {
+            font-size: 10.1rem;
+            &--first{
+                letter-spacing: 2.14667rem;
+            }
+            &--last{
+                letter-spacing: 3.955rem;
+            }
+        }
+        
+        // Now it grows vertically
+        @media(min-width: breakpoint(w-mid)) {
+            font-size: 10.1rem;
+            &--first{
+                letter-spacing: 2.14667rem;
+            }
+            &--last{
+                letter-spacing: 3.955rem;
+            }
+        }
+    }
+
+    &__intro{
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        //text-align: justify;
+
+        font: normal 1.6rem "Open sans", sans-serif;
+        line-height: 3rem;
+        letter-spacing: .05rem;
+        max-width: 38rem;
+/*
+        font-family: "Open sans", sans-serif;
+        font-size: 1.6rem;
+        font-weight: normal;*/
+    }
+
+    &__main-button{
+        font-family: "Raleway", sans-serif;
+        font-weight: 300;
+        font-size: 1.6rem;
+        width: 100%;
+        padding: 1rem 0;
+        background-color: white;
+        border: none;
+        color: col(theme);
+        margin: 2rem 0 3rem;
+        max-width: 33rem;
+
+        @media(min-width: breakpoint(w-sml)) {
+            height: 6.5rem;
+            font-size: 2.8rem;
+        }
+    }
+}

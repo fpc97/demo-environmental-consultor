@@ -1,0 +1,23 @@
+.logo{
+    display: flex;
+    flex-flow: nowrap row;
+    align-items: center;
+
+    /*
+    height: 4rem;
+    width: 4rem;
+    @media(min-width: breakpoint(w-sml)) {
+        height: 6rem;
+        width: 6rem;
+    }*/
+
+    &__svg{
+        fill: white;
+        @include logo-height(1);
+        @include logo-width(1);
+    }
+
+    &--dark &__path{
+        fill: col(theme);
+    }
+}

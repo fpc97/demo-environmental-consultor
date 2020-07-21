@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+}
+
+h1, .specificity{
+    margin: 0;
+}
+
+a,
+a:link,
+a:visited{
+    text-decoration: none;
+    color: col(link);
+
+    &:hover{
+        //color: col(link-hover);
+    }
+}
+
+.invisible{
+    @include invisible;
+}

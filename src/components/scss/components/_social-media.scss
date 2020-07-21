@@ -1,0 +1,13 @@
+.social-media{
+    &__a{
+        &:not(:first-child) {
+            //margin-left: 2.4rem;
+        }
+    }
+    
+    &__icon{
+        display: inline-block;
+        color: white;
+        fill: white;
+    }
+}

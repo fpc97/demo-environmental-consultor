@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Evelina Cejuela y Asociados`,
+    description: `Servicios de Consultoria Ambiental`,
+    author: `@Francisco Perez Cejuela`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -17,6 +17,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -54,8 +61,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#003575`,
+        theme_color: `#003575`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`,
         cache_busting_mode: 'none'
