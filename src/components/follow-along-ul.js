@@ -1,6 +1,4 @@
-import { faUnderline } from "@fortawesome/fontawesome-free-solid";
-
-let ddBackground;
+let ddBackground, ddUnderline;
 let isActive = false;
 let initialized = false;
 
@@ -19,9 +17,15 @@ function initBackground() {
     ddBackground.addEventListener('transitionend', () => toggleMiddleTrans(isActive));
 }
 
+function initUnderline() {
+
+}
+
 function followAlong(e) {
     const p = e.currentTarget;
     const parent = p.parentElement;
+
+    console.log(p);
 
     const dd = Array.from(p.children).find(a => a.classList.contains('nav-dropdown'));
     const isEmpty = dd ? !dd.children.length : true;
@@ -42,11 +46,6 @@ function followAlong(e) {
         if (parent.style.position === 'static' || typeof parent.style.position === 'undefined') {
             parent.style.position = 'relative';
         }
-/*
-        if (dd) {
-            faSwitch(dd, parent);
-            return;
-        }*/
     }
 
     if (isEmpty) {
@@ -62,13 +61,10 @@ function faSwitch(dd, parent) {
         boundingRect = dd.getBoundingClientRect(),
         boundingRectParent = parent.getBoundingClientRect();
 
-    const w = compStyle.width,
-        h = compStyle.height,
-        x = boundingRect.left,
-        y = boundingRect.top;
-    
-    const xP = boundingRectParent.left,
-        yP = boundingRectParent.top;
+    const {width: w, height: h} = compStyle;
+    const {left: x, top: y} = boundingRect;
+
+    const {left: xP, top: yP} = boundingRectParent;
 
     const xR = `${x - xP}px`
     const yR = `${y - yP}px`
@@ -78,9 +74,7 @@ function faSwitch(dd, parent) {
     ddBackground.style.left     = xR;
     ddBackground.style.top      = yR;
 
-    setTimeout(() => {
-        toggleMiddleTrans(true);   
-    });
+    setTimeout(() => toggleMiddleTrans(true));
 }
 
 function faRemove() {
