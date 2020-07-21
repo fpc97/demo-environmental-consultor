@@ -2,23 +2,34 @@ let ddBackground, ddUnderline;
 let isActive = false;
 let initialized = false;
 
+const basicStyles = {
+    backgroundColor: 'white',
+    width: '0px',
+    position: 'absolute',
+    transitionProperty: 'width',
+    transitionDuration: '.4s',
+    boxShadow: '0 0 10px rgba(0, 0, 0, .15)'
+};
+
 function initBackground() {
     initialized = true;
     ddBackground = document.createElement('span');
 
     ddBackground.className = 'dd-background';
-    ddBackground.style.backgroundColor = 'white';
-    ddBackground.style.width = '0px';
-    ddBackground.style.position = 'absolute';
-    ddBackground.style.transitionProperty = 'width';
-    ddBackground.style.transitionDuration = '.4s';
-    ddBackground.style.boxShadow = '0 0 10px rgba(0, 0, 0, .15)';
+
+    Object.assign(ddBackground.style, basicStyles);
 
     ddBackground.addEventListener('transitionend', () => toggleMiddleTrans(isActive));
 }
 
 function initUnderline() {
+    ddUnderline = document.createElement('span');
 
+    ddUnderline.className = 'dd-underline';
+
+    Object.assign(ddUnderline.style, basicStyles);
+
+    ddUnderline.addEventListener('transitionend', () => toggleMiddleTrans(isActive));
 }
 
 function followAlong(e) {
