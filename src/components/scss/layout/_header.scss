@@ -21,32 +21,23 @@
         font-weight: 100;
 
         &--first{
-            letter-spacing: .2rem;
+            //letter-spacing: .2rem;
             letter-spacing: calc(3.3vw - .36rem);
         }
         &--last{
-            letter-spacing: .8rem;
+            //letter-spacing: .8rem;
             letter-spacing: calc(5.6vw - .3rem);
         }
         
-        @media(min-width: breakpoint(w-mid)) {
-            font-size: 10.1rem;
+        @media (min-width: breakpoint(w-sml)) and (min-height: breakpoint(h-big)) {
+            font-size: 5.6rem;
+            font-size: calc(12vh - 3rem);
+
             &--first{
-                letter-spacing: 2.14667rem;
+                letter-spacing: calc(1.25vh + .4rem);
             }
             &--last{
-                letter-spacing: 3.955rem;
-            }
-        }
-        
-        // Now it grows vertically
-        @media(min-width: breakpoint(w-mid)) {
-            font-size: 10.1rem;
-            &--first{
-                letter-spacing: 2.14667rem;
-            }
-            &--last{
-                letter-spacing: 3.955rem;
+                letter-spacing: 3.2vh;
             }
         }
     }
