@@ -7,8 +7,14 @@
     //margin-top: calc(12vh - 3rem);
 
     // Wrapper
-    max-width: 1920px;
-    margin: calc(12vh - 3rem) auto 0;
+    //max-width: 1920px;
+    //margin: calc(12vh - 3rem) auto 0;
+    
+    max-width: breakpoint(w-mid);
+    
+    @media(min-width: breakpoint(w-mid)) {
+        margin-left: calc(20vw - 10rem);
+    }
     
     &__h2{
         font-size: 3rem;
@@ -27,6 +33,19 @@
         &--last{
             //letter-spacing: .8rem;
             letter-spacing: calc(5.6vw - .3rem);
+        }
+
+        @media (min-width: breakpoint(w-sml)) {
+            font-size: 5.5rem;
+            
+            &--first{
+                //letter-spacing: .2rem;
+                letter-spacing: .96rem;
+            }
+            &--last{
+                //letter-spacing: .8rem;
+                letter-spacing: 1.9rem;
+            }
         }
         
         @media (min-width: breakpoint(w-sml)) and (min-height: breakpoint(h-big)) {
@@ -68,6 +87,7 @@
         color: col(theme);
         margin: 2rem 0 3rem;
         max-width: 33rem;
+        cursor: pointer;
 
         @media(min-width: breakpoint(w-sml)) {
             height: 6.5rem;

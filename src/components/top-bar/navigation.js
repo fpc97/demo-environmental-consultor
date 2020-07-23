@@ -19,8 +19,8 @@ const Navigation = ({data: data}) => {
 
         const categoryNameNoSpace = categoryName.split(' ')[0];
         
-        const subsections = !isEdges ? null : dataToExtract.edges.map(d => (
-            <li className="nav-dropdown__li">
+        const subsections = !isEdges ? null : dataToExtract.edges.map((d, i) => (
+            <li className="nav-dropdown__li" key={i}>
                 <Link className="nav-dropdown__link" to='/'>{d.node.frontmatter.title}</Link>
             </li>
         ));

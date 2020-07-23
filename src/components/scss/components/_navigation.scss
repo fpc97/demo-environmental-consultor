@@ -124,7 +124,8 @@
         }
     }
 
-    & .dd-background{
+    & .dd-background,
+    & .dd-underline{
         display: none;
         @media (min-width: breakpoint(nav)) {
             display: inline-block;
@@ -180,11 +181,13 @@
                 &::after{
                     content: '';
                     display: inline-block;
-                    height: 2rem;
                     width: 100%;
                     position: absolute;
-                    bottom: -100%;
                     left: 0;
+                    
+                    // Has to be the same
+                    height: 3rem;
+                    bottom: -3rem;
                 }
             }
 
@@ -196,7 +199,7 @@
         &__link{
             width: auto;
             height: auto;
-            padding: 2px;
+            padding: 0;
             line-height: 1.6rem;
         }
 

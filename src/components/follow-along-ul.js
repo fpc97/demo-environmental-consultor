@@ -95,9 +95,6 @@ function faSwitchBackground(dd) {
     const xR = `${x - xP}px`
     const yR = `${y - yP}px`
 
-    console.log(xR);
-    console.log(yR);
-
     fa.background.style.width    = `${w}`;
     fa.background.style.height   = `${h}`;
     fa.background.style.left     = xR;
@@ -113,8 +110,6 @@ function faSwitchUnderline(li) {
 
     const {width: w, paddingRight} = compStyle;
     const {left: x, bottom: y} = boundingRect;
-
-    //console.log(parseInt(w) - parseInt(paddingRight));
 
     // Parent's dimensions
     const {left: xP, top: yP} = parentBounds(li);

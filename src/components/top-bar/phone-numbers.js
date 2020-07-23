@@ -12,6 +12,6 @@ function parseNumber(num) {
 
 export default () => (
     <>
-        {dummyData.map(num => <a className="phone-number" href={`tel:${parseNumber(num)}`}>{num}</a>)}
+        {dummyData.map((num, i) => <a className="phone-number" href={`tel:${parseNumber(num)}`} key={i}>{num}</a>)}
     </>
 );
