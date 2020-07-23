@@ -47,12 +47,16 @@ function followAlong(e) {
         initElements();
 
         parent.insertBefore(fa.background, parent.firstChild);
+        parent.insertBefore(fa.underline, parent.firstChild);
+
         parent.addEventListener('mouseenter', () => {
             fa.isActive = true;
         });
+
         parent.addEventListener('mouseleave', () => {
             fa.isActive = false;
             faRemove(fa.background);
+            faRemove(fa.underline);
         });
 
         fa.isActive = true;
@@ -64,10 +68,12 @@ function followAlong(e) {
 
     if (isEmpty) {
         faRemove(fa.background);
+        faRemove(fa.underline);
     }
     else {
-        faSwitchBackground(dd, parent);
+        faSwitchBackground(dd);
     }
+    faSwitchUnderline(p);
 }
 
 function parentBounds(a) {
@@ -83,22 +89,46 @@ function faSwitchBackground(dd) {
     const {left: x, top: y} = boundingRect;
 
     // Parent's dimensions
-    const {left: xP, top: yP} = parentBounds(dd);
+    const {left: xP, top: yP} = parentBounds(dd.parentElement);
 
     // Calculations
     const xR = `${x - xP}px`
     const yR = `${y - yP}px`
+
+    console.log(xR);
+    console.log(yR);
 
     fa.background.style.width    = `${w}`;
     fa.background.style.height   = `${h}`;
     fa.background.style.left     = xR;
     fa.background.style.top      = yR;
 
-    setTimeout(() => toggleMiddleTrans(fa. background, true));
+    setTimeout(() => toggleMiddleTrans(fa.background, true));
 }
 
-function faSwitchUnderline(a, parent) {
+function faSwitchUnderline(li) {
+    // Instance's dimensions
+    const compStyle = window.getComputedStyle(li),
+        boundingRect = li.getBoundingClientRect();
 
+    const {width: w, paddingRight} = compStyle;
+    const {left: x, bottom: y} = boundingRect;
+
+    //console.log(parseInt(w) - parseInt(paddingRight));
+
+    // Parent's dimensions
+    const {left: xP, top: yP} = parentBounds(li);
+    
+    // Calculations
+    const xR = `${x - xP}px`
+    const yR = `${y - yP + 8}px`
+
+    fa.underline.style.width    = `${parseInt(w) - parseInt(paddingRight)}px`;
+    fa.underline.style.height   = `6px`;
+    fa.underline.style.left     = xR;
+    fa.underline.style.top      = yR;
+
+    setTimeout(() => toggleMiddleTrans(fa.underline, true));
 }
 
 function faRemove(obj) {
