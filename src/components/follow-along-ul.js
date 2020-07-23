@@ -1,6 +1,12 @@
-let ddBackground, ddUnderline;
-let isActive = false;
-let initialized = false;
+const fa = {
+    // Flags
+    isActive: false,
+    isInited: false,
+
+    // Un-inited HTML Elements
+    background: null,
+    underline: null
+}
 
 const basicStyles = {
     backgroundColor: 'white',
@@ -11,48 +17,45 @@ const basicStyles = {
     boxShadow: '0 0 10px rgba(0, 0, 0, .15)'
 };
 
-function initBackground() {
-    initialized = true;
-    ddBackground = document.createElement('span');
+function initIndividualElement(elementName) {
+    const thisElement = document.createElement('span');
 
-    ddBackground.className = 'dd-background';
+    thisElement.className = `dd-${elementName}`;
 
-    Object.assign(ddBackground.style, basicStyles);
+    Object.assign(thisElement.style, basicStyles);
 
-    ddBackground.addEventListener('transitionend', () => toggleMiddleTrans(isActive));
+    thisElement.addEventListener('transitionend', () => toggleMiddleTrans(thisElement, fa.isActive));
+
+    fa[elementName] = thisElement;
 }
 
-function initUnderline() {
-    ddUnderline = document.createElement('span');
-
-    ddUnderline.className = 'dd-underline';
-
-    Object.assign(ddUnderline.style, basicStyles);
-
-    ddUnderline.addEventListener('transitionend', () => toggleMiddleTrans(isActive));
+function initElements() {
+    fa.isInited = true;
+    
+    initIndividualElement('background');
+    initIndividualElement('underline');
 }
 
 function followAlong(e) {
     const p = e.currentTarget;
     const parent = p.parentElement;
 
-    console.log(p);
-
     const dd = Array.from(p.children).find(a => a.classList.contains('nav-dropdown'));
     const isEmpty = dd ? !dd.children.length : true;
 
-    if (!initialized) {
-        initBackground();
-        parent.insertBefore(ddBackground, parent.firstChild);
+    if (!fa.isInited) {
+        initElements();
+
+        parent.insertBefore(fa.background, parent.firstChild);
         parent.addEventListener('mouseenter', () => {
-            isActive = true;
+            fa.isActive = true;
         });
         parent.addEventListener('mouseleave', () => {
-            isActive = false;
-            faRemove();
+            fa.isActive = false;
+            faRemove(fa.background);
         });
 
-        isActive = true;
+        fa.isActive = true;
 
         if (parent.style.position === 'static' || typeof parent.style.position === 'undefined') {
             parent.style.position = 'relative';
@@ -60,41 +63,51 @@ function followAlong(e) {
     }
 
     if (isEmpty) {
-        faRemove();
+        faRemove(fa.background);
     }
     else {
-        faSwitch(dd, parent);
+        faSwitchBackground(dd, parent);
     }
 }
 
-function faSwitch(dd, parent) {
+function parentBounds(a) {
+    return a.parentElement.getBoundingClientRect();
+}
+
+function faSwitchBackground(dd) {
+    // Instance's dimensions
     const compStyle = window.getComputedStyle(dd),
-        boundingRect = dd.getBoundingClientRect(),
-        boundingRectParent = parent.getBoundingClientRect();
+        boundingRect = dd.getBoundingClientRect();
 
     const {width: w, height: h} = compStyle;
     const {left: x, top: y} = boundingRect;
 
-    const {left: xP, top: yP} = boundingRectParent;
+    // Parent's dimensions
+    const {left: xP, top: yP} = parentBounds(dd);
 
+    // Calculations
     const xR = `${x - xP}px`
     const yR = `${y - yP}px`
 
-    ddBackground.style.width    = `${w}`;
-    ddBackground.style.height   = `${h}`;
-    ddBackground.style.left     = xR;
-    ddBackground.style.top      = yR;
+    fa.background.style.width    = `${w}`;
+    fa.background.style.height   = `${h}`;
+    fa.background.style.left     = xR;
+    fa.background.style.top      = yR;
 
-    setTimeout(() => toggleMiddleTrans(true));
+    setTimeout(() => toggleMiddleTrans(fa. background, true));
 }
 
-function faRemove() {
-    ddBackground.style.width = '0px';
+function faSwitchUnderline(a, parent) {
+
 }
 
-function toggleMiddleTrans(bool = false) {
+function faRemove(obj) {
+    obj.style.width = '0px';
+}
+
+function toggleMiddleTrans(obj, bool = false) {
     const props = !bool ? 'width' : 'width, height, left';
-    ddBackground.style.transitionProperty = props;
+    obj.style.transitionProperty = props;
 }
 
 export default followAlong;
