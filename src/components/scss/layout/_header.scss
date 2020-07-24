@@ -78,25 +78,6 @@
         }
     }
 
-    &__main-button{
-        font-family: "Raleway", sans-serif;
-        font-weight: 300;
-        font-size: 1.6rem;
-        width: 100%;
-        padding: 1rem 0;
-        background-color: white;
-        border: none;
-        color: col(theme);
-        margin: 2rem 0 3rem;
-        max-width: 33rem;
-        cursor: pointer;
-
-        @media(min-width: breakpoint(w-sml)) {
-            height: 6.5rem;
-            font-size: 2.8rem;
-        }
-    }
-
     &__general-flex{
         display: flex;
         flex-flow: nowrap column;

@@ -1,0 +1,60 @@
+.btn{
+    cursor: pointer;
+}
+
+.slide-btn{
+    position: relative;
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: white;
+    border: none;
+    color: col(theme);
+    margin: 2rem 0 3rem;
+    max-width: 33rem;
+    height: 4.5rem;
+
+    @media(min-width: breakpoint(w-sml)) {
+        height: 6.5rem;
+        font-size: 2.8rem;
+    }
+
+    &__content,
+    &__slider{
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
+    
+    &__content{
+        width: 100%;
+        color: col(theme);
+        white-space: nowrap;
+        padding: 1.6rem 8.6rem;
+
+        @media(min-width: breakpoint(w-sml)) {
+            padding: 1.6rem 8.6rem;
+        }
+
+        &--last{
+            background-color: col(theme);
+            color: white;
+        }
+    }
+
+    &__slider{
+        left: 0;
+        display: inline-block;
+        overflow: hidden;
+        width: 0;
+        transition: width .3s;
+    }
+
+    &:hover > &__slider{
+        width: 100%;
+    }
+}

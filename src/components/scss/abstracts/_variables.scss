@@ -23,6 +23,9 @@ $breakpoints: (
 
 $general-padding: 2rem;
 
+// Component/Buttons
+$slide-btn-transition-duration: .3s;
+
 @function col($col) {
     @return map-get($colors, $col)
 };
