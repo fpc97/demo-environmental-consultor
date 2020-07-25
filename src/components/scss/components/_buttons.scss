@@ -41,7 +41,7 @@
         }
 
         &--last{
-            background-color: lighten(col(theme), 10%);
+            background-color: lighten(col(theme-light), 8%);
             color: white;
         }
     }

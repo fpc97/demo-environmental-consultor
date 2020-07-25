@@ -10,4 +10,8 @@
         color: white;
         fill: white;
     }
+
+    &__span{
+        @include invisible;
+    }
 }

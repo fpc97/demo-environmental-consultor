@@ -66,7 +66,7 @@
             transition: transform .3s;
         }
         &:hover{
-            background-color: col(theme-light);
+            background-color: col(theme-lighter);
         }
 
         &::selection{
@@ -121,7 +121,7 @@
     & li > a{
         background-color: col(theme);
         &:hover{
-            background-color: col(theme-light);
+            background-color: col(theme-lighter);
             //color: white;
         }
     }
@@ -235,7 +235,7 @@
             }
 
             &:hover{
-                background-color: col(theme-light);
+                background-color: col(theme-lighter);
             }
 
             &::selection{

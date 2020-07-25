@@ -56,7 +56,9 @@ const Navigation = ({data: data}) => {
                     {createSection('Sobre Nosotros', '/sobre-nosotros', 'sobre')}
                     {createSection('Trabajos Realizados', '/trabajos-realizados', 'trabajos')}
                     {createSection('Clientes', '/clientes', 'clientes')}
+                    {createSection('Servicios', '/servicios', 'servicios')}
                     {createSection('Contacto', '/contacto', 'contacto')}
+                    {createSection('Servicios', '/servicios', 'servicios')}
                 </ul>
                 <div className="navigation__bg-info navigation__bg-info--bottom">
                     <div className="navigation__phones">

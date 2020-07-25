@@ -48,6 +48,7 @@ export default () => (
     <>
         {dummyData.map(i => (
             <a className="social-media__a" href={i.link}>
+                <span className="social-media__span">Puede encontrarnos en {i.site}</span>
                 <FontAwesomeIcon className="social-media__icon" size="3x" icon={icons[i.site]||icons.default} />
             </a>
         ))}
