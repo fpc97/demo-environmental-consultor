@@ -67,7 +67,6 @@
         font: normal 1.6rem "Open sans", sans-serif;
         line-height: 3rem;
         letter-spacing: .05rem;
-        max-width: 38rem;
 /*
         font-family: "Open sans", sans-serif;
         font-size: 1.6rem;
@@ -75,6 +74,10 @@
 
         @media(min-width: breakpoint(w-sml)) {
             margin-right: 4rem;
+        }
+
+        @media(min-width: breakpoint(w-mid)) {
+            max-width: 38rem;
         }
     }
 

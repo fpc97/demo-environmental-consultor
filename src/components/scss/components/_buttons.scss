@@ -34,14 +34,14 @@
         width: 100%;
         color: col(theme);
         white-space: nowrap;
-        padding: 1.6rem 8.6rem;
+        padding: 1.6rem 30vw;
 
         @media(min-width: breakpoint(w-sml)) {
             padding: 1.6rem 8.6rem;
         }
 
         &--last{
-            background-color: col(theme);
+            background-color: lighten(col(theme), 10%);
             color: white;
         }
     }

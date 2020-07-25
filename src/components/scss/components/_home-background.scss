@@ -7,13 +7,12 @@
     z-index: -100;
 
     &__slideshow{
-        display: none;
         background-color: green;
-
+        width: 100%;
+        height: 100%;
+        display: none;
         @media(min-width: breakpoint(w-mid)) {
             display: inline-block;
-            width: 100%;
-            height: 100%;
         }
     }
 
@@ -24,9 +23,12 @@
         width: 40%;
         height: 100%;
 
-        display: flex;
+        display: none;
         flex-flow: nowrap row;
         justify-content: left;
+        @media(min-width: breakpoint(w-mid)) {
+            display: flex;
+        }
     }
     &__gradient{
         background-image: linear-gradient(to right, lighten(col(theme), 5%), col(theme) 80%);
@@ -44,9 +46,9 @@
     &__svg{
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
-        left: 26%;
+        transform: translate(-50%, -50%);
+        left: 46%;
         z-index: 99;
-        width: 34%;
+        width: calc(20% + 25rem);
     }
 }
