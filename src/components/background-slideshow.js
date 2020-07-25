@@ -28,8 +28,6 @@ function startCycle(e) {
 
     let index = 0;
 
-    console.log(imageList);
-
     setInterval(() => {
         imageList[index].style.opacity = 0;
         index = (index + 1) % listLength;
@@ -44,8 +42,8 @@ export default () => {
             allFile (filter: {name: {regex: "/home-slideshow/"}}){
                 nodes{
                     childImageSharp{
-                        fluid (maxWidth: 4000, quality: 100){
-                            ...GatsbyImageSharpFluid
+                        fluid (maxWidth: 1920, quality: 100){
+                            ...GatsbyImageSharpFluid_withWebp
                         }
                     }
                 }

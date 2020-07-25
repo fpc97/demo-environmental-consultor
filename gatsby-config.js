@@ -79,6 +79,7 @@ module.exports = {
         }
       }
     },
+    'gatsby-plugin-preload-link-crossorigin',
 
     // Netlify things
     {

@@ -34,7 +34,6 @@ export default () => (
         </div>
         
         <header className="header">
-
             <Title bottomBar/>
             <h2 className="header__h2"><span className="header__h2--first">BIOLOGIA</span> <br/><span className="header__h2--last">DIGITAL</span></h2>
             <div className="header__bottom-flex">

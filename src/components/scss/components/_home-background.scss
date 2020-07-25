@@ -18,28 +18,48 @@
     &__blue{
         position: absolute;
         top: 0;
-        left: 18%;
-        width: 40%;
+        //left: 18%;
+        //width: 40%;
         height: 100%;
+        //max-width: 70rem;
 
         display: none;
         flex-flow: nowrap row;
-        justify-content: left;
+        //justify-content: left;
         @media(min-width: breakpoint(w-mid)) {
             display: flex;
+        }
+
+        // Nuevo estilo
+        left: 50%;
+        width: 100%;
+        max-width: 192rem;
+        transform: translateX(-50%);
+        justify-content: center;
+
+        // 4K
+        @media(min-height: breakpoint(h-max) + 1) {
+            max-width: none;
         }
     }
     &__gradient{
         background-image: linear-gradient(to right, lighten(col(theme), 5%), col(theme) 80%);
         display: inline-block;
-        width: 60%;
+        //width: 60%;
         height: 100%;
+
+        // Nuevo estilo
+        width: 25%;
     }
     &__plain{
         background-color: col(theme);
         display: inline-block;
-        width: 40%;
+        //width: 40%;
         height: 50%;
+
+        // Nuevo estilo
+        width: 14%;
+        margin-right: 24%;
     }
 
     &__svg{
@@ -49,5 +69,11 @@
         left: 46%;
         z-index: 99;
         width: calc(20% + 25rem);
+        max-width: 60rem;
+
+        // 4K
+        @media(min-height: breakpoint(h-max) + 1) {
+            max-width: 100%;
+        }
     }
 }

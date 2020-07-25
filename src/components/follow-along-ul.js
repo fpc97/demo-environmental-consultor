@@ -96,14 +96,13 @@ function faSwitchBackground(dd) {
     const yR = `${y - yP}px`
 
     const horizontalCorrection = Math.max(0, parseFloat(x) + parseFloat(w) + 31 - window.innerWidth);
-    const horizontalCorrectionNoMax = parseFloat(x) + parseFloat(w) + 31 - window.innerWidth;
 
     fa.background.style.width    = `${w}`;
     fa.background.style.height   = `${h}`;
     fa.background.style.left     = `${parseInt(xR) - horizontalCorrection}px`;
     fa.background.style.top      = yR;
 
-    dd.style.left = `${parseFloat(dd.style.left) - horizontalCorrection}px`;
+    dd.style.left = `${parseFloat(dd.style.left || 0) - horizontalCorrection}px`;
 
     setTimeout(() => toggleMiddleTrans(fa.background, true));
 }

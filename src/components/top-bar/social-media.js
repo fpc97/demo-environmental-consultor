@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { config } from "@fortawesome/fontawesome-svg-core";
 import {
     faTwitter,
     faYoutube,
@@ -14,6 +15,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/fontawesome-free-regular";
 import { faLink } from "@fortawesome/fontawesome-free-solid";
+
+//config.autoAddCss = false;
 
 const icons = {
     facebook: faFacebook,
