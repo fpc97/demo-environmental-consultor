@@ -98,13 +98,6 @@ function faSwitchBackground(dd) {
     const horizontalCorrection = Math.max(0, parseFloat(x) + parseFloat(w) + 31 - window.innerWidth);
     const horizontalCorrectionNoMax = parseFloat(x) + parseFloat(w) + 31 - window.innerWidth;
 
-    console.log('----------------------------------------------------------------------');
-    console.log('parseFloat(x)', parseFloat(x));
-    console.log('parseFloat(w)', parseFloat(w));
-    console.log('window.innerWidth', window.innerWidth);
-    console.log('horizontalCorrectionNoMax', horizontalCorrectionNoMax);
-    console.log('----------------------------------------------------------------------');
-
     fa.background.style.width    = `${w}`;
     fa.background.style.height   = `${h}`;
     fa.background.style.left     = `${parseInt(xR) - horizontalCorrection}px`;
