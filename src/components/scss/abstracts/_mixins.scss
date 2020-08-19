@@ -35,3 +35,12 @@
     width: 100%;
     height: 100%;
 }
+
+
+@mixin marginTopNav($extra) {
+    margin-top: 11.8rem + $extra;
+
+    @media (min-width: breakpoint(nav)) {
+        margin-top: 22.8rem + $extra;
+    }
+}
