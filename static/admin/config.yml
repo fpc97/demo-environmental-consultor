@@ -2,10 +2,35 @@ backend:
   name: git-gateway
   branch: master
 
+# Borrar despues de desarrollo
+local_backend: true
+# Borrar despues de desarrollo
+
 media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: general
+    label: "General"
+    files:
+    - name: controlpanel
+      label: Panel de Control
+      file: src/general/cp.md
+      fields:
+        - {label: "Sitio activo", name: "activesite", widget: "boolean", default: false}
+        - label: "Numeros de telefono"
+          name: "phonenumbers"
+          widget: "list"
+          field: {label: "Numero de telefono", name: "singlephonenumber", widget: string}
+        - label: "E-mails"
+          name: "emailaddresses"
+          widget: "list"
+          field: {label: "Direccion de email", name: "singleemailaddress", widget: string}
+        - label: "Redes sociales"
+          name: "social-media"
+          widget: list
+          field: {label: "Link de red social", name: "socialmedialink", widget: string, pattern: ['www', 'Debe ser una URL']}
+
   - name: pages
     label: Pages
     files:

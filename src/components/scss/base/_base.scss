@@ -33,3 +33,51 @@ a:visited{
 .invisible{
     @include invisible;
 }
+
+
+/*Base theme*/
+h2, h3, h4, h5, h6{
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 4rem;
+    @media (min-width: breakpoint(w-mid)) {
+        font-size: 6rem;
+    }
+    @media (min-width: breakpoint(w-big)) {
+        font-size: 8.6rem;
+    }
+}
+
+h3{
+    font-size: 3.4rem;
+    @media (min-width: breakpoint(w-mid)) {
+        font-size: 5.4rem;
+    }
+}
+
+h4{
+    font-size: 2.6rem;
+    @media (min-width: breakpoint(w-mid)) {
+        font-size: 3.2rem;
+    }
+}
+
+.brief{
+    font-family: "Raleway", sans-serif;
+    font-size: 2.1rem;
+    font-weight: bold;
+    @media (min-width: breakpoint(w-mid)) {
+        font-size: 2.4rem;
+    }
+}
+
+p{
+    font-family: "Open-sans", sans-serif;
+    font-size: 1.8rem;
+    max-width: 68rem;
+    line-height: 3rem;
+    letter-spacing: .05rem;
+}
