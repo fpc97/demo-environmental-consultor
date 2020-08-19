@@ -3,10 +3,12 @@
 
     color: white;
 
-    margin-top: 2rem;
+    //margin-top: 2rem;
+    @include marginTopNav(2rem);
 
     @media(min-height: breakpoint(h-big)) {
-        margin-top: calc(20vh - 14rem);
+        //margin-top: calc(20vh - 14rem);
+        @include marginTopNav(calc(20vh - 14rem));
     }
     
     @media(min-width: breakpoint(w-mid)) {
