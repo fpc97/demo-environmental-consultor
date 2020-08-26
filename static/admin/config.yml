@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: master
 
+locale: 'es'
+
 # Borrar despues de desarrollo
 local_backend: true
 # Borrar despues de desarrollo
@@ -14,10 +16,9 @@ collections:
     label: "General"
     files:
     - name: controlpanel
-      label: Panel de Control
+      label: "Panel de Control"
       file: src/general/cp.md
       fields:
-        - {label: "Sitio activo", name: "activesite", widget: "boolean", default: false}
         - label: "Numeros de telefono"
           name: "phonenumbers"
           widget: "list"
@@ -31,25 +32,204 @@ collections:
           widget: list
           field: {label: "Link de red social", name: "socialmedialink", widget: string, pattern: ['www', 'Debe ser una URL']}
 
-  - name: pages
-    label: Pages
+  - name: "pages"
+    label: "Paginas"
     files:
-      - file: src/pages/about-us/index.md
-        label: "About Us"
-        name: "about-us"
+      # SOBRE NOSOTROS ---------------------------------------------------------------------------------------------------
+      - file: "src/pages/sobre-nosotros/content.md"
+        name: "sobre-nosotros"
+        label: "Sobre nosotros"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-us-page"}
-          - {label: "Introduction", name: introduction, widget: text, hint: "Texto introductorio. Puede ser dejado en blanco"}
-          - label: "Team Members"
-            name: team-members
-            widget: list
-            hint: "Lista con todos los colaboradores"
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "sobre-nosotros"}
+          # intro (titulo, brief, p1, p2, background)
+          - {label: "Titulo", name: "title", widget: "string"}
+          - label: "Introduccion"
+            name: "intro"
+            widget: "object"
             fields:
-              - {label: "Name", name: "nombre", widget: string, required: true}
-              - {label: "Position", name: "position", widget: string, required: true}
-              - {label: "Description", name: "description", widget: text, required: true}
-              - label: "Social media"
-                name: "social-media"
-                widget: list
-                field: {label: "Social media link", name: social-media-link, widget: string, pattern: ['www', 'It needs to be an URL']}
-              - {label: "Photo", name: "photo", widget: file, default: 'static/img/persona-avatar.jpg'}
+              - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+              - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
+              - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
+          # nuestros objetivos (brief, p1, items)
+          - label: "Objetivos"
+            name: "objetivos"
+            widget: "object"
+            fields:
+              - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones"}
+              - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal"}
+              # items (titulo, p1, icono)
+              - label: "Lista de items"
+                name: "items"
+                widget: "list"
+                hint: "Lista de consignas breves que ilustren mejor los objetivos. Deben ser por lo menos 3 y no mas de 4"
+                fields:
+                  - {label: "Titulo", name: "titulo", widget: "string", hint: "Deberia ser una sola palabra, P.ej: 'Responsabilidad', 'Accesibilidad', 'Seguridad'"}
+                  - {label: "Descripcion", name: "descripcion", widget: "markdown", hint: "Descripcion breve, entre 3 y 6 renglones"}
+
+          # por que elegirnos (brief, p1, items)
+          - label: "¿Por qué elegirnos?"
+            name: "elegirnos"
+            widget: "object"
+            fields:
+              - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+              - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal"}
+              - label: "Lista de items"
+                name: "items"
+                widget: "list"
+                hint: "Cualidades destacables del negocio. Deberian mantenerse entre 3 y 6"
+                fields:
+                  - {label: "Titulo", name: "titulo", widget: "string", hint: "Frase corta de no mas de 3 renglones"}
+                  - {label: "Descripcion", name: "descripcion", widget: "markdown", hint: "Descripcion breve, entre 3 y 10 renglones"}
+                  - label: "Icono"
+                    name: "icono"
+                    widget: "select"
+                    hint: "Para ver mejor las opciones ir a la URL /icons"
+                    options: ["Herramientas", "Diskette", "Planta", "Escudo", "Señal", "Firma", "Sonrisa guiño", "Sonrisa", "Spell check", "Cronometro", "Sol", "Etiquetas", "Etiqueta", "Lista", "Cinta", "Termometro vacio", "Termometro lleno", "Pin", "Pulgar arriba", "Arbol", "Paragua",
+                              "Lupa", "Lupa ubicacion", "Regla", "Regla vertical", "Cohete", "Ruta", "Recibo", "Cartas", "Lapicera", "Microscopio", "Microfono", "Celular", "Luna", "Montaña", "Mouse", "Rodillo", "Clip", "Avion", "Garra", "Foto video", "Power off", "Pluma", "Matraz",
+                              "Carpeta", "Diamante", "Anteojos", "Mundo internet", "Mundo", "Auriculares microfono", "Auriculares", "Hiking", "Hogar", "Reloj arena", "Imagenes", "Notebook", "Teclado", "Llave", "Iman", "Pulmones", "Ubicacion", "Mapa ubicacion", "Mapa", "Manzana",
+                              "Atomo", "Bateria llena", "Bateria vacia", "Tick", "Grafico barras", "Grafico torta", "Ciudad", "Reloj", "Nubes sol", "Lluvia", "Comentarios", "Comentario", "Campana hotel", "Monitor", "ADN", "Paloma", "Sobre abierto", "Sobre", "Ojo", "Ventilador", "Arroba"]
+
+          # items (titulo, p1, icono)
+          # nuestros clientes (logo, nombre)
+          - label: "Clientes"
+            name: "clientes"
+            widget: "list"
+            fields:
+              - {label: "Logo", name: "logo", widget: "file"}
+              - {label: "Nombre", name: "nombre", widget: "string", hint: "Nombre de la empresa"}
+      
+      # TRABAJOS REALIZADOS ---------------------------------------------------------------------------------------------------
+      - file: "src/pages/trabajos-realizados/content.md"
+        name: "trabajos-realizados"
+        label: "Trabajos realizados"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "trabajos-realizados"}
+          # intro (titulo, brief, p1, p2, background)
+          - {label: "Titulo", name: "title", widget: "string"}
+          - label: "Introduccion"
+            name: "intro"
+            widget: "object"
+            fields:
+              - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+              - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
+              - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
+          - label: "Lista de trabajos"
+            name: "lista-de-trabajos"
+            widget: "list"
+            fields:
+              - {label: "Titulo", name: "title", widget: "string"}
+              - {label: "Cliente", name: "cliente", widget: "string"}
+              - {label: "Contenido", name: "contenido", widget: "markdown"}
+
+      # EQUIPAMIENTO ---------------------------------------------------------------------------------------------------- file: "src/pages/trabajos-realizados/content.md"
+      - file: "src/pages/equipamiento/content.md"
+        name: "equipamiento"
+        label: "Equipamiento"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "equipamiento"}
+          # intro (titulo, brief, p1, p2, background)
+          - {label: "Titulo", name: "title", widget: "string"}
+          - label: "Introduccion"
+            name: "intro"
+            widget: "object"
+            fields:
+              - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+              - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
+              - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
+          - label: "Lista de equipamiento"
+            name: "lista-de-equipamiento"
+            widget: "list"
+            fields:
+              - {label: "Nombre", name: "nombre", widget: "string"}
+              - {label: "Fotos", name: "fotos", widget: "image"}
+              - {label: "Descripcion", name: "descripcion", widget: "markdown"}
+
+      # PERSONAL ---------------------------------------------------------------------------------------------------
+      - file: "src/pages/personal/content.md"
+        name: "personal"
+        label: "Personal"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "personal"}
+          # intro (titulo, brief, p1, p2, background)
+          - {label: "Titulo", name: "title", widget: "string"}
+          - label: "Introduccion"
+            name: "intro"
+            widget: "object"
+            fields:
+              - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+              - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
+              - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
+          - label: "Lista de personal"
+            name: "lista-de-personal"
+            widget: "list"
+            fields:
+              - {label: "Nombre", name: "nombre", widget: "string"}
+              - {label: "Cargo", name: "cargo", widget: "string", hint: "Que cargo tiene esta persona"}
+              - {label: "Foto", name: "foto", widget: "image", allow_multiple: false, required: false}
+              - {label: "Descripcion", name: "descripcion", widget: "markup", hint: "Descripcion breve de esta persona", required: false}
+              - label: "Comunicacion"
+                name: "comunicacion"
+                hint: "Perfiles o direcciones en donde encontrar a esta persona, redes sociales, mail, etc."
+                widget: "list"
+                fields:
+                  - {label: "URL", name: "url", widget: "text"}
+                  - label: "Red social"
+                    name: "site"
+                    widget: "select"
+                    options:
+                      - {label: "Otro", value: "default"}
+                      - {label: "E-mail", value: "mail"}
+                      - {label: "Linkedin", value: "linkedin"}
+                      - {label: "Facebook", value: "facebook"}
+                      - {label: "Twitter", value: "twitter"}
+                      - {label: "Instagram", value: "instagram"}
+                      - {label: "YouTube", value: "youtube"}
+                      - {label: "Blogger", value: "blogger"}
+                      - {label: "Reddit", value: "reddit"}
+                      - {label: "Discord", value: "discord"}
+                      - {label: "Google+", value: "googleplus"}
+
+        # SERVICIOS ---------------------------------------------------------------------------------------------------
+      - file: "src/pages/servicios/content.md"
+        name: "servicios"
+        label: "Servicios"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "personal"}
+          # intro (titulo, brief, p1, p2, background)
+          - {label: "Titulo", name: "title", widget: "string"}
+          - label: "Introduccion"
+            name: "intro"
+            widget: "object"
+            fields:
+              - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+              - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
+              - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
+          - label: "Provincias en las que trabajamos"
+            name: "provincias"
+            widget: "select"
+            multiple: true
+            options: ["Buenos Aires", "Catamarca", "Chaco", "Chubut", "Cordoba", "Corrientes", "Entre Rios", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquen", "Rio Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucuman"]
+      
+            # SERVICIOS INDIVIDUALES -------------------------------------------------------------------------------------------
+  - name: "servicios-individuales"
+    label: "Servicios individuales"
+    folder: "src/pages/servicios"
+    create: true
+    slug: "{{title}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Titulo", name: "title", widget: "string"}
+      - label: "Introduccion"
+        name: "intro"
+        widget: "object"
+        fields:
+          - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+          - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
+          - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+          - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
+      - {label: "Cuerpo", name: "cuerpo", widget: "markdown"}
