@@ -170,13 +170,13 @@ collections:
               - {label: "Nombre", name: "nombre", widget: "string"}
               - {label: "Cargo", name: "cargo", widget: "string", hint: "Que cargo tiene esta persona"}
               - {label: "Foto", name: "foto", widget: "image", allow_multiple: false, required: false}
-              - {label: "Descripcion", name: "descripcion", widget: "markup", hint: "Descripcion breve de esta persona", required: false}
+              - {label: "Descripcion", name: "descripcion", widget: "markdown", hint: "Descripcion breve de esta persona", required: false}
               - label: "Comunicacion"
                 name: "comunicacion"
                 hint: "Perfiles o direcciones en donde encontrar a esta persona, redes sociales, mail, etc."
                 widget: "list"
                 fields:
-                  - {label: "URL", name: "url", widget: "text"}
+                  - {label: "URL", name: "url", widget: "string"}
                   - label: "Red social"
                     name: "site"
                     widget: "select"
