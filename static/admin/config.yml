@@ -198,7 +198,7 @@ collections:
         name: "servicios"
         label: "Servicios"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "personal"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "servicios"}
           # intro (titulo, brief, p1, p2, background)
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
@@ -222,7 +222,7 @@ collections:
     create: true
     slug: "{{title}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "servicio-individual"}
       - {label: "Titulo", name: "title", widget: "string"}
       - label: "Introduccion"
         name: "intro"
