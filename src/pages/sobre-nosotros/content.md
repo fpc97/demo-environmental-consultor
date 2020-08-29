@@ -1,5 +1,5 @@
 ---
-title: Titulo
+title: Titulop
 intro:
   brief: Introduccion - Frase introductoria
   principal: Introduccion - Parrafo principal
