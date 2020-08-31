@@ -36,11 +36,11 @@ collections:
     label: "Paginas"
     files:
       # SOBRE NOSOTROS ---------------------------------------------------------------------------------------------------
-      - file: "src/pages/sobre-nosotros/content.md"
+      - file: "src/pages/sobre-nosotros/index.md"
         name: "sobre-nosotros"
         label: "Sobre nosotros"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "sobre-nosotros"}
+          - {label: "Template Key", name: "templateKey", widget: "select", options: ["sobre-nosotros"], default: "sobre-nosotros"}
           # intro (titulo, brief, p1, p2, background)
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
@@ -100,11 +100,11 @@ collections:
               - {label: "Nombre", name: "nombre", widget: "string", hint: "Nombre de la empresa"}
       
       # TRABAJOS REALIZADOS ---------------------------------------------------------------------------------------------------
-      - file: "src/pages/trabajos-realizados/content.md"
+      - file: "src/pages/trabajos-realizados/index.md"
         name: "trabajos-realizados"
         label: "Trabajos realizados"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "trabajos-realizados"}
+          - {label: "Template Key", name: "templateKey", widget: "select", options: ["trabajos-realizados"], default: "trabajos-realizados"}
           # intro (titulo, brief, p1, p2, background)
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
@@ -123,12 +123,12 @@ collections:
               - {label: "Cliente", name: "cliente", widget: "string"}
               - {label: "Contenido", name: "contenido", widget: "markdown"}
 
-      # EQUIPAMIENTO ---------------------------------------------------------------------------------------------------- file: "src/pages/trabajos-realizados/content.md"
-      - file: "src/pages/equipamiento/content.md"
+      # EQUIPAMIENTO ---------------------------------------------------------------------------------------------------- file: "src/pages/trabajos-realizados/index.md"
+      - file: "src/pages/equipamiento/index.md"
         name: "equipamiento"
         label: "Equipamiento"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "equipamiento"}
+          - {label: "Template Key", name: "templateKey", widget: "select", options: ["equipamiento"], default: "equipamiento"}
           # intro (titulo, brief, p1, p2, background)
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
@@ -148,11 +148,11 @@ collections:
               - {label: "Descripcion", name: "descripcion", widget: "markdown"}
 
       # PERSONAL ---------------------------------------------------------------------------------------------------
-      - file: "src/pages/personal/content.md"
+      - file: "src/pages/personal/index.md"
         name: "personal"
         label: "Personal"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "personal"}
+          - {label: "Template Key", name: "templateKey", widget: "select", options: ["personal"], default: "personal"}
           # intro (titulo, brief, p1, p2, background)
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
@@ -194,11 +194,11 @@ collections:
                       - {label: "Google+", value: "googleplus"}
 
         # SERVICIOS ---------------------------------------------------------------------------------------------------
-      - file: "src/pages/servicios/content.md"
+      - file: "src/pages/servicios/index.md"
         name: "servicios"
         label: "Servicios"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "servicios"}
+          - {label: "Template Key", name: "templateKey", widget: "select", options: ["servicios"], default: "servicios"}
           # intro (titulo, brief, p1, p2, background)
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
@@ -222,7 +222,7 @@ collections:
     create: true
     slug: "{{title}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "servicio-individual"}
+      - {label: "Template Key", name: "templateKey", widget: "select", options: ["servicio-individual"], default: "servicio-individual"}
       - {label: "Titulo", name: "title", widget: "string"}
       - label: "Introduccion"
         name: "intro"
