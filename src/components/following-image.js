@@ -4,7 +4,7 @@ class FollowingImage extends Component {
   constructor({ imageUrl = 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*' }) {
     super()
 
-    this.containerRef = React.createRef()
+    this.imgRef = React.createRef()
 
     this.state = {
       imgStyle: {
@@ -14,9 +14,31 @@ class FollowingImage extends Component {
     }
   }
 
+  // Have to use refs because setState updates asynchronously making the animation look glitchy
   handleScroll = e => {
     if (!window) return
 
+    const img = this.imgRef.current,
+      parent = img.parentElement
+
+    const parentBounds = parent.getBoundingClientRect()
+    const screenHeight = window.innerHeight
+
+    const isTop = parentBounds.top > 0
+    const isBottom = parentBounds.bottom < screenHeight
+
+    const style = {
+      top: 'auto',
+      bottom: 'auto'
+    }
+
+    if (isBottom) {
+      style.bottom = 0
+    } else {
+      style.top = `${Math.max(0, -parentBounds.top)}px`
+    }
+
+    for (const prop in style) img.style[prop] = style[prop]
   }
 
   componentDidMount() {
@@ -30,8 +52,8 @@ class FollowingImage extends Component {
   render() {
 
     return (
-      <div className="following-image" ref={this.containerRef}>
-        <img className="following-image__img" src={this.state.imageUrl} style={this.state.imgStyle}/>
+      <div className="following-image">
+        <img className="following-image__img" src={this.state.imageUrl} style={this.state.imgStyle} ref={this.imgRef}/>
       </div>
     )
   }
