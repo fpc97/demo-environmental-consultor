@@ -17,36 +17,6 @@ class FollowingImage extends Component {
   handleScroll = e => {
     if (!window) return
 
-    const containerBounds = this.containerRef.current.getBoundingClientRect(),
-      containerWidth = containerBounds.right - containerBounds.left
-    const viewportHeight = window.innerHeight
-    const viewportWidth = window.innerWidth
-
-    const isTop = containerBounds.top > 0
-    const isBottom = containerBounds.bottom < viewportHeight
-
-    /*if (isTop) {
-
-    } else */
-    const imgStyle = {}
-
-    if (isBottom) {
-      imgStyle.bottom = 0
-    } else if (isTop) {
-      imgStyle.top = 0
-    } else {
-      imgStyle.position = 'fixed'
-      //imgStyle.top = `${-containerBounds.top}px`
-      imgStyle.bottom = '0'
-      imgStyle.right = `${viewportWidth - containerBounds.right}px`
-      imgStyle.width = `${containerWidth}px`
-    }
-
-    Promise.resolve(
-      this.setState({
-        imgStyle
-      }
-    ))
   }
 
   componentDidMount() {
