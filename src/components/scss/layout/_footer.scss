@@ -1,0 +1,110 @@
+.footer{
+  background-color: col(footer-background);
+  padding: 3rem 1rem;
+  @include mq(big) {
+    padding: 6rem 11rem;
+  }
+
+  @include mq(mid) {
+    display: flex;
+    flex-flow: wrap row;
+  }
+
+  // Info
+  &__info{
+    @include mq(sml) {
+      margin-right: 5rem;
+    }
+  }
+
+  &__address{
+    margin-top: 3rem;
+  }
+
+  &__social-media{
+    margin-bottom: 2rem;
+
+    & > a{
+      margin-right: 1.4rem;
+    }
+  }
+
+  &__phone-numbers{
+    
+    & > a{
+      font-size: 1.8rem;
+      font-style: normal;
+      margin-bottom: 1rem;
+      display: table;
+    }
+  }
+
+  // Routes
+  &__routes{
+    list-style: none;
+    margin-top: 4rem;
+
+    flex: 1 0 breakpoint(w-sml);
+
+    @include mq(mid) {
+      margin-top: 0;
+    }
+  }
+
+  &__route{
+    display: inline-block;
+    vertical-align: top;
+
+    margin-bottom: 2rem;
+    width: 100%;
+
+    @include mq(sml) {
+      width: 46%;
+      margin-right: 4%;
+    }
+    @include mq(big) {
+      width: 21%;
+    }
+  }
+
+  &__link,
+  &__sublink{
+    font-size: 2.1rem;
+    display: table;
+  }
+  
+  &__link{
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  &__subroutes{
+    
+  }
+
+  &__subroute{
+    
+  }
+
+  &__sublink{
+    margin-bottom: 2rem;
+    line-height: 3.4rem;
+    opacity: .7;
+  }
+
+  // Bottom
+  &__bottom{
+    flex: 1 0 100%;
+    margin-top: 4rem;
+  }
+
+  &__dev-link{
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  &__copyright{
+    margin-top: .4rem;
+    font-size: 1.6rem;
+  }
+}

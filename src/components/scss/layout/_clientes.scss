@@ -1,0 +1,31 @@
+.clientes{
+
+  &__h3{
+
+  }
+
+  &__ul{
+    list-style: none;
+    width: 100%;
+  }
+
+  &__li{
+    display: inline-block;
+    margin-bottom: 2%;
+
+    @include mq('sml') {
+      width: 48%;
+      margin-right: 2%;
+    }
+    @include mq('mid') {
+      width: 31%;
+    }
+    @include mq('big') {
+      width: 23%;
+    }
+  }
+
+  &__img{
+    width: 100%;
+  }
+}

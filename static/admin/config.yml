@@ -40,23 +40,21 @@ collections:
         name: "sobre-nosotros"
         label: "Sobre nosotros"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "select", options: ["sobre-nosotros"], default: "sobre-nosotros"}
-          # intro (titulo, brief, p1, p2, background)
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
             name: "intro"
             widget: "object"
             fields:
-              - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+              - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
               - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
               - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
               - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
-          # nuestros objetivos (brief, p1, items)
+          # nuestros objetivos (lead, p1, items)
           - label: "Objetivos"
             name: "objetivos"
             widget: "object"
             fields:
-              - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones"}
+              - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones"}
               - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal"}
               # items (titulo, p1, icono)
               - label: "Lista de items"
@@ -67,12 +65,12 @@ collections:
                   - {label: "Titulo", name: "titulo", widget: "string", hint: "Deberia ser una sola palabra, P.ej: 'Responsabilidad', 'Accesibilidad', 'Seguridad'"}
                   - {label: "Descripcion", name: "descripcion", widget: "markdown", hint: "Descripcion breve, entre 3 y 6 renglones"}
 
-          # por que elegirnos (brief, p1, items)
+          # por que elegirnos (lead, p1, items)
           - label: "¿Por qué elegirnos?"
             name: "elegirnos"
             widget: "object"
             fields:
-              - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+              - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
               - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal"}
               - label: "Lista de items"
                 name: "items"
@@ -104,14 +102,12 @@ collections:
         name: "trabajos-realizados"
         label: "Trabajos realizados"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "select", options: ["trabajos-realizados"], default: "trabajos-realizados"}
-          # intro (titulo, brief, p1, p2, background)
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
             name: "intro"
             widget: "object"
             fields:
-              - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+              - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
               - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
               - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
               - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
@@ -129,13 +125,13 @@ collections:
         label: "Equipamiento"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "select", options: ["equipamiento"], default: "equipamiento"}
-          # intro (titulo, brief, p1, p2, background)
+          # intro (titulo, lead, p1, p2, background)
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
             name: "intro"
             widget: "object"
             fields:
-              - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+              - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
               - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
               - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
               - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
@@ -152,14 +148,12 @@ collections:
         name: "personal"
         label: "Personal"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "select", options: ["personal"], default: "personal"}
-          # intro (titulo, brief, p1, p2, background)
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
             name: "intro"
             widget: "object"
             fields:
-              - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+              - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
               - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
               - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
               - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
@@ -198,14 +192,12 @@ collections:
         name: "servicios"
         label: "Servicios"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "select", options: ["servicios"], default: "servicios"}
-          # intro (titulo, brief, p1, p2, background)
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
             name: "intro"
             widget: "object"
             fields:
-              - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+              - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
               - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
               - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
               - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
@@ -222,13 +214,13 @@ collections:
     create: true
     slug: "{{title}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "select", options: ["servicio-individual"], default: "servicio-individual"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "servicio-individual"}
       - {label: "Titulo", name: "title", widget: "string"}
       - label: "Introduccion"
         name: "intro"
         widget: "object"
         fields:
-          - {label: "Frase introductoria", name: "brief", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+          - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
           - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
           - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
           - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}

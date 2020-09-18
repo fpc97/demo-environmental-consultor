@@ -1,0 +1,29 @@
+$item-separate: 4rem;
+
+.elegirnos{
+  background: linear-gradient(col(theme-green), col(theme-green-light)) col(theme-green);
+  //margin-top: 10rem;
+
+  &__intro{
+    max-width: 49rem;
+  }
+
+  &__lista{
+    list-style: none;
+    @include mq('sml') {
+      display: flex;
+    }
+    flex-wrap: wrap;
+    margin-right: -$item-separate;
+  }
+}
+
+.elec-item{
+  margin-top: 8rem;
+  flex: 1 0 30rem;
+  margin-right: $item-separate;
+
+  &__svg{
+    margin-bottom: 3rem;
+  }
+}

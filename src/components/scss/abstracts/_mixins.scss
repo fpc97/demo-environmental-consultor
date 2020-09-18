@@ -44,3 +44,16 @@
         margin-top: 22.8rem + $extra;
     }
 }
+@mixin paddingTopNav($extra) {
+    padding-top: 11.8rem + $extra;
+
+    @media (min-width: breakpoint(nav)) {
+        padding-top: 22.8rem + $extra;
+    }
+}
+
+@mixin mq($size) {
+    @media(min-width: breakpoint("w-" + $size)) {
+        @content;
+    }
+}

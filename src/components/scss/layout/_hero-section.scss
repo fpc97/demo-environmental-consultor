@@ -1,0 +1,87 @@
+.hero-section{
+    position: relative;
+    color: white;
+
+    @include paddingTopNav(6rem);
+
+    //background-color: col(intro-background);
+    background-image: linear-gradient(to right, #2A9640, #108043 60%);
+    padding-bottom: 4rem;
+
+    overflow: hidden;
+
+    &__svg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        z-index: 0;
+    }
+    
+    &__background{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    &__container{
+        position: relative;
+        z-index: 1;
+    }
+
+    &__title{
+        margin-bottom: 2rem;
+        @media (min-width: breakpoint(w-sml)) {
+            margin-bottom: 3rem;
+        }
+        @media (min-width: breakpoint(w-mid)) {
+            margin-bottom: 6rem;
+        }
+    }
+
+    &__lead{
+        margin-bottom: 1.6rem;
+        @media (min-width: breakpoint(w-sml)) {
+            margin-bottom: 2rem;
+        }
+        max-width: 48rem;
+        @media (min-width: breakpoint(w-mid)) {
+            line-height: 4rem;
+        }
+    }
+
+    &__content{
+        @media (min-width: breakpoint(w-mid)) {
+            display: flex;
+        }
+        flex-flow: wrap row;
+        justify-content: flex-start;
+
+        max-width: 100rem;
+        //background-color: red;
+    }
+
+    &__col{
+        max-width: 48rem;
+        //min-width: 34rem;
+        flex: 1 0 34rem;
+        //flex: 1;
+        margin-bottom: 4rem;
+        
+        @media (min-width: breakpoint(w-mid)) {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        &--first{
+            @media (min-width: breakpoint(w-mid)) {
+                margin-right: 10rem;
+            }
+        }
+        &--last{
+        }
+    }
+}

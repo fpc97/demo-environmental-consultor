@@ -1,13 +1,19 @@
 $colors: (
     theme: hsl(213, 100%, 23%),
-    theme-light: #00408f,
+    theme-light: hsl(213, 100%, 28%),
     theme-lighter: hsl(215, 100%, 25%),
-    dd-highlight: #EEF1F5,
+    theme-green: hsl(147, 78%, 28%),
+    theme-green-light: hsl(132, 56%, 38%),
+    dd-highlight: hsl(214, 26%, 95%),
     dd-highlight2: hsl(214, 78%, 36%),
     link: hsl(0, 0%, 100%),
     link-hover: hsl(244, 100%, 87%),
     red-secondary: hsl(5, 100%, 59%),
-    grey-link: hsl(212, 14%, 36%)
+    grey-link: hsl(212, 14%, 36%),
+    intro-background: hsl(211, 100%, 8%),
+    title-black: hsl(212, 25%, 12%),
+    text-blue: hsl(202, 17%, 29%),
+    footer-background: hsl(210, 100%, 0%)
 );
 
 $breakpoints: (

@@ -1,0 +1,19 @@
+.following-image{
+  overflow: hidden;
+  display: none;
+  position: relative;
+  height: 100%;
+
+  @include mq(sml) {
+    display: block;
+  }
+
+  &__img{
+    position: absolute;
+    padding: 2rem 0;
+    height: 100vh;
+    max-height: 108rem;
+    width: 100%;
+    object-fit: cover;
+  }
+}

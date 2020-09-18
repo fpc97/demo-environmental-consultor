@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: servicio-individual
 title: Consectetuer adipiscing elit
 date: 2016-12-17T15:04:10.000Z
 featuredpost: false

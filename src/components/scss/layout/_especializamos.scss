@@ -1,0 +1,75 @@
+@mixin espec-padding{
+  padding-right: 30%;
+}
+
+.especializamos{
+
+  &__container.container{
+    position: relative;
+  }
+
+  &__titulo{
+    width: 70%;
+  }
+
+  &__lista{
+    display: block;
+    list-style: none;
+
+    @include mq(sml) {
+      margin-right: 30%;
+    }
+  }
+
+  &__item{
+    display: inline-block;
+    margin-bottom: 3rem;
+
+    @include mq(mid) {
+      width: 40%;
+      margin-right: 10%;
+      margin-bottom: 8rem;
+    }
+  }
+  &__h4{
+    
+  }
+  &__descripcion{
+    margin-bottom: 2rem;
+  }
+  &__leer-mas{
+    //display: inline-block;
+    font-size: 1.9rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border: 1px solid col(theme-green);
+    border-radius: .4rem;
+    float: right;
+
+    transition-property: color, background-color;
+    transition-duration: .1s;
+
+    &,
+    &:link,
+    &:visited{
+      color: col(theme-green);
+    }
+
+    &:hover{
+      &,
+      &:link,
+      &:visited{
+        color: white;
+      }
+      background-color: col(theme-green);
+    }
+  }
+
+  &__ilustracion{
+    position: absolute;
+    right: 2rem;
+    top: 0;
+    width: calc(30% - 3rem);
+    height: 100%;
+  }
+}

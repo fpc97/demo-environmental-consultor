@@ -1,7 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import { config } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
     faTwitter,
     faYoutube,
@@ -12,9 +11,9 @@ import {
     faDiscord,
     faReddit,
     faGooglePlus
-} from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/fontawesome-free-regular";
-import { faLink } from "@fortawesome/fontawesome-free-solid";
+} from "@fortawesome/free-brands-svg-icons"
+import { faEnvelope } from "@fortawesome/fontawesome-free-regular"
+import { faLink } from "@fortawesome/fontawesome-free-solid"
 
 //config.autoAddCss = false;
 
@@ -45,7 +44,7 @@ const dummyData = [
         site: 'instagram',
         link: 'http://twitter.com/ecj'
     }
-];
+]
 
 export default () => (
     <>
