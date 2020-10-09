@@ -1,82 +1,76 @@
 import React, { Component } from 'react'
 
 class FollowingImage extends Component {
-  constructor({ imageUrl = 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*' }) {
+  constructor() {
     super()
 
-    this.imgRef = React.createRef()
+    this.parentRef = React.createRef()
 
     this.state = {
       imgStyle: {
-        top: '100px'
-      },
-      imageUrl
+        top: 0
+      }
     }
   }
 
-  // Have to use refs because setState updates asynchronously making the animation look glitchy
-  handleScroll = e => {
-    if (!window) return
-
-    const img = this.imgRef.current,
-      parent = img.parentElement
-
-    const parentBounds = parent.getBoundingClientRect()
+  handleViewportChange = () => {
+    const parent = this.parentRef.current
+    
+    const bounds = parent.getBoundingClientRect()
     const screenHeight = window.innerHeight
 
-    const isTop = parentBounds.top > 0
-    const isBottom = parentBounds.bottom < screenHeight
+    const width = bounds.right - bounds.left
 
-    const style = {
+    const isTop = bounds.top > 0
+    const isBottom = bounds.bottom < screenHeight
+
+    const imgStyle = {
+      position: 'absolute',
       top: 'auto',
-      bottom: 'auto'
+      bottom: 'auto',
+      width: `${width}px`
     }
 
-    if (isBottom) {
-      style.bottom = 0
+    if (isTop) {
+      imgStyle.top = 0
+    } else if (isBottom) {
+      imgStyle.bottom = 0
     } else {
-      style.top = `${Math.max(0, -parentBounds.top)}px`
+      imgStyle.position = 'fixed'
+      imgStyle.top = 0
     }
-
-    for (const prop in style) img.style[prop] = style[prop]
+    
+    this.setState({ imgStyle })
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', this.handleViewportChange)
+    window.addEventListener('resize', this.handleViewportChange)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('scroll', this.handleViewportChange)
+    window.removeEventListener('resize', this.handleViewportChange)
   }
 
   render() {
+    const generateImgs = () => this.props.imgList.map((img, i) => {
+      const style = {
+        transition: `opacity .6s`,
+        opacity: this.props.currentImg === img ? 1 : 0
+      }
+      
+      return <img src={img} className="following-image__img" key={i} style={style}/>
+    })
 
     return (
-      <div className="following-image">
-        <img className="following-image__img" src={this.state.imageUrl} style={this.state.imgStyle} ref={this.imgRef}/>
+      <div className="following-image" ref={this.parentRef}>
+        <div className="following-image__container" style={this.state.imgStyle}>
+          {generateImgs()}
+        </div>
       </div>
     )
   }
 }
-/*
-const FollowingImage = ({ imageUrl = 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*' }) => {
-  const imgStyle = {
-    top: 0
-  }
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  })
-
-  return (
-    <div className="following-image" onScroll={handleScroll}>
-      <img className="following-image__img" src={imageUrl} style={imgStyle}/>
-    </div>
-  )
-}
-*/
 export default FollowingImage

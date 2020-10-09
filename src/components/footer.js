@@ -7,22 +7,24 @@ import Routes from './top-bar/routes'
 
 
 const Footer = () => (
-  <footer className="footer white">
-    <div className="footer__info">
+  <footer className="foot white">
+    <div className="foot__info">
       <Title />
-      <address className="footer__address">
-        <div className="footer__social-media">
+      <address className="foot__address">
+        <div className="foot__social-media">
           <SocialMedia />
         </div>
-        <div className="footer__phone-numbers">
+        <div className="foot__phone-numbers">
           <PhoneNumbers />
         </div>
       </address>
     </div>
-    <Routes classNamePrefix={'footer'}/>
-    <div className="footer__bottom">
-      <a href="https://fpece.com" className="footer__dev-link">Diseño web</a>
-      <p className="footer__copyright">
+    <Routes
+      classNamePrefix={'foot'}
+      className="foot__routes foot__route foot__link foot__subroutes foot__subroute foot__sublink"  
+    />
+    <div className="foot__bottom">
+      <p className="foot__copyright">
         © {new Date().getFullYear()} Evelina Cejuela y Asociados. Todos los derechos reservados
       </p>
     </div>

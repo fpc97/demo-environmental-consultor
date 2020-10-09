@@ -1,8 +1,24 @@
-$item-separate: 4rem;
-
 .elegirnos{
   background: linear-gradient(col(theme-green), col(theme-green-light)) col(theme-green);
+  position: relative;
   //margin-top: 10rem;
+
+  &__background{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 0;
+    right: 0;
+    transform: translateX(25%);
+    @include mq(md) {
+      transform: translateX(0);
+    }
+  }
+
+  &__container{
+    position: relative;
+    z-index: 1;
+  }
 
   &__intro{
     max-width: 49rem;
@@ -10,18 +26,17 @@ $item-separate: 4rem;
 
   &__lista{
     list-style: none;
-    @include mq('sml') {
+    @include mq('sm') {
       display: flex;
     }
     flex-wrap: wrap;
-    margin-right: -$item-separate;
   }
 }
 
 .elec-item{
   margin-top: 8rem;
   flex: 1 0 30rem;
-  margin-right: $item-separate;
+  margin-right: 4rem;
 
   &__svg{
     margin-bottom: 3rem;

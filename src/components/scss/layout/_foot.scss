@@ -1,20 +1,25 @@
-.footer{
+.foot{
   background-color: col(footer-background);
   padding: 3rem 1rem;
-  @include mq(big) {
+
+  @include mq(lg) {
     padding: 6rem 11rem;
   }
 
-  @include mq(mid) {
+  @include mq(md) {
     display: flex;
     flex-flow: wrap row;
   }
 
   // Info
   &__info{
-    @include mq(sml) {
-      margin-right: 5rem;
+    @include mq(sm) {
+      margin-right: 10rem;
     }
+  }
+
+  & ul{
+    list-style: none;
   }
 
   &__address{
@@ -44,9 +49,9 @@
     list-style: none;
     margin-top: 4rem;
 
-    flex: 1 0 breakpoint(w-sml);
+    flex: 1 0 breakpoint(w-sm);
 
-    @include mq(mid) {
+    @include mq(md) {
       margin-top: 0;
     }
   }
@@ -58,18 +63,18 @@
     margin-bottom: 2rem;
     width: 100%;
 
-    @include mq(sml) {
+    @include mq(sm) {
       width: 46%;
       margin-right: 4%;
     }
-    @include mq(big) {
+    @include mq(lg) {
       width: 21%;
     }
   }
 
   &__link,
   &__sublink{
-    font-size: 2.1rem;
+    font-size: 1.8rem;
     display: table;
   }
   

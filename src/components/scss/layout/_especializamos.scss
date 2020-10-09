@@ -16,7 +16,7 @@
     display: block;
     list-style: none;
 
-    @include mq(sml) {
+    @include mq(sm) {
       margin-right: 30%;
     }
   }
@@ -24,15 +24,16 @@
   &__item{
     display: inline-block;
     margin-bottom: 3rem;
+    vertical-align: top;
 
-    @include mq(mid) {
+    @include mq(md) {
       width: 40%;
       margin-right: 10%;
       margin-bottom: 8rem;
     }
   }
   &__h4{
-    
+    opacity: .95;
   }
   &__descripcion{
     margin-bottom: 2rem;

@@ -1,6 +1,6 @@
 export const objectHasValues = obj => {
   if (!(typeof obj === 'object' && obj !== null)) return false
-  return Object.values(obj).some(a => Boolean(a))
+  return Object.values(obj).some(a => !!a)
 }
 
 export const objectDeepSearch = (obj, navigation) => {
@@ -20,3 +20,27 @@ export const parseNumber = num => {
 export const parseFirstWord = str => str.split(' ')[0].toLowerCase()
 
 export const toKebabCase = str => str.toLowerCase().replace(' ', '-')
+
+export const toTitleCase = str => [...str].map((ch, i, arr) => (
+  i === 0 || arr[i - 1] === ' ' ? ch.toUpperCase() : ch.toLowerCase()
+)).join('')
+
+export const getMarkdownFirstImage = md => typeof md === 'string' ? md.match(/!\[.*]\((.*)\)/)[1] : false
+
+export const parseGraphQLEdges = data => data.allMarkdownRemark.edges || false
+
+export const removeAccents = str => {
+  const parseMap = {
+    'á': 'a',
+    'é': 'e',
+    'í': 'i',
+    'ó': 'o',
+    'ú': 'u'
+  }
+
+  return [...str]
+    .map(ch => parseMap[ch.toLowerCase()] || ch.toLowerCase())
+    .join('')
+}
+
+export const removeSpaces = str => str.split(' ').join('')

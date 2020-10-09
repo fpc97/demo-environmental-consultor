@@ -6,7 +6,7 @@
     /*
     height: 4rem;
     width: 4rem;
-    @media(min-width: breakpoint(w-sml)) {
+    @include mq(sm) {
         height: 6rem;
         width: 6rem;
     }*/

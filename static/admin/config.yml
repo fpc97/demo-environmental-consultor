@@ -35,7 +35,15 @@ collections:
   - name: "pages"
     label: "Paginas"
     files:
-      # SOBRE NOSOTROS ---------------------------------------------------------------------------------------------------
+  # SOBRE NOSOTROS ---------------------------------------------------------------------------------------------------
+      - file: "src/pages/index/index.md"
+        name: "index"
+        label: "Indice"
+        fields:
+          - {label: "Texto introductorio", name: "intro", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: []}
+          - {label: "Imagenes de fondo", name: "slideshow", widget: "image", allow_multiple: true}
+
+  # SOBRE NOSOTROS ---------------------------------------------------------------------------------------------------
       - file: "src/pages/sobre-nosotros/index.md"
         name: "sobre-nosotros"
         label: "Sobre nosotros"
@@ -46,8 +54,8 @@ collections:
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
-              - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
-              - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
+              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
               - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
           # nuestros objetivos (lead, p1, items)
           - label: "Objetivos"
@@ -55,7 +63,7 @@ collections:
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones"}
-              - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal"}
+              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal"}
               # items (titulo, p1, icono)
               - label: "Lista de items"
                 name: "items"
@@ -71,7 +79,7 @@ collections:
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
-              - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal"}
+              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal"}
               - label: "Lista de items"
                 name: "items"
                 widget: "list"
@@ -97,7 +105,7 @@ collections:
               - {label: "Logo", name: "logo", widget: "file"}
               - {label: "Nombre", name: "nombre", widget: "string", hint: "Nombre de la empresa"}
       
-      # TRABAJOS REALIZADOS ---------------------------------------------------------------------------------------------------
+  # TRABAJOS REALIZADOS ---------------------------------------------------------------------------------------------------
       - file: "src/pages/trabajos-realizados/index.md"
         name: "trabajos-realizados"
         label: "Trabajos realizados"
@@ -108,8 +116,8 @@ collections:
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
-              - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
-              - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
+              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
               - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
           - label: "Lista de trabajos"
             name: "lista-de-trabajos"
@@ -117,33 +125,34 @@ collections:
             fields:
               - {label: "Titulo", name: "title", widget: "string"}
               - {label: "Cliente", name: "cliente", widget: "string"}
-              - {label: "Contenido", name: "contenido", widget: "markdown"}
+              - {label: "Portada", name: "portada", widget: "image"}
+              - {label: "Contenido", name: "contenido", buttons: [bold, italic, link, heading-three, heading-four, heading-five, heading-six], widget: "markdown"}
 
-      # EQUIPAMIENTO ---------------------------------------------------------------------------------------------------- file: "src/pages/trabajos-realizados/index.md"
-      - file: "src/pages/equipamiento/index.md"
-        name: "equipamiento"
-        label: "Equipamiento"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "select", options: ["equipamiento"], default: "equipamiento"}
-          # intro (titulo, lead, p1, p2, background)
-          - {label: "Titulo", name: "title", widget: "string"}
-          - label: "Introduccion"
-            name: "intro"
-            widget: "object"
-            fields:
-              - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
-              - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
-              - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
-              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
-          - label: "Lista de equipamiento"
-            name: "lista-de-equipamiento"
-            widget: "list"
-            fields:
-              - {label: "Nombre", name: "nombre", widget: "string"}
-              - {label: "Fotos", name: "fotos", widget: "image"}
-              - {label: "Descripcion", name: "descripcion", widget: "markdown"}
+  # EQUIPAMIENTO ---------------------------------------------------------------------------------------------------- file: "src/pages/trabajos-realizados/index.md"
+#      - file: "src/pages/equipamiento/index.md"
+#        name: "equipamiento"
+#        label: "Equipamiento"
+#        fields:
+#          - {label: "Template Key", name: "templateKey", widget: "select", options: ["equipamiento"], default: "equipamiento"}
+#          # intro (titulo, lead, p1, p2, background)
+#          - {label: "Titulo", name: "title", widget: "string"}
+#          - label: "Introduccion"
+#            name: "intro"
+#            widget: "object"
+#            fields:
+#              - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
+#              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
+#              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+#              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
+#          - label: "Lista de equipamiento"
+#            name: "lista-de-equipamiento"
+#            widget: "list"
+#            fields:
+#              - {label: "Nombre", name: "nombre", widget: "string"}
+#              - {label: "Fotos", name: "fotos", widget: "image"}
+#              - {label: "Descripcion", name: "descripcion", widget: "markdown"}
 
-      # PERSONAL ---------------------------------------------------------------------------------------------------
+  # PERSONAL ---------------------------------------------------------------------------------------------------
       - file: "src/pages/personal/index.md"
         name: "personal"
         label: "Personal"
@@ -154,8 +163,8 @@ collections:
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
-              - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
-              - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
+              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
               - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
           - label: "Lista de personal"
             name: "lista-de-personal"
@@ -164,7 +173,7 @@ collections:
               - {label: "Nombre", name: "nombre", widget: "string"}
               - {label: "Cargo", name: "cargo", widget: "string", hint: "Que cargo tiene esta persona"}
               - {label: "Foto", name: "foto", widget: "image", allow_multiple: false, required: false}
-              - {label: "Descripcion", name: "descripcion", widget: "markdown", hint: "Descripcion breve de esta persona", required: false}
+              - {label: "Descripcion", name: "descripcion", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: [], hint: "Descripcion breve de esta persona", required: false}
               - label: "Comunicacion"
                 name: "comunicacion"
                 hint: "Perfiles o direcciones en donde encontrar a esta persona, redes sociales, mail, etc."
@@ -176,18 +185,18 @@ collections:
                     widget: "select"
                     options:
                       - {label: "Otro", value: "default"}
-                      - {label: "E-mail", value: "mail"}
-                      - {label: "Linkedin", value: "linkedin"}
-                      - {label: "Facebook", value: "facebook"}
-                      - {label: "Twitter", value: "twitter"}
-                      - {label: "Instagram", value: "instagram"}
-                      - {label: "YouTube", value: "youtube"}
-                      - {label: "Blogger", value: "blogger"}
-                      - {label: "Reddit", value: "reddit"}
-                      - {label: "Discord", value: "discord"}
-                      - {label: "Google+", value: "googleplus"}
+                      - {label: "E-mail", value: "Mail"}
+                      - {label: "Linkedin", value: "Linkedin"}
+                      - {label: "Facebook", value: "Facebook"}
+                      - {label: "Twitter", value: "Twitter"}
+                      - {label: "Instagram", value: "Instagram"}
+                      - {label: "YouTube", value: "YouTube"}
+                      - {label: "Blogger", value: "Blogger"}
+                      - {label: "Reddit", value: "Reddit"}
+                      - {label: "Discord", value: "Discord"}
+                      - {label: "Google+", value: "Google+"}
 
-        # SERVICIOS ---------------------------------------------------------------------------------------------------
+  # SERVICIOS ---------------------------------------------------------------------------------------------------
       - file: "src/pages/servicios/index.md"
         name: "servicios"
         label: "Servicios"
@@ -198,16 +207,16 @@ collections:
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
-              - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
-              - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
+              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
               - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
           - label: "Provincias en las que trabajamos"
             name: "provincias"
             widget: "select"
             multiple: true
-            options: ["Buenos Aires", "Catamarca", "Chaco", "Chubut", "Cordoba", "Corrientes", "Entre Rios", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquen", "Rio Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucuman"]
-      
-            # SERVICIOS INDIVIDUALES -------------------------------------------------------------------------------------------
+            options: ["Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán"]
+
+  # SERVICIOS INDIVIDUALES -------------------------------------------------------------------------------------------
   - name: "servicios-individuales"
     label: "Servicios individuales"
     folder: "src/pages/servicios"
@@ -221,7 +230,7 @@ collections:
         widget: "object"
         fields:
           - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
-          - {label: "Parrafo principal", name: "principal", widget: "markdown", hint: "La descripcion principal", required: false}
-          - {label: "Parrafo secundario", name: "secundario", widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+          - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
+          - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
           - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
-      - {label: "Cuerpo", name: "cuerpo", widget: "markdown"}
+      - {label: "Cuerpo", name: "cuerpo", widget: "markdown", buttons: [bold, italic, code, link, heading-three, heading-four, heading-five, heading-six, quote, bulleted-list, numbered-list]}

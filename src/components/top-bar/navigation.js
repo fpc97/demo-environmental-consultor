@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Link, StaticQuery} from 'gatsby'
+import {Link, StaticQuery, graphql} from 'gatsby'
 
 import followAlong from '../follow-along-ul'
 

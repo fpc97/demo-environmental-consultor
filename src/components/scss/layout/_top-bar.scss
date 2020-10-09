@@ -15,7 +15,7 @@
         position: relative;
         //height: 8.6rem;
 
-        @media (min-width: breakpoint(w-sml)) {
+        @include mq(sm) {
             height: 11.8rem;
         }
     }

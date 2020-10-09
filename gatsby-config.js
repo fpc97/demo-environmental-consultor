@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Evelina Cejuela y Asociados`,
     description: `Servicios de Consultoria Ambiental`,
-    author: `@Francisco Perez Cejuela`,
+    author: `@fpece199`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -12,24 +12,30 @@ module.exports = {
     `gatsby-plugin-purgecss`,
 
     // File handling things
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `uploads`,
+        path: `${__dirname}/static/img`
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
 
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/src/pages`,
-      },
+        path: `${__dirname}/src/pages`
+      }
     },
-
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
 
     {
       resolve: 'gatsby-transformer-remark',
@@ -38,23 +44,23 @@ module.exports = {
           {
             resolve: 'gatsby-remark-relative-images',
             options: {
-              name: 'uploads',
-            },
+              name: 'uploads'
+            }
           },
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 2048,
-            },
+              maxWidth: 1400
+            }
           },
           {
             resolve: 'gatsby-remark-copy-linked-files',
             options: {
-              destinationDir: 'static',
-            },
-          },
-        ],
-      },
+              destinationDir: 'static'
+            }
+          }
+        ]
+      }
     },
 
     // Cache things
@@ -69,7 +75,7 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`,
         cache_busting_mode: 'none'
-      },
+      }
     },
     {
       resolve: `gatsby-plugin-offline`,

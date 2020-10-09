@@ -45,18 +45,11 @@ export default SobreNosotrosPage
 
 export const sobreNosotrosPageQuery = graphql`
 query SobreNosotrosPage(
-  $id: String!,
-  $background: String
+  $id: String!
 ) {
   markdownRemark(id: { eq: $id }) {
+    ...IntroFields
     frontmatter {
-      title
-      intro {
-        background
-        lead
-        principal
-        secundario
-      }
       elegirnos {
         lead
         items {
@@ -68,7 +61,13 @@ query SobreNosotrosPage(
       }
       clientes {
         nombre
-        logo
+        logo {
+          childImageSharp {
+            fluid(maxWidth: 400, maxHeight: 400) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       objetivos {
         lead
@@ -80,13 +79,6 @@ query SobreNosotrosPage(
       }
     }
     id
-  }
-  file(relativePath: {eq: $background}) {
-    childImageSharp {
-      fixed(width: 1920) {
-        ...GatsbyImageSharpFixed
-      }
-    }
   }
 }
 `

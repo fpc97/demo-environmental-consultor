@@ -6,12 +6,12 @@
     //margin-top: 2rem;
     @include marginTopNav(2rem);
 
-    @media(min-height: breakpoint(h-big)) {
+    @media(min-height: breakpoint(h-lg)) {
         //margin-top: calc(20vh - 14rem);
         @include marginTopNav(calc(20vh - 14rem));
     }
     
-    @media(min-width: breakpoint(w-mid)) {
+    @include mq(md) {
         //margin-left: calc(20vw - 10rem);
         width: 80vw;
         max-width: 144rem;
@@ -44,7 +44,7 @@
             letter-spacing: calc(5.6vw - .3rem);
         }
 
-        @media (min-width: breakpoint(w-sml)) {
+        @include mq(sm) {
             font-size: 5.5rem;
             
             &--first{
@@ -57,7 +57,7 @@
             }
         }
         
-        @media (min-width: breakpoint(w-mid)) and (min-height: breakpoint(h-big)) {
+        @media (min-width: breakpoint(w-md)) and (min-height: breakpoint(h-lg)) {
             font-size: 5.6rem;
             font-size: calc(12vh - 3rem);
 
@@ -84,11 +84,11 @@
         font-size: 1.6rem;
         font-weight: normal;*/
 
-        @media(min-width: breakpoint(w-sml)) {
+        @include mq(sm) {
             margin-right: 4rem;
         }
 
-        @media(min-width: breakpoint(w-mid)) {
+        @include mq(md) {
             max-width: 38rem;
         }
 

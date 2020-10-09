@@ -34,7 +34,7 @@
         padding: 2rem 35% 2rem 2rem;
         line-height: 2.2rem;
 
-        @media(min-width: breakpoint(w-sml)) {
+        @include mq(sm) {
             font-size: 1.8rem;
         }
     }

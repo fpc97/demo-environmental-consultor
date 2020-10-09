@@ -1,0 +1,50 @@
+.servicio-individual{
+  & ol,
+  & ul{
+    padding-left: 4rem;
+    margin: 3rem 0 5rem;
+  }
+
+  & p,
+  & li{
+    font-size: 1.8rem;
+  }
+
+  & li{
+    margin-top: 2rem;
+  }
+
+  & p{
+    max-width: 100%;
+    line-height: 3.5rem;
+  }
+
+  & strong{
+    font-weight: bold;
+  }
+
+  & p,
+  & strong,
+  & li{
+    color: col(text-dark);
+  }
+
+  & img{
+    width: 100%;
+
+    @include mq(md) {
+      max-height: 60vh;
+      min-height: 50rem;
+      width: 70vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 6rem 0 8rem;
+    }
+  }
+
+  h3,
+  h4{
+    margin-top: 4rem;
+  }
+}

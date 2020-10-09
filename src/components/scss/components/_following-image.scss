@@ -1,19 +1,28 @@
 .following-image{
-  overflow: hidden;
   display: none;
   position: relative;
   height: 100%;
 
-  @include mq(sml) {
+  @include mq(sm) {
     display: block;
   }
 
-  &__img{
-    position: absolute;
-    padding: 2rem 0;
+  &__container{
+    position: relative;
     height: 100vh;
     max-height: 108rem;
     width: 100%;
+    overflow: hidden;
+  }
+
+  &__img{
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2rem 0;
+    height: 100%;
+    width: 100%;
   }
 }

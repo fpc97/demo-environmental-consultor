@@ -1,4 +1,6 @@
 .clientes{
+  position: relative;
+  overflow: hidden;
 
   &__h3{
 
@@ -13,19 +15,14 @@
     display: inline-block;
     margin-bottom: 2%;
 
-    @include mq('sml') {
-      width: 48%;
-      margin-right: 2%;
-    }
-    @include mq('mid') {
-      width: 31%;
-    }
-    @include mq('big') {
-      width: 23%;
-    }
+    @include fourColumns;
   }
 
   &__img{
     width: 100%;
+
+    & img{
+      object-position: 50% 50%;
+    }
   }
 }

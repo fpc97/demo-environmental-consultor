@@ -1,0 +1,81 @@
+.mapa-argentina{
+  padding-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include mq(md) {
+      flex-flow: row nowrap;
+      justify-content: center;
+    }
+  }
+
+  &__svg{
+    height: 78vh;
+    @include mq(md) {
+      height: 84vh;
+    }
+    max-height: 200rem;
+  }
+  &__path{
+    opacity: 0;
+    transition: opacity .6s;
+  }
+  &.on &__path{
+    opacity: 1;
+  }
+
+  .no-anim &__path{
+    opacity: 1;
+    transition: none;
+  }
+
+  &__p{
+    max-width: 50rem;
+    padding-top: calc(4rem + 6vw);
+    display: flex;
+    flex-flow: nowrap column;
+    @include mq(sm) {
+      flex-flow: nowrap row;
+    }
+    @include mq(md) {
+      font-size: 2.1rem;
+      padding-top: 15rem;
+      margin-left: -10rem;
+    }
+
+    transition-property: opacity, transform;
+    transition-duration: 1.2s;
+    opacity: 0;
+    transform: translateX(-1.4rem);
+
+    .on &{
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .no-anim &{
+      transform: translateX(0);
+      opacity: 1;
+      transition: none;
+    }
+  }
+
+  &__span{
+    color: darken(col(map-blue), 3%);
+    font-weight: bold;
+  }
+
+  &__half{
+    display: inline-block;
+
+    &--first{
+      margin-right: 1rem;
+      white-space: nowrap;
+      flex: 0 1;
+    }
+  }
+}

@@ -3,7 +3,7 @@
     margin: auto;
     padding: 0 1rem;
 
-    @media (min-width: breakpoint(w-mid)) {
+    @include mq(md) {
         padding: 0 5rem;
     }
 }

@@ -1,121 +1,123 @@
 *,
 *::after,
 *::before{
-    padding: 0;
-    margin: 0;
-    box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
 }
 
 html{
-    box-sizing: border-box;
-    font-size: 62.5%;
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 body{
-    font-family: "Open Sans", sans-serif;
-    background-color: white;
+  font-family: "Open Sans", sans-serif;
+  background-color: white;
 }
 
 h1, .specificity{
-    margin: 0;
+  margin: 0;
 }
 
 a,
 a:link,
 a:visited{
-    text-decoration: none;
-    color: col(link);
+  text-decoration: none;
+  color: col(link);
 
-    &:hover{
-        //color: col(link-hover);
-    }
+  &:hover{
+    //color: col(link-hover);
+  }
 }
 
 .invisible{
-    @include invisible;
+  @include invisible;
 }
 
 
 /*Base theme*/
 h2, h3, h4, h5, h6{
-    font-family: "Raleway", sans-serif;
-    font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
 }
 
 h2{
-    font-size: 4rem;
-    @media (min-width: breakpoint(w-mid)) {
-        font-size: 6rem;
-    }
-    @media (min-width: breakpoint(w-big)) {
-        font-size: 8.6rem;
-    }
+  font-size: 4rem;
+  @include mq(sm) {
+    font-size: 7rem;
+  }
+  @include mq(md) {
+    font-size: 8.6rem;
+  }
 }
-
 h3{
-    font-size: 3.4rem;
-    @media (min-width: breakpoint(w-mid)) {
-        font-size: 5.4rem;
-    }
-
-    article &{
-        margin-bottom: 4rem;
-    }
+  font-size: 2.4rem;
+  margin-bottom: 4rem;
+  @include mq(sm) {
+    font-size: 3.6rem;
+  }
+  @include mq(md) {
+    font-size: 5.4rem;
+  }
 }
-
 h4{
-    font-size: calc(.8rem + 5vw);
-    margin-bottom: 1.2rem;
-    @media (min-width: breakpoint(w-sml)) {
-      font-size: 3.2rem;
-    }
-    @media (min-width: breakpoint(w-mid)) {
-      font-size: 3.5rem;
-    }
-/*
-    font-size: 2.6rem;
-    @media (min-width: breakpoint(w-mid)) {
-        font-size: 3.2rem;
-    }*/
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  @include mq(sm) {
+    font-size: 2.8rem;
+  }
+  @include mq(md) {
+    font-size: 3.5rem;
+    line-height: 4.8rem;
+  }
 }
 
 h3,h4,h5,h6,.lead{
-    color: col(title-black);
+  color: col(title-black);
 
-    .white &{
-        color: white
-    }
+  .white &{
+    color: white
+  }
 }
 
 article{
-    padding: 10rem 0 12rem;
-    @include mq(sml) {
-        padding: 16rem 0 18rem;
-    }
+  padding: 10rem 0 12rem;
+  @include mq(sm) {
+    padding: 16rem 0 18rem;
+  }
 }
 
 .lead{
-    font-family: "Raleway", sans-serif;
-    font-weight: bold;
-    font-size: 2.1rem;
-    margin-bottom: 1rem;
-    .hero__section &{
-        @media (min-width: breakpoint(w-mid)) {
-            font-size: 2.4rem;
-        }
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 2.1rem;
+  margin-bottom: 1rem;
+  .hero__section &{
+    @include mq(md) {
+      font-size: 2.4rem;
     }
+  }
 }
 
 p{
-    font-family: "Open-sans", sans-serif;
-    font-size: 1.74rem;
-    font-weight: 200;
-    max-width: 68rem;
-    line-height: 3rem;
-    letter-spacing: .05rem;
-    color: col(text-blue);
+  font-family: "Open-sans", sans-serif;
+  font-weight: 200;
+  max-width: 68rem;
+  line-height: 3rem;
+  letter-spacing: .05rem;
 
-    .white &{
-        color: white;
-    }
+  .white &{
+    color: white;
+  }
+}
+
+p, li{
+  font-size: 1.74rem;
+  color: col(text-blue);
+}
+
+.gatsby-image-wrapper > img{
+  filter: blur(10px);
+  transform: scale(1.2);
 }
