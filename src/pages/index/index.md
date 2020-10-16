@@ -1,6 +1,8 @@
 ---
-covos: >-
-  Adasdda asd das asd asdad asd asd ad asd asd asd as asd asd ad ad wadwd asd ad qwdasd wdqasd asd dqdasd asdwqdqsdad wdqda sdadqdada adsdasdaduy ady aduy agudgauydgasuydg auydgu agduyagdugasyudguya gduyasgd uaysgd uasdg iuadgas
+covos: Adasdda asd das asd asdad asd asd ad asd asd asd as asd asd ad ad wadwd
+  asd ad qwdasd wdqasd asd dqdasd asdwqdqsdad wdqda sdadqdada adsdasdaduy ady
+  aduy agudgauydgasuydg auydgu agduyagdugasyudguya gduyasgd uaysgd uasdg iuadgas
+intro: cocos
 slideshow:
   - /img/windmill.jpg
   - /img/home-slideshow-1.jpg
