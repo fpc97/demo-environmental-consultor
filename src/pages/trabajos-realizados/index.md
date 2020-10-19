@@ -5,7 +5,8 @@ intro:
   brief: dasdadasd
   principal: asdawdadwad
   secundario: wad
-  background: /img/complejo.png
+  background: /img/untitled.png
+  lead: asdasdasdasdasdasd
 lista-de-trabajos:
   - title: Trabajo 1
     cliente: ALUAR Aluminio Argention
@@ -21,4 +22,5 @@ lista-de-trabajos:
 
 
       aefefasfefasfasdfadczcf
+    portada: /img/complejo.png
 ---
