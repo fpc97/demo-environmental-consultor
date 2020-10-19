@@ -1,19 +1,15 @@
 ---
-templateKey: servicios
-title: Hololo
+title: Titulin
 intro:
-  brief: Asd dsa dsa das
-  principal: " asdad asd ad ad asd ad ad"
-  secundario: asdasd asd ad ad
+  lead: Como andamowo amigowo
+  principal: Ad
+  secundario: asdasdasd
   background: /img/untitled.png
 provincias:
+  - Jujuy
   - Chubut
-  - Buenos Aires
-  - Santa Fe
+  - Catamarca
+  - Entre Ríos
+  - La Rioja
   - Corrientes
-<<<<<<< HEAD
-  - Tucumán
 ---
-=======
----
->>>>>>> 5b88046fb3002d92e943d27b76209ee4c120cdc4
