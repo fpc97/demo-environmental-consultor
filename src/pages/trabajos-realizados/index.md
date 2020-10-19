@@ -11,8 +11,8 @@ lista-de-trabajos:
   - title: Trabajo 1
     cliente: ALUAR Aluminio Argention
     contenido: >-
-      ### Hololwlwlwolo asdajdh adhiadha idhad *asdad ads ad
-      ad**dadadawdawdawd*****dadwaddadsadasd**
+      ### Hololwlwlwolo asd ajdh adhiadha idhad *asdad ads ad ad*
+      *dadadawdawdawd* ***dadwaddadsadasd**
 
 
       asdawdawd
