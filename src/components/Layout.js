@@ -4,7 +4,7 @@ import 'typeface-open-sans'
 import 'typeface-raleway'
 
 import './scss/main.scss'
-import './Layout.css'
+import './layout.css'
 
 import Navigation from './Navigation'
 import Footer from './Footer'
