@@ -1,4 +1,6 @@
 .servicio-individual{
+  padding-bottom: 14rem;
+
   & ol,
   & ul{
     padding-left: 4rem;
@@ -43,8 +45,10 @@
     }
   }
 
-  h3,
+  h3{
+    margin-top: 7rem;
+  }
   h4{
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 }

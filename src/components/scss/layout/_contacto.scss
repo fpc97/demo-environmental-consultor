@@ -133,5 +133,10 @@
     letter-spacing: .8px;
     font-size: 1.8rem;
     padding: 1.2rem 3rem;
+    transition: background-color .14s;
+
+    &:hover{
+      background-color: lighten(col(theme-green), 3%);
+    }
   }
 }

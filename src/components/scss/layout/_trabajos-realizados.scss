@@ -1,8 +1,5 @@
 .trabajos-realizados{
 
-  &__container{
-    
-  }
   &__lista{
     list-style: none;
   }
@@ -44,14 +41,10 @@
       font-size: 2.1rem;
     }
   }
-  
-  &__contenido{
-  }
 }
 
 .extracto{
-  animation: extracto-slide-down .4s forwards;
-
+  overflow: hidden;
   &__portada{
     object-fit: cover;
     height: 46rem;
@@ -81,17 +74,3 @@
   0%{margin-bottom: 0}
   100%{margin-bottom: 4rem}
 }
-/*
-@keyframes spread-fade-in{
-  0%{
-    margin-bottom: -50%;
-    opacity: 0;
-  }
-  50%{
-    opacity: 0;
-  }
-  100%{
-    margin-bottom: 4rem;
-    opacity: 1;
-  }
-}*/

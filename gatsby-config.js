@@ -74,7 +74,7 @@ module.exports = {
         background_color: `#003575`,
         theme_color: `#003575`,
         display: `minimal-ui`,
-        icon: `src/images/default-avatar.jpg`,
+        icon: `src/images/favicon.png`,
         cache_busting_mode: 'none'
       }
     },

@@ -439,7 +439,7 @@ $transitionduration: .4s;
     &,
     &:link,
     &:visited{
-      color: desaturate(lighten(col(theme-green), 3%), 30%);
+      color: desaturate(col(theme-green), 50%);
     }
 
     &:hover{
