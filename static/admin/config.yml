@@ -4,10 +4,6 @@ backend:
 
 locale: 'es'
 
-# Borrar despues de desarrollo
-local_backend: true
-# Borrar despues de desarrollo
-
 media_folder: static/img
 public_folder: /img
 
