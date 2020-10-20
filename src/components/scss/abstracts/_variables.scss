@@ -4,6 +4,7 @@ $colors: (
   theme-lighter: hsl(215, 100%, 25%),
   theme-green: hsl(147, 78%, 28%),
   theme-green-light: hsl(132, 56%, 38%),
+  theme-green-highlight: hsl(147, 28%, 95%),
   dd-highlight: hsl(214, 26%, 95%),
   dd-highlight2: hsl(214, 78%, 36%),
   link: hsl(0, 0%, 100%),
@@ -15,7 +16,8 @@ $colors: (
   text-blue: hsl(202, 17%, 29%),
   text-dark: hsl(203, 18%, 14%),
   footer-background: rgb(6, 6, 12),
-  map-blue: hsl(204, 100%, 37%)
+  map-blue: hsl(204, 100%, 37%),
+  focus-blue: hsl(204, 100%, 48%)
 );
 
 $breakpoints: (
@@ -27,7 +29,7 @@ $breakpoints: (
   h-max: 1080px,
   h-lg: 720px,
   h-min: 400px,
-  nav: 900px
+  nav: 850px
 );
 
 $general-padding: 2rem;

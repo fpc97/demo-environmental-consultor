@@ -3,104 +3,104 @@ $lineheight: 2.1rem;
 $transitionduration: .4s;
 
 .nav-icon{
-    &__label{
-        /*
-        width: 4rem;
-        height: $lineheight * 2;*/
-        @include logo-height(1);
-        @include logo-width(1);
-        position: fixed;
-        display: inline-block;
-        right: 2rem;
-        top: 2rem;
-        z-index: 1000000;
+  &__label{
+    /*
+    width: 4rem;
+    height: $lineheight * 2;*/
+    @include logo-height(1);
+    @include logo-width(1);
+    position: fixed;
+    display: inline-block;
+    right: 2rem;
+    top: 2rem;
+    z-index: 1000000;
 
-        transition: background-color $transitionduration;
+    transition: background-color $transitionduration;
 
-        cursor: pointer;
+    cursor: pointer;
 
-        @media (min-width: breakpoint(nav)) {
-            display: none;
-        }
+    @media (min-width: breakpoint(nav)) {
+      display: none;
+    }
+  }
+
+  &__check{
+    display: none;
+  }
+
+  &__line{
+    top: 2.1rem;
+
+    &,
+    &::before,
+    &::after{
+      position: absolute;
+      display: inline-block;
+      background-color: white;
+      height: .8rem;
+      width: 100%;
+
+      transition-property: transform, background-color;
+      transition-duration: $transitionduration;
     }
 
-    &__check{
-        display: none;
+    &::before,
+    &::after{
+      content: '';
+      left: 0;
     }
 
-    &__line{
-        top: 2.1rem;
-
-        &,
-        &::before,
-        &::after{
-            position: absolute;
-            display: inline-block;
-            background-color: white;
-            height: .8rem;
-            width: 100%;
-
-            transition-property: transform, background-color;
-            transition-duration: $transitionduration;
-        }
-
-        &::before,
-        &::after{
-            content: '';
-            left: 0;
-        }
-
-        &::before{
-            top: -$lineheight;
-        }
-
-        &::after{
-            bottom: -$lineheight;
-        }
-
-        &::selection{
-            background-color: transparent;
-        }
-
-        @include mq(sm) {
-            top: 3.6rem;
-        }
+    &::before{
+      top: -$lineheight;
     }
 
-    &__check:checked ~ &__label{
-        background-color: col(theme);
+    &::after{
+      bottom: -$lineheight;
     }
 
-    &__check:checked ~ &__label > &__line{
-        background-color: transparent;
-
-        &,
-        &:before,
-        &:after{
-            @media (max-width: breakpoint(w-sm + 1)){
-                transition: none;
-            }
-        }
-
-        &:before,
-        &:after{
-            background-color: white;
-        }
-
-        &:before{
-            transform: translate(0, 340%) rotate(-45deg) scaleX(.5);
-
-            @include mq(sm){
-                transform: translate(0, 410%) rotate(-45deg) scaleX(.5);
-            }
-        }
-
-        &:after{
-            transform: translate(0, -340%) rotate(45deg) scaleX(.5);
-
-            @include mq(sm){
-                transform: translate(0, -410%) rotate(45deg) scaleX(.5);
-            }
-        }
+    &::selection{
+      background-color: transparent;
     }
+
+    @include mq(sm) {
+      top: 3.6rem;
+    }
+  }
+
+  &__check:checked ~ &__label{
+    background-color: col(theme);
+  }
+
+  &__check:checked ~ &__label > &__line{
+    background-color: transparent;
+
+    &,
+    &:before,
+    &:after{
+      @media (max-width: breakpoint(w-sm + 1)){
+        transition: none;
+      }
+    }
+
+    &:before,
+    &:after{
+      background-color: white;
+    }
+
+    &:before{
+      transform: translate(0, 340%) rotate(-45deg) scaleX(.5);
+
+      @include mq(sm){
+        transform: translate(0, 410%) rotate(-45deg) scaleX(.5);
+      }
+    }
+
+    &:after{
+      transform: translate(0, -340%) rotate(45deg) scaleX(.5);
+
+      @include mq(sm){
+        transform: translate(0, -410%) rotate(45deg) scaleX(.5);
+      }
+    }
+  }
 }

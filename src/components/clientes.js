@@ -1,13 +1,12 @@
 import React from 'react'
 
-import PreviewCompatibleImage from './preview-compatible-image'
+import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 import { Generic1 as Background } from './svgr/backgrounds'
 
 const Clientes = ({ lista }) => {
-  console.log(lista)
   return (
-    <article className="clientes">
+    <article className="clientes" id="clientes">
       <Background className="generic-background generic-background--rotate generic-background--invert objetivos__background"/>
       <div className="container clientes__container">
         <h3 className="clientes__h3">Nuestros clientes</h3>

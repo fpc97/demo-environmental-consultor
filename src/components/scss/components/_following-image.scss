@@ -1,6 +1,5 @@
 .following-image{
   display: none;
-  position: relative;
   height: 100%;
 
   @include mq(sm) {
@@ -9,15 +8,17 @@
 
   &__container{
     position: relative;
-    height: 100vh;
-    max-height: 108rem;
     width: 100%;
     overflow: hidden;
+    padding: 2rem 0;
+
+    height: 100vh;
+    max-height: 100%;
   }
 
   &__img{
     object-fit: cover;
-    position: absolute;
+    position: absolute !important;
     top: 0;
     left: 50%;
     transform: translateX(-50%);

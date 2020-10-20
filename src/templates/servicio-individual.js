@@ -1,20 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/layout'
-import Intro from '../components/hero-section'
-import SEO from '../components/seo'
+import Layout from '../components/Layout'
+import Intro from '../components/HeroSection'
 
-import { HTMLContent } from '../components/content'
+import { HTMLContent } from '../components/Content'
 
-const ServicioIndividual = ({ data: { markdownRemark } }) => {
-  return (
-    <Layout>
-      <SEO title={markdownRemark.frontmatter.title}/>
-      <ServicioIndividualPageTemplate {...markdownRemark} />
-    </Layout>
-  )
-}
+const ServicioIndividual = ({ data: { markdownRemark } }) => (
+  <Layout title={markdownRemark.frontmatter.title}>
+    <ServicioIndividualPageTemplate {...markdownRemark} title={markdownRemark.frontmatter.title}/>
+  </Layout>
+)
 
 export default ServicioIndividual
 
@@ -24,11 +20,11 @@ export const ServicioIndividualPageTemplate = ({
 }) => (
   <>
     <Intro title={frontmatter.title}/>
-    <article className="servicio-individual">
+    <main className="servicio-individual">
       <div className="servicio-individual__container container">
         <HTMLContent content={html}/>
       </div>
-    </article>
+    </main>
   </>
 )
 

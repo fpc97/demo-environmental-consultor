@@ -36,14 +36,22 @@
 }
 
 @mixin marginTopNav($extra) {
-  margin-top: 11.8rem + $extra;
+  margin-top: 6.8rem + $extra;
+
+  @media (min-width: breakpoint(w-sm)) {
+    margin-top: 11.8rem + $extra;
+  }
 
   @media (min-width: breakpoint(nav)) {
     margin-top: 22.8rem + $extra;
   }
 }
 @mixin paddingTopNav($extra) {
-  padding-top: 11.8rem + $extra;
+  padding-top: 6.8rem + $extra;
+
+  @media (min-width: breakpoint(w-sm)) {
+    padding-top: 11.8rem + $extra;
+  }
 
   @media (min-width: breakpoint(nav)) {
     padding-top: 22.8rem + $extra;

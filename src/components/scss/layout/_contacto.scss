@@ -1,0 +1,137 @@
+.contacto{
+
+  &__background{
+    @include paddingTopNav(0);
+    background-color: col(theme-green);
+  }
+
+  &__intro{
+    background-color: white;
+    padding-top: 8rem;
+    margin-bottom: 4rem;
+  }
+
+  &__h2{
+    color: col(title-black);
+
+    @media (max-width: 300px) {
+      font-size: 2.5rem;
+    }
+
+    @include mq(sm) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__lead{
+    margin-top: 2rem;
+  }
+
+  // Contact bundle
+  &__address{
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 3rem;
+  }
+
+  &__social-media{
+    margin-bottom: 2rem;
+
+    & > a{
+      margin-right: 2rem;
+    }
+
+    & svg{
+      color: col(text-dark);
+    }
+  }
+
+  &__phone-numbers{
+    margin-bottom: 2rem;
+
+    & > a{
+      display: table;
+      margin-bottom: 1rem;
+      @include mq(sm) {
+        font-size: 1.9rem;
+      }
+    }
+    & a{
+      color: col(text-dark);
+    }
+  }
+
+  &__emails{
+    margin-bottom: 1.9rem;
+
+    & > a{
+      display: table;
+      margin-bottom: 1rem;
+      @include mq(sm) {
+        font-size: 2rem;
+      }
+    }
+    & a{
+      color: col(text-dark);
+    }
+  }
+}
+
+.contact-form{
+  max-width: 60rem;
+  margin: 0 0 3rem;
+  display: inline-block;
+  @include clearfix;
+  width: 100%;
+  @include mq(md) {
+    margin-right: 6rem;
+    margin-bottom: 6rem;
+  }
+
+  &__text{
+    height: 4rem;
+  }
+
+  &__textarea{
+    height: 14rem;
+  }
+
+  &__label{
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+
+  &__text,
+  &__textarea{
+    display: table;
+    width: 100%;
+    color: col(text-dark);
+    border: 1px solid col(text-blue);
+    padding: 1rem 1rem;
+    font-size: 1.8rem;
+
+    &:focus{
+      border: 1px solid darken(col(focus-blue), 10%);
+      box-shadow: 0 0 3px col(focus-blue);
+    }
+  }
+  
+  &__text,
+  &__textarea,
+  &__submit{
+    margin-bottom: 2.4rem;
+    border-radius: 3px;
+  }
+
+  &__submit{
+    display: inline-block;
+    background-color: col(theme-green);
+    color: white;
+    border: none;
+    float: right;
+    letter-spacing: .8px;
+    font-size: 1.8rem;
+    padding: 1.2rem 3rem;
+  }
+}

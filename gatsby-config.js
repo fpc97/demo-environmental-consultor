@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Evelina Cejuela y Asociados`,
     description: `Servicios de Consultoria Ambiental`,
-    author: `@fpece199`,
+    author: `@fpece_`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -21,6 +21,7 @@ module.exports = {
         path: `${__dirname}/static/img`
       }
     },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -73,7 +74,7 @@ module.exports = {
         background_color: `#003575`,
         theme_color: `#003575`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/default-avatar.jpg`,
         cache_busting_mode: 'none'
       }
     },

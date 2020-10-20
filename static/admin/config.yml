@@ -12,36 +12,50 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: general
-    label: "General"
-    files:
-    - name: controlpanel
-      label: "Panel de Control"
-      file: src/general/cp.md
-      fields:
-        - label: "Numeros de telefono"
-          name: "phonenumbers"
-          widget: "list"
-          field: {label: "Numero de telefono", name: "singlephonenumber", widget: string}
-        - label: "E-mails"
-          name: "emailaddresses"
-          widget: "list"
-          field: {label: "Direccion de email", name: "singleemailaddress", widget: string}
-        - label: "Redes sociales"
-          name: "social-media"
-          widget: list
-          field: {label: "Link de red social", name: "socialmedialink", widget: string, pattern: ['www', 'Debe ser una URL']}
-
   - name: "pages"
     label: "Paginas"
     files:
-  # SOBRE NOSOTROS ---------------------------------------------------------------------------------------------------
+  # INDEX ---------------------------------------------------------------------------------------------------
       - file: "src/pages/index/index.md"
         name: "index"
-        label: "Indice"
+        label: "Principal"
         fields:
           - {label: "Texto introductorio", name: "intro", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: []}
-          - {label: "Imagenes de fondo", name: "slideshow", widget: "image", allow_multiple: true}
+#          - {label: "Imagenes de fondo", name: "slideshow", widget: "image", default: /img/default-bat.jpg}
+          - label: "Imagenes de fondo"
+            name: "slideshow"
+            widget: "list"
+            field: {label: "Imagen", name: "imag", widget: image}
+          - label: "Numeros de telefono"
+            name: "phonenumbers"
+            widget: "list"
+            field: {label: "Numero de telefono", name: "singlephonenumber", widget: string}
+          - label: "E-mails"
+            name: "emailaddresses"
+            widget: "list"
+            field: {label: "Direccion de email", name: "singleemailaddress", widget: string}
+          - label: "Redes sociales"
+            name: "social-media"
+            hint: "Redes sociales de Evelina Cejuela y Asociados"
+            widget: "list"
+            fields:
+              - {label: "URL", name: "url", widget: "string", default: "vacio"}
+              - label: "Red social"
+                default: "vacio"
+                name: "site"
+                widget: "select"
+                options:
+                  - {label: "Otro", value: "default"}
+                  - {label: "E-mail", value: "Mail"}
+                  - {label: "Linkedin", value: "Linkedin"}
+                  - {label: "Facebook", value: "Facebook"}
+                  - {label: "Twitter", value: "Twitter"}
+                  - {label: "Instagram", value: "Instagram"}
+                  - {label: "YouTube", value: "YouTube"}
+                  - {label: "Blogger", value: "Blogger"}
+                  - {label: "Reddit", value: "Reddit"}
+                  - {label: "Discord", value: "Discord"}
+                  - {label: "Google+", value: "Google+"}
 
   # SOBRE NOSOTROS ---------------------------------------------------------------------------------------------------
       - file: "src/pages/sobre-nosotros/index.md"
@@ -56,7 +70,7 @@ collections:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
               - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
               - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
-              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
+              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false, hint: "Asegurarse de que sea lo suficientemente oscura para que el texto sea legible", default: "non-display.png"}
           # nuestros objetivos (lead, p1, items)
           - label: "Objetivos"
             name: "objetivos"
@@ -71,7 +85,15 @@ collections:
                 hint: "Lista de consignas breves que ilustren mejor los objetivos. Deben ser por lo menos 3 y no mas de 4"
                 fields:
                   - {label: "Titulo", name: "titulo", widget: "string", hint: "Deberia ser una sola palabra, P.ej: 'Responsabilidad', 'Accesibilidad', 'Seguridad'"}
-                  - {label: "Descripcion", name: "descripcion", widget: "markdown", hint: "Descripcion breve, entre 3 y 6 renglones"}
+                  - {label: "Descripcion", name: "descripcion", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: [], hint: "Descripcion breve, entre 3 y 6 renglones"}
+                  - label: "Icono"
+                    name: "icono"
+                    widget: "select"
+                    hint: "Para ver mejor las opciones ir a evelinacejuela.com/icons"
+                    options: ["Herramientas", "Diskette", "Planta", "Escudo", "Señal", "Firma", "Sonrisa guiño", "Sonrisa", "Spell check", "Cronometro", "Sol", "Etiquetas", "Etiqueta", "Lista", "Cinta", "Termometro vacio", "Termometro lleno", "Pin", "Pulgar arriba", "Arbol", "Paragua",
+                              "Lupa", "Lupa ubicacion", "Regla", "Regla vertical", "Cohete", "Ruta", "Recibo", "Cartas", "Lapicera", "Microscopio", "Microfono", "Celular", "Luna", "Montaña", "Mouse", "Rodillo", "Clip", "Avion", "Garra", "Foto video", "Power off", "Pluma", "Matraz",
+                              "Carpeta", "Diamante", "Anteojos", "Mundo internet", "Mundo", "Auriculares microfono", "Auriculares", "Hiking", "Hogar", "Reloj arena", "Imagenes", "Notebook", "Teclado", "Llave", "Iman", "Pulmones", "Ubicacion", "Mapa ubicacion", "Mapa", "Manzana",
+                              "Atomo", "Bateria llena", "Bateria vacia", "Tick", "Grafico barras", "Grafico torta", "Ciudad", "Reloj", "Nubes sol", "Lluvia", "Comentarios", "Comentario", "Campana hotel", "Monitor", "ADN", "Paloma", "Sobre abierto", "Sobre", "Ojo", "Ventilador", "Arroba"]
 
           # por que elegirnos (lead, p1, items)
           - label: "¿Por qué elegirnos?"
@@ -96,8 +118,6 @@ collections:
                               "Carpeta", "Diamante", "Anteojos", "Mundo internet", "Mundo", "Auriculares microfono", "Auriculares", "Hiking", "Hogar", "Reloj arena", "Imagenes", "Notebook", "Teclado", "Llave", "Iman", "Pulmones", "Ubicacion", "Mapa ubicacion", "Mapa", "Manzana",
                               "Atomo", "Bateria llena", "Bateria vacia", "Tick", "Grafico barras", "Grafico torta", "Ciudad", "Reloj", "Nubes sol", "Lluvia", "Comentarios", "Comentario", "Campana hotel", "Monitor", "ADN", "Paloma", "Sobre abierto", "Sobre", "Ojo", "Ventilador", "Arroba"]
 
-          # items (titulo, p1, icono)
-          # nuestros clientes (logo, nombre)
           - label: "Clientes"
             name: "clientes"
             widget: "list"
@@ -118,14 +138,14 @@ collections:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
               - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
               - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
-              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
+              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false, hint: "Asegurarse de que sea lo suficientemente oscura para que el texto sea legible", default: "non-display.png"}
           - label: "Lista de trabajos"
             name: "lista-de-trabajos"
             widget: "list"
             fields:
               - {label: "Titulo", name: "title", widget: "string"}
               - {label: "Cliente", name: "cliente", widget: "string"}
-              - {label: "Portada", name: "portada", widget: "image"}
+              - {label: "Portada", name: "portada", widget: "image", default: "default-bats.jpg"}
               - {label: "Contenido", name: "contenido", buttons: [bold, italic, link, heading-three, heading-four, heading-five, heading-six], widget: "markdown"}
 
   # EQUIPAMIENTO ---------------------------------------------------------------------------------------------------- file: "src/pages/trabajos-realizados/index.md"
@@ -143,7 +163,7 @@ collections:
 #              - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
 #              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
 #              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
-#              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
+#              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false, hint: "Asegurarse de que sea lo suficientemente oscura para que el texto sea legible"}
 #          - label: "Lista de equipamiento"
 #            name: "lista-de-equipamiento"
 #            widget: "list"
@@ -165,14 +185,14 @@ collections:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
               - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
               - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
-              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
+              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false, hint: "Asegurarse de que sea lo suficientemente oscura para que el texto sea legible", default: "non-display.png"}
           - label: "Lista de personal"
             name: "lista-de-personal"
             widget: "list"
             fields:
               - {label: "Nombre", name: "nombre", widget: "string"}
               - {label: "Cargo", name: "cargo", widget: "string", hint: "Que cargo tiene esta persona"}
-              - {label: "Foto", name: "foto", widget: "image", allow_multiple: false, required: false}
+              - {label: "Foto", name: "foto", widget: "image", allow_multiple: false, required: false, default: "default-avatar.jpg"}
               - {label: "Descripcion", name: "descripcion", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: [], hint: "Descripcion breve de esta persona", required: false}
               - label: "Comunicacion"
                 name: "comunicacion"
@@ -209,7 +229,7 @@ collections:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
               - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
               - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
-              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
+              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false, hint: "Asegurarse de que sea lo suficientemente oscura para que el texto sea legible", default: "non-display.png"}
           - label: "Provincias en las que trabajamos"
             name: "provincias"
             widget: "select"
@@ -232,5 +252,5 @@ collections:
           - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
           - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
           - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
-          - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false}
-      - {label: "Cuerpo", name: "cuerpo", widget: "markdown", buttons: [bold, italic, code, link, heading-three, heading-four, heading-five, heading-six, quote, bulleted-list, numbered-list]}
+          - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false, hint: "Asegurarse de que sea lo suficientemente oscura para que el texto sea legible", default: "non-display.png"}
+      - {label: "Cuerpo", name: "body", widget: "markdown", buttons: [bold, italic, code, link, heading-three, heading-four, heading-five, heading-six, quote, bulleted-list, numbered-list]}

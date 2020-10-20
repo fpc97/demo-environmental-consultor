@@ -1,123 +1,119 @@
 // Burger styles
 .nav-dropdown{
-    position: relative;
-    z-index: 100000000000;
-    overflow: hidden;
-    list-style: none;
+  position: relative;
+  z-index: 100000000000;
+  overflow: hidden;
+  list-style: none;
 
-    &__li{
-
+  &__link{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.6rem;
+    padding: 1.4rem 1rem 1.4rem 3rem;
+    width: 100%;
+    line-height: 3rem;
+    
+    &,
+    &:link,
+    &:visited{
+      color: white;
     }
-
-    &__link{
-        display: inline-block;
-        text-decoration: none;
-        font-size: 1.6rem;
-        padding: 1.4rem 1rem 1.4rem 3rem;
-        width: 100%;
-        line-height: 3rem;
-        
-        &,
-        &:link,
-        &:visited{
-            color: white;
-        }
-    }
+  }
 /*
-    &:empty{
-        padding: 0;
-        margin: 0;
-    }*/
+  &:empty{
+    padding: 0;
+    margin: 0;
+  }*/
 }
 
 // Spread styles
 @media(min-width: breakpoint(nav)) {
-    .nav-dropdown{
-        //display: inline-block;
-        top: calc(100% + 2.4rem);
-        //right: 0;
-        position: absolute;
-        min-width: 100%;
-        width: auto;
-        padding: 2.2rem 1rem;
+  .nav-dropdown{
+    //display: inline-block;
+    top: calc(100% + 2.4rem);
+    //right: 0;
+    position: absolute;
+    min-width: 100%;
+    width: auto;
+    padding: 2.2rem 1rem;
 
-        //background-color: white;
-        //box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    //background-color: white;
+    //box-shadow: 0 0 10px rgba(0, 0, 0, .15);
 
-        li:not(:last-child) > &{
-            right: auto;
-            left: 0;
-        }
-
-        li:hover > &{
-            height: auto;
-        }
-    
-        &__ul{
-            width: auto;
-        }
-
-        &__li{
-            display: block;
-            position: relative;
-            width: auto;
-            white-space: nowrap;
-            background-color: transparent;
-
-            opacity: 0;
-
-            li:hover &{
-                transition: .4s opacity .4s;
-                opacity: 1;
-            }
-
-            &:not(:last-child) {
-                margin-bottom: .4rem;
-            }
-        }
-
-        &__link{
-            position: relative;
-            z-index: 10000000;
-            display: block;
-            font-size: 1.8rem;
-            font-size: 1.6rem;
-            //padding: 1px;
-            width: auto;
-            line-height: 1.6rem;
-            padding: 1.4rem 1.4rem;
-            
-            &,
-            &:link,
-            &:visited{
-                color: col(grey-link);
-            }
-
-            transition: background-color .2s;
-        }
-
-        li:not(:hover) > &{
-            width: 0;
-            height: 0;
-
-            &,& *{
-                padding: 0;
-                margin: 0;
-            }
-        }
-
-        & > li > &__link:hover{
-            background-color: col(dd-highlight);
-        }
+    li:not(:last-child) > &{
+      right: auto;
+      left: 0;
     }
+
+    li:hover > &{
+      height: auto;
+    }
+
+    &__ul{
+      width: auto;
+    }
+
+    &__li{
+      display: block;
+      position: relative;
+      width: auto;
+      white-space: nowrap;
+      background-color: transparent;
+
+      opacity: 0;
+
+      li:hover &{
+        transition: .4s opacity .4s;
+        opacity: 1;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: .4rem;
+      }
+    }
+
+    &__link{
+      position: relative;
+      z-index: 10000000;
+      display: block;
+      font-size: 1.8rem;
+      font-size: 1.6rem;
+      //padding: 1px;
+      width: auto;
+      line-height: 1.6rem;
+      padding: 1.4rem 1.4rem;
+      
+      &,
+      &:link,
+      &:visited{
+        color: col(grey-link);
+      }
+
+      transition: background-color .2s;
+    }
+
+    li:not(:hover) > &{
+      width: 0;
+      height: 0;
+
+      &,& *{
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    & > li > &__link:hover{
+      background-color: col(dd-highlight);
+    }
+  }
 }
 
 // Checkbox hack - It stays separate so it doesn't need to be undone later on
 @media (max-width: breakpoint(nav) - 1) {
-    .nav-dropdown{
-        input:not(:checked) ~ &{
-            width: 0;
-            height: 0;
-        }
+  .nav-dropdown{
+    input:not(:checked) ~ &{
+      width: 0;
+      height: 0;
     }
+  }
 }

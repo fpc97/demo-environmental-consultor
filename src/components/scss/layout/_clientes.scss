@@ -2,10 +2,6 @@
   position: relative;
   overflow: hidden;
 
-  &__h3{
-
-  }
-
   &__ul{
     list-style: none;
     width: 100%;
@@ -14,6 +10,8 @@
   &__li{
     display: inline-block;
     margin-bottom: 2%;
+    height: 22rem;
+    overflow: hidden;
 
     @include fourColumns;
   }

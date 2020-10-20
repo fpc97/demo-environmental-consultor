@@ -1,5 +1,7 @@
 import React from 'react'
-import Img from 'gatsby-image'
+
+import artDirection from '../utils/art-direction'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 const transitionIntervalTime = 6000
 
@@ -18,11 +20,13 @@ let isCycleStarted = false
 function startCycle(e) {
   if (isCycleStarted) return
   isCycleStarted = true
+  console.log('ok...')
 
   const imageList = e.currentTarget.children,
     listLength = imageList.length
 
   if (listLength <= 1) return
+  console.log('oksds...')
 
   let index = 0
 
@@ -35,6 +39,6 @@ function startCycle(e) {
 
 export default ({ images }) => (
   <div className="slideshow" onLoad={startCycle}>
-    {images.map((a, i) => <Img className="slideshow__image" fluid={a} style={imageStyle} key={i}/>)}
+    {images.map((img, i) => <PreviewCompatibleImage imageInfo={{ image: artDirection(img) }} key={i} style={imageStyle}/>)}
   </div>
 )

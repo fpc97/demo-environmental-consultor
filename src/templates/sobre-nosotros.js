@@ -1,13 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../components/Layout'
 
-import Intro from '../components/hero-section'
-import NuestrosObjetivos from '../components/objetivos'
-import PorQueElegirnos from '../components/elegirnos'
-import NuestrosClientes from '../components/clientes'
+import Intro from '../components/HeroSection'
+import NuestrosObjetivos from '../components/Objetivos'
+import PorQueElegirnos from '../components/Elegirnos'
+import NuestrosClientes from '../components/Clientes'
 
 import { objectHasValues } from '../utils'
 
@@ -17,29 +16,22 @@ export const SobreNosotrosPageTemplate = ({
   objetivos = false,
   elegirnos = false,
   clientes = false
-}) => {
-  introContent.title = title
-
-  return (
-    <>
-      {objectHasValues(introContent) && <Intro {...introContent}/>}
+}) => (
+  <>
+    {objectHasValues(introContent) && <Intro {...introContent} title={title}/>}
+    <main>
       {objectHasValues(objetivos) && <NuestrosObjetivos {...objetivos}/>}
       {objectHasValues(elegirnos) && <PorQueElegirnos {...elegirnos}/>}
       {objectHasValues(clientes) && <NuestrosClientes lista={clientes}/>}
-    </>
-  )
-}
+    </main>
+  </>
+)
 
-const SobreNosotrosPage = ({ data }) => {
-  const content = data.markdownRemark.frontmatter
-  
-  return (
-    <Layout>
-      <SEO title="Sobre Nosotros"/>
-      <SobreNosotrosPageTemplate {...content}/>
-    </Layout>
-  )
-}
+const SobreNosotrosPage = ({ data: { markdownRemark: { frontmatter } } }) => (
+  <Layout title="Sobre Nosotros">
+    <SobreNosotrosPageTemplate {...frontmatter}/>
+  </Layout>
+)
 
 export default SobreNosotrosPage
 
@@ -50,12 +42,21 @@ query SobreNosotrosPage(
   markdownRemark(id: { eq: $id }) {
     ...IntroFields
     frontmatter {
+      objetivos {
+        lead
+        principal
+        items {
+          titulo
+          descripcion
+          icono
+        }
+      }
       elegirnos {
         lead
         items {
+          titulo
           descripcion
           icono
-          titulo
         }
         principal
       }
@@ -67,14 +68,6 @@ query SobreNosotrosPage(
               ...GatsbyImageSharpFluid
             }
           }
-        }
-      }
-      objetivos {
-        lead
-        principal
-        items {
-          descripcion
-          titulo
         }
       }
     }

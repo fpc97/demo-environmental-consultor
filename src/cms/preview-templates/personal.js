@@ -5,14 +5,14 @@ import { getIntro } from '../utils'
 const PersonalPreview = ({ entry, getAsset }) => {
   const intro = getIntro(entry, getAsset)
 
-  const entryPersonal = entry.getIn(['data', 'lista-de-personal'])
+  const entryPersonal = entry.getIn(['data', 'lista-de-personal']) || false
   const personal = entryPersonal ? entryPersonal.toJS() : []
 
-  entryPersonal.forEach((coco, i) => {
-    personal[i].foto = getAsset(coco.get('foto')).url
-  })
-
-  //intro.background = <img className="intro__background" src={intro.background}></img>
+  if (entryPersonal) {
+    entryPersonal.forEach((coco, i) => {
+      personal[i].foto = getAsset(coco.get('foto')).url
+    })
+  }
 
   return (
     <PersonalPageTemplate

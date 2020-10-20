@@ -1,44 +1,48 @@
 .title{
-    display: inline-block;
+  display: inline-block;
 
-    &,
-    &:link,
-    &:visited{
-        color: white;
+  svg + &{
+    padding-left: 2rem;
+  }
+
+  &,
+  &:link,
+  &:visited{
+    color: white;
+  }
+
+  &__h1{
+    font-size: 2.6rem;
+    margin-bottom: .4rem;
+
+    &--small{
+      font-size: 2.1rem;
     }
+  }
 
-    &__h1{
-        font-size: 2.6rem;
-        margin-bottom: .4rem;
+  &__subtitle{
+    font-size: 1.6rem;
+    font-weight: normal;
+  }
 
-        &--small{
-            font-size: 2.1rem;
-        }
+  .top-bar &{
+    margin-left: 2.2rem;
+
+    @media (max-width: breakpoint(w-lg)) {
+      @include invisible;
     }
+  }
 
-    &__subtitle{
-        font-size: 1.6rem;
-        font-weight: normal;
+  &--bottom-bar{
+
+    &::after{
+      content: '';
+      background-color: white;
+      display: inline-block;
+      max-width: 17.5rem;
+      width: 100%;
+      height: .6rem;
+      margin-top: 2rem;
     }
-
-    .top-bar &{
-        margin-left: 2.2rem;
-
-        @media (max-width: breakpoint(w-lg)) {
-            @include invisible;
-        }
-    }
-
-    &--bottom-bar{
-
-        &::after{
-            content: '';
-            background-color: white;
-            display: inline-block;
-            max-width: 17.5rem;
-            width: 100%;
-            height: .6rem;
-            margin-top: 2rem;
-        }
-    }
+  }
 }

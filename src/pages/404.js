@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Intro from '../components/hero-section'
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
+import Intro from '../components/HeroSection'
 
 const NotFoundPage = () => {
   const [URL, setUrl] = useState(null)
@@ -10,10 +10,10 @@ const NotFoundPage = () => {
 
   return (
     <Layout>
-      <SEO title="Pagina no encontrada"/>
+      <SEO title="Página no encontrada"/>
       <Intro
-        title="Pagina no encontrada"
-        lead={URL && `La pagina ${URL} no existe`}
+        title="Página no encontrada"
+        lead={URL && `La página ${URL} no existe`}
       />
     </Layout>
   )

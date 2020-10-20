@@ -1,7 +1,6 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { AllIcons } from '../components/icon'
+import { AllIcons } from '../components/Icon'
 
 const ulStyles = {
   display: 'flex',
@@ -25,27 +24,16 @@ const spanStyles = {
   marginTop: '10px'
 }
 
-const Icons = () => {
-  //const iconsList = Object.entries(SVGIcons)
-
-  return (
-    <AllIcons style={{
+const Icons = () => (
+  <AllIcons
+    style={{
       ul: ulStyles,
       li: liStyles,
       icon: iconStyles,
       span: spanStyles
-    }}/>
-  )
-}
+    }}
+    size="3x"
+  />
+)
 
 export default Icons
-
-
-/*
-  <ul style={ulStyles}>
-    {iconsList.map((a, i) => (<li key={i} style={liStyles}>
-      <FontAwesomeIcon style={iconStyles} icon={a[1]} size="6x"/>
-      <span style={spanStyles}>{a[0]}</span>
-    </li>))}
-  </ul>
-*/

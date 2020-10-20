@@ -2,6 +2,7 @@
   background: linear-gradient(col(theme-green), col(theme-green-light)) col(theme-green);
   position: relative;
   //margin-top: 10rem;
+  overflow: hidden;
 
   &__background{
     position: absolute;
@@ -39,6 +40,8 @@
   margin-right: 4rem;
 
   &__svg{
+    max-width: 10rem;
+    max-height: 10rem;
     margin-bottom: 3rem;
   }
 }

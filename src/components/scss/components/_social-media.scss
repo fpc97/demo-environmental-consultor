@@ -1,18 +1,12 @@
 .social-media{
-    &__a{
-        &:not(:first-child) {
-            //margin-left: 2.4rem;
-        }
-    }
-    
-    &__icon{
-        display: inline-block;
-        color: white;
-        fill: white;
-        width: 3em;
-    }
+  &__icon{
+    display: inline-block;
+    color: white;
+    fill: white;
+    width: 3em;
+  }
 
-    &__span{
-        @include invisible;
-    }
+  &__span{
+    @include invisible;
+  }
 }

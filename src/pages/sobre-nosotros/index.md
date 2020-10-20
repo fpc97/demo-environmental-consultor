@@ -4,17 +4,20 @@ intro:
   lead: Somos un equipo multidisciplinario cuyo principal objetivo es etc etc etc
   principal: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
   secundario: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-  background: /img/untitled.png
+  background: /img/non-display.png
 objetivos:
   lead: Somos un equipo multidisciplinario cuyo principal objetivo es etc etc etc
   principal: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
   items:
     - titulo: Responsabilidad
       descripcion: Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+      icono: Cartas
     - titulo: Agilidad
       descripcion: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+      icono: Cartas
     - titulo: Comunicacion
       descripcion: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem
+      icono: Cartas
 elegirnos:
   lead: Somos un equipo multidisciplinario cuyo principal objetivo es etc etc etc
   principal: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
@@ -29,22 +32,6 @@ elegirnos:
       descripcion: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat
       icono: Cartas
 clientes:
-  - logo: /img/aluar.jpg
-    nombre: ALUAR Aluminio Argentino
-  - logo: /img/aluar.jpg
-    nombre: ALUAR Aluminio Argentino
-  - logo: /img/aluar.jpg
-    nombre: ALUAR Aluminio Argentino
-  - logo: /img/aluar.jpg
-    nombre: ALUAR Aluminio Argentino
-  - logo: /img/aluar.jpg
-    nombre: ALUAR Aluminio Argentino
-  - logo: /img/aluar.jpg
-    nombre: ALUAR Aluminio Argentino
-  - logo: /img/aluar.jpg
-    nombre: ALUAR Aluminio Argentino
-  - logo: /img/aluar.jpg
-    nombre: ALUAR Aluminio Argentino
-  - logo: /img/aluar.jpg
+  - logo: /img/default-avatar.jpg
     nombre: ALUAR Aluminio Argentino
 ---

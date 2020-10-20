@@ -1,58 +1,79 @@
 import React, { Component } from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
 
-import { getMarkdownFirstImage, parseGraphQLEdges } from '../utils'
-import FollowingImage from './following-image'
+import { Link } from 'gatsby'
+
+import { parseGraphQLEdges, isNonDisplay } from '../utils'
+import artDirection from '../utils/art-direction'
+import FollowingImage from './FollowingImage'
 
 class Especializamos extends Component{
-  constructor({ data }) {
+  constructor({
+    servicios,
+    defaultImage
+  }) {
     super()
     const imageLinks = new Map()
+    const edges = parseGraphQLEdges(servicios)
 
-    const edges = parseGraphQLEdges(data)
+    if (edges) edges.forEach(e => {
+      const backgroundImage = e.node.frontmatter.intro.background
 
-    if (edges) edges.forEach(e => imageLinks.set(
-      e.node.frontmatter.title,
-      getMarkdownFirstImage(e.node.internal.content)
-    ))
+      const availableBackground = backgroundImage && isNonDisplay(backgroundImage)
 
-    edges.forEach(e => console.log(getMarkdownFirstImage(e.node.internal.content)))
+      imageLinks.set(
+        e.node.frontmatter.title,
+        artDirection(
+          availableBackground ?
+            backgroundImage :
+            defaultImage
+        )
+      )
+    })
 
     this.state = {
       imageLinks,
-      isDataLoaded: !!edges
+      isDataLoaded: !!edges,
+      excerptLength: 250
     }
   }
 
   switchImage(title, e) {
     if (e.currentTarget.tagName.toLowerCase() !== 'li') return
 
-    const thisImage = this.state.imageLinks.get(title)
-
     this.setState({
-      currentDisplayImage: thisImage
+      currentDisplayImage: title
     })
   }
 
   render() {
-    const generateList = () => parseGraphQLEdges(this.props.data).map((d, i) => (
-      <li key={i} className="especializamos__item" onMouseEnter={this.switchImage.bind(this, d.node.frontmatter.title)}>
+    const excerpt = intro => {
+      if (intro.lead) return intro.lead
+      const excerpt = intro.principal || intro.secundario
+      const isLong = excerpt.length > this.state.excerptLength
+      return `${excerpt.slice(0, this.state.excerptLength)}${isLong ? '...' : ''}`
+    }
+
+    const generateList = () => parseGraphQLEdges(this.props.servicios).map((d, i) => (
+      <li key={`serv-${i}`} className="especializamos__item" onMouseEnter={this.switchImage.bind(this, d.node.frontmatter.title)}>
         <h4 className="especializamos__h4">{d.node.frontmatter.title}</h4>
-        <p className="especializamos__descripcion">{d.node.excerpt}</p>
+        {d.node.frontmatter.intro && <p className="especializamos__descripcion">{excerpt(d.node.frontmatter.intro)}</p>}
         <Link to={d.node.fields.slug} className="especializamos__leer-mas">Leer más</Link>
       </li>
     ))
 
     return (
-      <article className="especializamos">
+      <article className="especializamos" id="especializamos">
         <div className="especializamos__container container">
           <h3 className="especializamos__titulo">Áreas en las que Nos Especializamos</h3>
           <ul className="especializamos__lista">
             { this.state.isDataLoaded && generateList() }
           </ul>
-  
           <div className="especializamos__ilustracion">
-            <FollowingImage imgList={Array.from(this.state.imageLinks.values())} currentImg={this.state.currentDisplayImage}/>
+            <FollowingImage
+              imgList={Array.from(this.state.imageLinks.entries())}
+              defaultImage={this.props.defaultImage}
+              currentImg={this.state.currentDisplayImage}
+            />
           </div>
         </div>
       </article>
@@ -60,26 +81,4 @@ class Especializamos extends Component{
   }
 }
 
-export default props => <StaticQuery 
-  query={graphql`
-  {
-    allMarkdownRemark(filter: {frontmatter: {category: {eq: "servicios"}}}) {
-      edges {
-        node {
-          frontmatter {
-            title
-          }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 250)
-          internal {
-            content
-          }
-        }
-      }
-    }
-  }
-  `}
-  render={data => <Especializamos data={data} {...props}/>}
-/>
+export default Especializamos

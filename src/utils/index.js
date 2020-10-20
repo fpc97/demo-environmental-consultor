@@ -13,9 +13,7 @@ export const objectDeepSearch = (obj, navigation) => {
   })
 }
 
-export const parseNumber = num => {
-  return [...num].map(a => a === ' ' ? '-' : a).join('')
-}
+export const parseNumber = num => [...num].map(a => a === ' ' ? '-' : a).join('')
 
 export const parseFirstWord = str => str.split(' ')[0].toLowerCase()
 
@@ -25,9 +23,17 @@ export const toTitleCase = str => [...str].map((ch, i, arr) => (
   i === 0 || arr[i - 1] === ' ' ? ch.toUpperCase() : ch.toLowerCase()
 )).join('')
 
-export const getMarkdownFirstImage = md => typeof md === 'string' ? md.match(/!\[.*]\((.*)\)/)[1] : false
+export const getMarkdownFirstImage = md => {
+  const match = typeof md === 'string' ? md.match(/!\[.*]\((.*)\)/) : false
+  if (!(Array.isArray(match) && match.length > 1)) return false
+  return match[1].split(' ')[0]    // Remove alt text
+}
 
-export const parseGraphQLEdges = data => data.allMarkdownRemark.edges || false
+export const parseGraphQLEdges = data => {
+  if (data.allMarkdownRemark) return data.allMarkdownRemark.edges
+  else if (data.edges) return data.edges
+  else return false
+}
 
 export const removeAccents = str => {
   const parseMap = {
@@ -44,3 +50,9 @@ export const removeAccents = str => {
 }
 
 export const removeSpaces = str => str.split(' ').join('')
+
+export const isNonDisplay = img => {
+  const src = objectDeepSearch(img, ['childImageSharp', 'lg', 'src'])
+
+  return typeof src === 'string' && src.endsWith('non-display.png')
+}

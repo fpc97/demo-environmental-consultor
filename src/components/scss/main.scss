@@ -1,36 +1,37 @@
 @import
-    "abstracts/functions",
-    "abstracts/mixins",
-    "abstracts/variables";
+  "abstracts/variables",
+  "abstracts/mixins";
 
 @import
-    "base/normalize",
-    "base/base";
+  "base/normalize",
+  "base/base";
 
 @import
-    "components/buttons",
-    "components/navigation",
-    "components/nav-icon",
-    "components/nav-dropdown",
-    "components/title",
-    "components/phones",
-    "components/social-media",
-    "components/home-background",
-    "components/following-image",
-    "components/mapa-argentina",
-    "components/personal",
-    "components/generic-background",
-    "components/logo";
+  "components/buttons",
+  "components/navigation",
+  "components/nav-icon",
+  "components/nav-dropdown",
+  "components/title",
+  "components/phones",
+  "components/social-media",
+  "components/emails",
+  "components/home-background",
+  "components/following-image",
+  "components/mapa-argentina",
+  "components/personal",
+  "components/generic-background",
+  "components/logo";
 
 @import
-    "layout/foot",
-    "layout/header",
-    "layout/trabajos-realizados",
-    "layout/servicio-individual",
-    "layout/hero-section",
-    "layout/container",
-    "layout/objetivos",
-    "layout/elegirnos",
-    "layout/clientes",
-    "layout/especializamos",
-    "layout/top-bar";
+  "layout/foot",
+  "layout/header",
+  "layout/contacto",
+  "layout/trabajos-realizados",
+  "layout/servicio-individual",
+  "layout/hero-section",
+  "layout/container",
+  "layout/objetivos",
+  "layout/elegirnos",
+  "layout/clientes",
+  "layout/especializamos",
+  "layout/top-bar";

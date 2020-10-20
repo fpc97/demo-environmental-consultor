@@ -14,7 +14,6 @@ const TrabajosRealizadosPreview = ({ entry, getAsset, widgetsFor }) => {
   widgetsFor('lista-de-trabajos').forEach((p, i) => {
     trabajos[i].contenido = marked(p.getIn(['data', 'contenido']))
   })
-  console.log(trabajos)
 
   return (
     <TrabajosRealizadosPageTemplate

@@ -17,9 +17,13 @@ const SobreNosotrosPreview = ({ entry, getAsset }) => {
     items: entry.getIn(['data', 'elegirnos', 'items'])
   }
 
-  const clientes = entry.getIn(['clientes'])
+  const clientesList = entry.getIn(['data', 'clientes'])
 
-  //intro.background = <img className="intro__background" src={intro.background}></img>
+  objetivos.items = objetivos.items ? objetivos.items.toJS() : []
+  elegirnos.items = elegirnos.items ? elegirnos.items.toJS() : []
+  const clientes = clientesList ? clientesList.toJS() : []
+
+  intro.background = intro.background
 
   return (
     <SobreNosotrosPageTemplate

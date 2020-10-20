@@ -1,38 +1,105 @@
 .top-bar{
-    position: fixed;
-    top: 0;
-    left: 50%;
-    width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  //height: 100%;
+  transform: translate(-50%);
+  z-index: 100;
+
+  &__top{
+    display: none;
+  }
+
+  &__bottom{
+    position: relative;
+    //height: 8.6rem;
+
+    @include mq(sm) {
+      height: 11.8rem;
+    }
+  }
+
+  &__phones{
     height: 100%;
-    transform: translate(-50%);
-    z-index: 100;
+    display: flex;
+    flex-flow: nowrap row;
+    align-items: center;
+
+    & > a{
+      display: inline-block;
+      
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__contact-us{
+  
+  }
+
+  &__social-media{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    & > a:not(:first-child) {
+      margin-left: 2rem;
+    }
+  }
+
+
+  &__logo{
+    //display: none;
+    padding: $general-padding;
+
+    display: flex;
+    flex-flow: nowrap row;
+    align-items: center;
+    //height: 100%;
+    
+    //padding: 0;
+
+    & > a{
+      position: relative;
+      z-index: 10;
+    }
+  }
+}
+
+
+@media(min-width: breakpoint(nav)) {
+  .top-bar{
+    position: absolute;
+    padding: 0 3.3rem;
+    max-width: 176rem;
+    margin: 0 auto;
+    height: auto;
+
+    //background-color: col(theme);
 
     &__top{
-        display: none;
+      display: inline-block;
+      position: relative;
+      //background-color: red;
+      height: 9rem;
+      width: 100%;
+      
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
     }
 
     &__bottom{
-        position: relative;
-        //height: 8.6rem;
-
-        @include mq(sm) {
-            height: 11.8rem;
-        }
+      //display: inline-block;
+      width: 100%;
+      height: 13.8rem;
     }
 
-    &__phones{
-        height: 100%;
-        display: flex;
-        flex-flow: nowrap row;
-        align-items: center;
 
-        & > a{
-            display: inline-block;
-            
-            &:not(:last-child) {
-                margin-right: 2rem;
-            }
-        }
+    &__phones{
+
     }
 
     &__contact-us{
@@ -40,79 +107,17 @@
     }
 
     &__social-media{
-        display: inline-block;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-
-        & > a:not(:first-child) {
-            margin-left: 2rem;
-        }
+        
     }
 
 
     &__logo{
-        //display: none;
-        padding: $general-padding;
-
-        display: flex;
-        flex-flow: nowrap row;
-        align-items: center;
-        //height: 100%;
-        
-        //padding: 0;
+      display: flex;
+      flex-flow: nowrap row;
+      align-items: center;
+      height: 100%;
+      
+      padding: 0;
     }
-}
-
-
-@media(min-width: breakpoint(nav)) {
-    .top-bar{
-        position: absolute;
-        padding: 0 3.3rem;
-        max-width: 176rem;
-        margin: 0 auto;
-        height: auto;
-
-        //background-color: col(theme);
-    
-        &__top{
-            display: inline-block;
-            position: relative;
-            //background-color: red;
-            height: 9rem;
-            width: 100%;
-            
-            border-bottom: 1px solid rgba(255, 255, 255, .2);
-        }
-    
-        &__bottom{
-            //display: inline-block;
-            width: 100%;
-            height: 13.8rem;
-        }
-    
-    
-        &__phones{
-    
-        }
-    
-        &__contact-us{
-        
-        }
-    
-        &__social-media{
-            
-        }
-    
-    
-        &__logo{
-            display: flex;
-            flex-flow: nowrap row;
-            align-items: center;
-            height: 100%;
-            
-            padding: 0;
-        }
-    }
+  }
 }

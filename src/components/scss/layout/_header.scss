@@ -1,117 +1,106 @@
 .header{
-    padding: 0 $general-padding;
+  padding: 0 $general-padding;
 
-    color: white;
+  color: white;
 
-    //margin-top: 2rem;
-    @include marginTopNav(2rem);
+  //margin-top: 2rem;
+  @include marginTopNav(2rem);
 
-    @media(min-height: breakpoint(h-lg)) {
-        //margin-top: calc(20vh - 14rem);
-        @include marginTopNav(calc(20vh - 14rem));
+  @media(min-height: breakpoint(h-lg)) {
+    //margin-top: calc(20vh - 14rem);
+    @include marginTopNav(calc(20vh - 14rem));
+  }
+  
+  @include mq(md) {
+    //margin-left: calc(20vw - 10rem);
+    width: 80vw;
+    max-width: 144rem;
+    margin-left: auto;
+    margin-right: auto;
+    //margin: 0 auto;
+  }
+
+  // 4K
+  @media(min-height: breakpoint(h-max) + 1) {
+    max-width: 100%;
+  }
+  
+  &__h2{
+    font-size: 3rem;
+    font-size: calc(12.5vw + .6rem);
+
+    line-height: 100%;
+
+    margin-top: 2rem;
+    font-family: "Raleway", serif;
+    font-weight: 100;
+
+    &--first{
+      letter-spacing: calc(3.3vw - .36rem);
+    }
+    &--last{
+      letter-spacing: calc(5.6vw - .3rem);
+    }
+
+    @include mq(sm) {
+      font-size: 5.5rem;
+      
+      &--first{
+        letter-spacing: .96rem;
+      }
+      &--last{
+        letter-spacing: 1.9rem;
+      }
     }
     
+    @media (min-width: breakpoint(w-md)) and (min-height: breakpoint(h-lg)) {
+      font-size: 5.6rem;
+      font-size: calc(12vh - 3rem);
+
+      &--first{
+        letter-spacing: calc(1.25vh + .4rem);
+      }
+      &--last{
+        letter-spacing: 3.2vh;
+      }
+    }
+  }
+
+  &__intro{
+    margin-top: 1rem;
+    margin-bottom: auto;
+
+    font: normal 1.6rem "Open sans", sans-serif;
+    line-height: 3rem;
+    letter-spacing: .08rem;
+
+    @include mq(sm) {
+      margin-right: 4rem;
+    }
+
     @include mq(md) {
-        //margin-left: calc(20vw - 10rem);
-        width: 80vw;
-        max-width: 144rem;
-        margin-left: auto;
-        margin-right: auto;
-        //margin: 0 auto;
+      max-width: 38rem;
     }
 
     // 4K
     @media(min-height: breakpoint(h-max) + 1) {
-        max-width: 100%;
+      font-size: calc(1.5rem + .3vw);
+      line-height: calc(2.8rem + .8vw);
+      max-width: calc(38rem + 3.6vw);
     }
-    
-    &__h2{
-        font-size: 3rem;
-        font-size: calc(12.5vw + .6rem);
+  }
 
-        line-height: 100%;
+  &__general-flex{
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: middle;
+    height: 100%;
+  }
 
-        margin-top: 2rem;
-        font-family: "Raleway", serif;
-        font-weight: 100;
-
-        &--first{
-            //letter-spacing: .2rem;
-            letter-spacing: calc(3.3vw - .36rem);
-        }
-        &--last{
-            //letter-spacing: .8rem;
-            letter-spacing: calc(5.6vw - .3rem);
-        }
-
-        @include mq(sm) {
-            font-size: 5.5rem;
-            
-            &--first{
-                //letter-spacing: .2rem;
-                letter-spacing: .96rem;
-            }
-            &--last{
-                //letter-spacing: .8rem;
-                letter-spacing: 1.9rem;
-            }
-        }
-        
-        @media (min-width: breakpoint(w-md)) and (min-height: breakpoint(h-lg)) {
-            font-size: 5.6rem;
-            font-size: calc(12vh - 3rem);
-
-            &--first{
-                letter-spacing: calc(1.25vh + .4rem);
-            }
-            &--last{
-                letter-spacing: 3.2vh;
-            }
-        }
-    }
-
-    &__intro{
-        margin-top: 1rem;
-        //font-size: 1.6rem;
-        //text-align: justify;
-        //font-size: calc(1.6rem + 20vw);
-
-        font: normal 1.6rem "Open sans", sans-serif;
-        line-height: 3rem;
-        letter-spacing: .08rem;
-/*
-        font-family: "Open sans", sans-serif;
-        font-size: 1.6rem;
-        font-weight: normal;*/
-
-        @include mq(sm) {
-            margin-right: 4rem;
-        }
-
-        @include mq(md) {
-            max-width: 38rem;
-        }
-
-        // 4K
-        @media(min-height: breakpoint(h-max) + 1) {
-            font-size: calc(1.5rem + .3vw);
-            line-height: calc(2.8rem + .8vw);
-            max-width: calc(38rem + 3.6vw);
-        }
-    }
-
-    &__general-flex{
-        display: flex;
-        flex-flow: nowrap column;
-        justify-content: middle;
-        height: 100%;
-    }
-
-    &__bottom-flex{
-        display: flex;
-        flex-flow: wrap row;
-        justify-content: flex-start;
-        align-items: center;
-        //background-color: green;
-    }
+  &__bottom-flex{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }

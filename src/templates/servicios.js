@@ -1,22 +1,23 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import SEO from '../components/seo'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 
-import MapaArgentina from '../components/mapa-argentina'
-import Especializamos from '../components/especializamos'
-import Intro from '../components/hero-section'
+import MapaArgentina from '../components/MapaArgentina'
+import Especializamos from '../components/Especializamos'
+import Intro from '../components/HeroSection'
 
-const ServiciosPage = ({ data }) => {
-  const content = data.markdownRemark.frontmatter
-  return (
-    <Layout>
-      <SEO title="Servicios"/>
-      <ServiciosPageTemplate {...content} />
-    </Layout>
-  )
-}
+const ServiciosPage = ({
+  data: {
+    markdownRemark: { frontmatter },
+    servicios,
+    defaultImage
+  }
+}) => (
+  <Layout title="Servicios">
+    <ServiciosPageTemplate {...frontmatter} defaultImage={defaultImage} servicios={servicios} />
+  </Layout>
+)
 
 export default ServiciosPage
 
@@ -24,13 +25,17 @@ export const ServiciosPageTemplate = ({
   title,
   intro,
   provincias,
-  noAnim = false
+  noAnim = false,
+  servicios,
+  defaultImage
 }) => (
-  <main>
+  <>
     {intro && <Intro {...intro} title={title}/>}
-    {provincias && <MapaArgentina provincias={provincias} noAnim={noAnim}/>}
-    <Especializamos />
-  </main>
+    <main>
+      {provincias && <MapaArgentina provincias={provincias} noAnim={noAnim}/>}
+      {servicios && <Especializamos servicios={servicios} defaultImage={defaultImage}/>}
+    </main>
+  </>
 )
 
 export const serviciosPageQuery = graphql`
@@ -44,5 +49,16 @@ export const serviciosPageQuery = graphql`
       }
       id
     }
+    servicios: allMarkdownRemark(sort: {fields: id}, filter: {frontmatter: {templateKey: {eq: "servicio-individual"}}}) {
+      edges {
+        node {
+          ...IntroFields
+          fields {
+            slug
+          }
+        }
+      }
+    }
+    ...DefaultImage
   }
 `

@@ -1,267 +1,449 @@
-// Burger styles
-.navigation{
-    position: fixed;
+// Mobile ---------------------------------------------
+$item-height: 7rem;
+$min-height: 7rem;
+$lineheight: 2.1rem;
+$transitionduration: .4s;
+
+.navigation-mobile{
+  overflow-y: scroll;
+  width: 100vw;
+  //min-height: $min-height;
+  max-height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+
+  &.open{
+    min-height: 100vh;
+    transition: background-color .001s .4s;
+    background-color: col(theme-green);
+  }
+/*
+  @media (min-width: breakpoint(nav)) {
+    display: none;
+  }*/
+
+  &__circle{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    max-width: 34rem;
-    background-color: col(theme);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, .2);
-
-    z-index: 101;
-
-    &__ul{
-        list-style: none;
-        /*
-        max-width: 40rem;
-        margin: 0 auto;*/
+    overflow: hidden;
+    
+    &::before{
+      content: "";
+      display: inline-block;
+      position: absolute;
+      background-color: col(theme-green);
+      border-radius: 50%;
+      height: 0;
+      width: 0;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
     }
+  }
+  
+  &.open &__circle::before{
+    transition-property: width, height;
+    transition-duration: 1s;
+    height: 400rem;
+    width: 400rem;
+  }
 
-    &__li{
-        position: relative;
-        border-bottom: 1px solid rgba(255, 255, 255, .1);
+  &__logo{
+    float: left;
+  }
+
+  &__top{
+    background-color: col(theme-green);
+    padding: $general-padding;
+    //height: $min-height;
+    overflow: auto;
+    position: relative;
+    z-index: 2;
+    transition: background-color .4s;
+
+    .transparent & {
+      background-color: transparent;
     }
+  }
 
-    &__link{
-        display: inline-block;
-        text-decoration: none;
-        font-size: 1.6rem;
-        font-weight: bold;
-        width: 100%;
-        height: 100%;
-        padding: 2rem 35% 2rem 2rem;
-        line-height: 2.2rem;
-
-        @include mq(sm) {
-            font-size: 1.8rem;
-        }
+  &__toggle{
+    float: right;
+    position: relative;
+    @include logo-height(1);
+    @include logo-width(1);
+    &::selection{
+      background-color: transparent;
     }
+    
+    & > .line{
+      top: 2.1rem;
 
-    &__arrow{
+      &,
+      &::before,
+      &::after{
         position: absolute;
-        right: 0;
-        top: 0;
         display: inline-block;
-        //width: 6rem;
-        width: 35%;
-        margin-left: 2rem;
-        height: 100%;
-        cursor: pointer;
-
-        &::after{
-            content: '';
-            position: absolute;
-            top: 3rem;
-            left: 50%;
-            transform: translate(-20%, -50%);
-            
-            width: 0;
-            height: 0;
-            border-top: .7rem solid transparent;
-            border-left: .7rem solid white;
-            border-bottom: .7rem solid transparent;
-
-            transition: transform .3s;
-        }
-        &:hover{
-            background-color: col(theme-lighter);
-        }
-
-        &::selection{
-            background-color: transparent;
-        }
-    }
-
-    &__check:checked + &__arrow::after{
-        transform: translate(-20%, -50%) rotate(-90deg);
-    }
-
-    &__check{
-        display: none;
-    }
-
-    &__bg-info{
-        padding: $general-padding;
-
-        &--top{
-            display: flex;
-            flex-flow: nowrap row;
-            align-items: center;
-        }
-
-        &--bottom{
-            max-width: 24rem;
-        }
-    }
-
-    &__social-media{
-        display: flex;
-        flex-flow: wrap row;
-        justify-content: space-between;
-        margin: 0 -.8rem;
-
-        & > a{
-            margin: 2rem .8rem 0;
-        }
-    }
-
-    &__phones{
-        height: 100%;
+        background-color: white;
+        height: .8rem;
         width: 100%;
-        margin: 1rem 0 1rem;
+  
+        transition-property: transform, background-color;
+        transition-duration: $transitionduration;
+      }
+  
+      &::before,
+      &::after{
+        content: '';
+        left: 0;
+      }
+  
+      &::before{
+        top: -$lineheight;
+      }
+  
+      &::after{
+        bottom: -$lineheight;
+      }
+  
+      &::selection{
+        background-color: transparent;
+      }
+  
+      @include mq(sm) {
+        top: 3.6rem;
+      }
 
-        & > a{
-            display: block;
-            margin-bottom: 1.4rem;
-        }
-    }
-
-    & li > a{
-        background-color: col(theme);
-        &:hover{
-            background-color: col(theme-lighter);
-            //color: white;
-        }
-    }
-
-    & .dd-background,
-    & .dd-underline{
-        display: none;
-        @media (min-width: breakpoint(nav)) {
-            display: inline-block;
-        }
-    }
-}
-
-// Burger functionality
-@media(max-width: breakpoint(nav) - 1) {
-    .navigation{
-        transition: transform .5s;
-    }
-
-    .nav-icon__check:not(:checked) ~ .navigation{
-        transform: translateX(-104%);
-    }
-}
-
-
-// Spread styles
-@media(min-width: breakpoint(nav)) {
-    .navigation{
-        position: absolute;
-        left: auto;
-        right: 0;
-        //top: 3rem;
-        top: 50%;
-        transform: translateY(-50%);
-
-        overflow-y: visible;
-        display: inline-block;
-
-        width: auto;
-        height: auto;
-
-        max-width: none;
+      .open &{
         background-color: transparent;
 
-        box-shadow: none;
-    
-        &__ul{
-            //margin-top: 3.4rem;
-        }
-    
-        &__li{
-            display: inline-block;
-            border-bottom: none;
-            position: relative;
-
-            &--dd:hover{
-                //border-bottom: 4rem solid transparent;
-
-                &::after{
-                    content: '';
-                    display: inline-block;
-                    width: 100%;
-                    position: absolute;
-                    left: 0;
-                    
-                    // Has to be the same
-                    height: 3rem;
-                    bottom: -3rem;
-                }
-            }
-
-            &:not(:last-child){
-                padding-right: 3rem;
-            }
-        }
-    
-        &__link{
-            width: auto;
-            height: auto;
-            padding: 0;
-            line-height: 1.6rem;
+        &,
+        &:before,
+        &:after{
+          @media (max-width: breakpoint(w-sm + 1)){
+            transition: none;
+          }
         }
 
-        // Cocos
-        &__arrow{
-            position: relative;
-            display: inline-block;
-            display: none;
-
-            //width: 6rem;
-            width: 3rem;
-            height: 100%;
-
-            margin-left: 0;
-            cursor: pointer;
-
-            &::after{
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: auto;
-                right: 0;
-                transform: translate(-50%, -50%) rotate(90deg);
-                
-                width: 0;
-                height: 0;
-
-                border-top: .7rem solid transparent;
-                border-left: .7rem solid white;
-                border-bottom: .7rem solid transparent;
-            }
-
-            &:hover{
-                background-color: col(theme-lighter);
-            }
-
-            &::selection{
-                background-color: transparent;
-            }
+        &:before,
+        &:after{
+          background-color: white;
         }
 
-        &__li:hover > &__arrow::after{
-            border-left: .7rem solid col(dd-highlight);
-            transform: translate(-50%, -50%) rotate(90deg);
+        &:before{
+          transform: translate(0, 340%) rotate(-45deg) scaleX(.5);
+
+          @include mq(sm){
+            transform: translate(0, 410%) rotate(-45deg) scaleX(.5);
+          }
         }
 
-        &__check:checked + &__arrow::after{
-            transform: translate(-50%, -50%) rotate(90deg);
-        }
+        &:after{
+          transform: translate(0, -340%) rotate(45deg) scaleX(.5);
 
-        & li > a{
-            background-color: transparent;
-            &:hover{
-                background-color: transparent;
-            }
+          @include mq(sm){
+            transform: translate(0, -410%) rotate(45deg) scaleX(.5);
+          }
         }
-
-        // Belongs only in mobile mode
-        &__bg-info{
-            display: none;
-        }
+      }
     }
+  }
+  
+  &__bottom{
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: opacity .5s .3s;
+
+    .open &{
+      height: auto;
+      opacity: 1;
+      padding: $general-padding;
+    }
+  }
+
+  &__phonenumbers{
+    margin-bottom: 3rem;
+    & > a{
+      display: table;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__socialmedia{
+    & > a{
+      margin-right: 2rem;
+    }
+  }
+
+  &__routes{
+    padding: $general-padding;
+    .open &{
+      transition: opacity .5s .3s;
+    }
+
+    .closed &{
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      opacity: 0;
+    }
+  }
+
+  &__routes,
+  &__subroutes{
+    list-style: none;
+  }
+
+  &__route{
+    position: relative;
+    min-height: $item-height;
+    line-height: $item-height;
+    
+    & [role=button]{
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: $item-height;
+      width: $item-height;
+
+      &::selection{
+        background-color: transparent;
+      }
+
+      &::before{
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -25%);
+        border-top: 1rem solid white;
+        border-left: 1rem solid transparent;
+        border-right: 1rem solid transparent;
+      }
+    }
+  }
+
+  &__route.on [role=button]::before{
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  &__link{
+    display: inline-block;
+    line-height: 3rem;
+    font-size: 1.9rem;
+    @include mq(sm) {
+      font-size: 2.6rem;
+    }
+    height: 100%;
+    //width: 100%;
+    padding-right: $item-height;
+  }
+
+  &__link,
+  &__sublink{
+    font-weight: bold;
+    &,
+    &:link,
+    &:visited{
+      //color: white;
+    }
+  }
+
+  &__subroutes{
+    display: none;
+    line-height: 2rem;
+    @include mq(sm) {
+      padding: 0 0 2rem 1.4rem;
+    }
+  }
+  &__route.on &__subroutes{
+    display: block;
+  }
+
+  &__subroute{
+    display: block;
+    padding: 1rem 0;
+    @include mq(sm) {
+      padding: 2rem 0;
+    }
+  }
+
+  &__sublink{
+    font-size: 1.6rem;
+    @include mq(sm) {
+      font-size: 1.9rem;
+    }
+  }
+}
+
+
+// Desktop ---------------------------------------------
+.navigation-desktop{
+  top: 0;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%);
+  z-index: 100;
+
+  position: absolute;
+  padding: 0 3.3rem;
+  max-width: 176rem;
+  margin: 0 auto;
+  height: auto;
+
+  //background-color: col(theme);
+
+  &__top{
+    display: inline-block;
+    position: relative;
+    //background-color: red;
+    height: 9rem;
+    width: 100%;
+    
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+  }
+
+  &__bottom{
+    position: relative;
+    //display: inline-block;
+    width: 100%;
+    height: 13.8rem;
+  }
+  
+  &__phones{
+    height: 100%;
+    display: flex;
+    flex-flow: nowrap row;
+    align-items: center;
+
+    & > a{
+      display: inline-block;
+      
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__contact-us{
+  
+  }
+
+  &__social-media{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    & > a:not(:first-child) {
+      margin-left: 2rem;
+    }
+  }
+  
+  &__logo{
+    display: flex;
+    flex-flow: nowrap row;
+    align-items: center;
+    height: 100%;
+    
+    //padding: 0;
+    & > a{
+      position: relative;
+      z-index: 10;
+    }
+  }
+
+  // Chosi ----------------------
+  &__routes{
+    //display: none;
+    position: absolute;
+    right: 0;
+    top: 45%;
+    @media (min-width: breakpoint(nav)) {
+      //display: inline-block;
+    }
+  }
+
+  &__route{
+    position: relative;
+    display: inline-block;
+    margin-left: 4rem;
+
+    &:hover{
+      border-bottom: 1.5rem solid transparent;
+    }
+  }
+  
+  &__link{
+    font-size: 1.9rem;
+    li:hover > &{
+      background-color: rgba(255, 255, 255, .1);
+      //color: darken(col(theme-green), 2%);
+    }
+  }
+
+  &__link,
+  &__sublink{
+    padding: .3rem 1rem;
+    border-radius: 3px;
+    transition: background-color, .1s;
+  }
+  
+  &__subroutes{
+    position: absolute;
+    top: calc(100% + 1.5rem);
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    list-style: none;
+    background-color: #fdfdfd;
+    border-radius: 3px;
+    box-shadow:
+      0 8.2px 2.4px rgba(0, 0, 0, 0.016),
+      0 12.1px 9.1px rgba(0, 0, 0, 0.024),
+      0 24px 55px rgba(0, 0, 0, 0.04)
+    ;
+
+    transition-property: opacity, transform;
+    transition-duration: .3s;
+    opacity: 0;
+    transform: scale(.97) translateY(-4px);
+  }
+
+  &__route:hover > &__subroutes{
+    opacity: 1;
+    display: inline-block;
+    width: auto;
+    transform: none;
+  }
+
+  &__subroute{
+    margin: 2rem 1.5rem;
+  }
+  
+  &__sublink{
+    font-size: 1.6rem;
+    white-space: nowrap;
+
+    &,
+    &:link,
+    &:visited{
+      color: desaturate(lighten(col(theme-green), 3%), 30%);
+    }
+
+    &:hover{
+      background-color: col(theme-green-highlight);
+    }
+  }
 }

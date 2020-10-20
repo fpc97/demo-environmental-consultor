@@ -5,28 +5,22 @@ import { graphql } from 'gatsby'
 import { SlideDown } from 'react-slidedown'
 import 'react-slidedown/lib/slidedown.css'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Intro from '../components/hero-section'
-import PreviewCompatibleImage from '../components/preview-compatible-image'
-import { HTMLContent } from '../components/content'
+import Layout from '../components/Layout'
+import Intro from '../components/HeroSection'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import { HTMLContent } from '../components/Content'
 
-const TrabajosRealizados = ({ data }) => {
-  console.log(data)
+const TrabajosRealizados = ({ data: { markdownRemark: { frontmatter, fields } } }) => {
+  const payload = {...frontmatter}
+  const contenidos = fields ? fields.lista_de_trabajos : null
 
-  const payload = {...data.markdownRemark.frontmatter}
-  const contenidos = data.markdownRemark.fields ? data.markdownRemark.fields.lista_de_trabajos : null
-
-  if (payload.lista_de_trabajos && contenidos) payload.lista_de_trabajos.forEach((elem, i) => {
-    elem.contenido = contenidos[i]
-  })
+  if (payload.lista_de_trabajos && contenidos) {
+    payload.lista_de_trabajos.forEach((elem, i) => elem.contenido = contenidos[i])
+  }
 
   return (
-    <Layout>
-      <SEO title="Trabajos Realizados"/>
-      <TrabajosRealizadosPageTemplate
-        {...data.markdownRemark.frontmatter}
-      />
+    <Layout title="Trabajos Realizados">
+      <TrabajosRealizadosPageTemplate {...frontmatter}/>
     </Layout>
   )
 }
@@ -48,26 +42,31 @@ export const TrabajosRealizadosPageTemplate = ({
       textContents = {title: t.title, contenido: t.contenido, portada: t.portada, i}
     }
 
+    const handleDeploy = e => {
+      const current = e.currentTarget
+      let next = current,
+        position = i
+
+      while (
+        !(next.nextSibling === null) &&
+        !(next.nextSibling.getBoundingClientRect().top > current.getBoundingClientRect().bottom)
+      ) {
+        next = next.nextSibling
+        if (next.classList.contains('trabajo')) position++
+      }
+
+      updateSelected(selected !== i ? i : null)
+      setTextPos(position)
+    }
+
     return (
       <>
-        <li className={`trabajo${selected === i ? ' selected' : ''}`}
+        <li
+          className={`trabajo${selected === i ? ' selected' : ''}`}
           key={i}
-          onClick={e => {
-            const current = e.currentTarget
-            let next = current,
-              position = i
-
-            while (
-              !(next.nextSibling === null) &&
-              !(next.nextSibling.getBoundingClientRect().top > current.getBoundingClientRect().bottom)
-            ) {
-              next = next.nextSibling
-              if (next.classList.contains('trabajo')) position++
-            }
-
-            updateSelected(selected !== i ? i : null)
-            setTextPos(position)
-          }}
+          role="button"
+          onClick={handleDeploy}
+          onKeyDown={handleDeploy}
         >
           <PreviewCompatibleImage
             className="trabajo__portada"
@@ -105,13 +104,15 @@ export const TrabajosRealizadosPageTemplate = ({
   return(
     <>
       <Intro title={title} {...intro}/>
-      <article className="trabajos-realizados">
-        <div className="trabajos-realizados__container container">
-          <ul className="trabajos-realizados__lista">
-            { parseTrabajos() }
-          </ul>
-        </div>
-      </article>
+      <main>
+        <article className="trabajos-realizados">
+          <div className="trabajos-realizados__container container">
+            <ul className="trabajos-realizados__lista">
+              { parseTrabajos() }
+            </ul>
+          </div>
+        </article>
+      </main>
     </>  
   )
 }

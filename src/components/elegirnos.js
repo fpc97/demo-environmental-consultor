@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Icon from './icon'
+import Icon from './Icon'
 import { Elegirnos as Background } from './svgr/backgrounds'
 
 const PorQueElegirnos = ({
@@ -9,7 +9,7 @@ const PorQueElegirnos = ({
   items
 }) => {
   return (
-    <article className="elegirnos white">
+    <article className="elegirnos white" id="elegirnos">
       <Background className="elegirnos__background" />
       <div className="container elegirnos__container">
         <h3 className="elegirnos__h3">¿Por qué elegirnos?</h3>

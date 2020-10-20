@@ -278,3 +278,51 @@ export const Elegirnos = props => (
     </g>
   </svg>
 )
+
+export const HeroSection = props => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    data-name="Layer 1"
+    viewBox="0 0 1299.1 961"
+  >
+    <defs>
+      <linearGradient
+        id="a"
+        x1="-128"
+        x2="272.3"
+        y1="880.1"
+        y2="-171.2"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0" stopColor="#2a9640"></stop>
+        <stop offset="0.2" stopColor="#108043"></stop>
+      </linearGradient>
+      <linearGradient
+        id="b"
+        x1="177"
+        x2="586"
+        y1="958.6"
+        y2="-115.4"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0" stopColor="#2a9640"></stop>
+        <stop offset="0.6" stopColor="#108043"></stop>
+      </linearGradient>
+      <linearGradient
+        id="c"
+        x1="522.6"
+        x2="942.1"
+        y1="1063.3"
+        y2="-38.5"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0" stopColor="#2a9640"></stop>
+        <stop offset="0.8" stopColor="#108043"></stop>
+      </linearGradient>
+    </defs>
+    <path fill="url(#a)" d="M414 0L0 597V0h414z"></path>
+    <path fill="url(#b)" d="M857 0L190 961H0V597L414 0h443z"></path>
+    <path fill="url(#c)" d="M1299 0L632 961H190L857 0h442z"></path>
+  </svg>
+)

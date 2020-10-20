@@ -1,8 +1,17 @@
 ---
-covos: >-
-  Adasdda asd das asd asdad asd asd ad asd asd asd as asd asd ad ad wadwd asd ad qwdasd wdqasd asd dqdasd asdwqdqsdad wdqda sdadqdada adsdasdaduy ady aduy agudgauydgasuydg auydgu agduyagdugasyudguya gduyasgd uaysgd uasdg iuadgas
+intro-text: >-
+  Adasdda asd das asd asdad asd asd ad asd ds sadads d adasd
 slideshow:
-  - /img/windmill.jpg
-  - /img/home-slideshow-1.jpg
-  - /img/home-slideshow-2.jpg
+  - /img/default-bat.jpg
+  - /img/default-avatar.jpg
+phonenumbers:
+  - +54 280 2 323 323
+  - +54 231 3213 3123
+emailaddresses:
+  - holowo@gmail.com
+social-media:
+  - url: https://www.faceboo.com/frank
+    site: Facebook
+  - url: https://www.tuite.com/frank
+    site: Twitter
 ---

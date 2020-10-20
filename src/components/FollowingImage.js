@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import PreviewCompatibleImage from './PreviewCompatibleImage'
+
 class FollowingImage extends Component {
   constructor() {
     super()
@@ -57,10 +59,18 @@ class FollowingImage extends Component {
     const generateImgs = () => this.props.imgList.map((img, i) => {
       const style = {
         transition: `opacity .6s`,
-        opacity: this.props.currentImg === img ? 1 : 0
+        opacity: this.props.currentImg === img[0] ? 1 : 0
       }
       
-      return <img src={img} className="following-image__img" key={i} style={style}/>
+      return <PreviewCompatibleImage
+        imageInfo={{
+          image: img[1],
+          alt: ''
+        }}
+        key={i}
+        style={style}
+        className="following-image__img"
+      />
     })
 
     return (
