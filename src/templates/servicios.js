@@ -26,14 +26,15 @@ export const ServiciosPageTemplate = ({
   intro,
   provincias,
   noAnim = false,
-  servicios,
+  servicios = [],
   defaultImage
 }) => (
   <>
     {intro && <Intro {...intro} title={title}/>}
     <main>
+      {console.log('Serv', servicios)}
       {provincias && <MapaArgentina provincias={provincias} noAnim={noAnim}/>}
-      {servicios && <Especializamos servicios={servicios} defaultImage={defaultImage}/>}
+      {servicios.edges.length && <Especializamos servicios={servicios} defaultImage={defaultImage}/>}
     </main>
   </>
 )

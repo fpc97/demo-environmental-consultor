@@ -1,7 +1,7 @@
 .contacto{
 
   &__background{
-    @include paddingTopNav(0);
+    @include paddingTopNav(2rem);
     background-color: col(theme-green);
   }
 

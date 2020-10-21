@@ -39,7 +39,6 @@ const MobileNavigation = ({ transparent }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log('e uacho')
       if (window.pageYOffset > 0) toggleScrolled(true)
       else toggleScrolled(false)
     }

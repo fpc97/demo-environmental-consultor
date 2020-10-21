@@ -20,13 +20,11 @@ let isCycleStarted = false
 function startCycle(e) {
   if (isCycleStarted) return
   isCycleStarted = true
-  console.log('ok...')
 
   const imageList = e.currentTarget.children,
     listLength = imageList.length
 
   if (listLength <= 1) return
-  console.log('oksds...')
 
   let index = 0
 
