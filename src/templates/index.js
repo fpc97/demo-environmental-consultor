@@ -46,7 +46,7 @@ export const IndexPageTemplate = ({ images, introText }) => (
 
 export default ({ data }) => {
   const images = objectDeepSearch(data, ['markdownRemark', 'frontmatter', 'slideshow'])
-  const introText = objectDeepSearch(data, ['markdownRemark', 'frontmatter', 'intro_text'])
+  const introText = objectDeepSearch(data, ['markdownRemark', 'frontmatter', 'intro_phrase'])
 
   return (
     <Layout
@@ -85,7 +85,7 @@ export const IndexPageQuery = graphql`
   fragment IntroFields on MarkdownRemark {
     frontmatter {
       title
-      intro {
+      intro_phrase {
         principal
         secundario
         lead

@@ -18,7 +18,7 @@ collections:
         name: "index"
         label: "Principal"
         fields:
-          - {label: "Texto introductorio", name: "intro", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: []}
+          - {label: "Texto introductorio", name: "intro-phrase", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: []}
 #          - {label: "Imagenes de fondo", name: "slideshow", widget: "image", default: /img/default-bat.jpg}
           - label: "Imagenes de fondo"
             name: "slideshow"
