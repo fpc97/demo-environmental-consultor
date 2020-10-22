@@ -1,14 +1,15 @@
 import React from 'react'
 import { IndexPageTemplate } from '../../templates/index'
-import { getIntro } from '../utils'
 
-const IndexPreview = ({ entry, getAsset }) => {
-  const intro = getIntro(entry, getAsset)
+const IndexPreview = ({ entry }) => {
+  const intro = entry.getIn(['data', 'intro'])
   const images = entry.getIn(['data', 'slideshow'])
+
+  console.log(intro)
 
   return (
     <IndexPageTemplate
-      intro={intro}
+      introText={intro}
       images={images}
     />
   )
