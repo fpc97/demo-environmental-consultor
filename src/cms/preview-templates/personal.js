@@ -4,6 +4,7 @@ import { getIntro } from '../utils'
 
 const PersonalPreview = ({ entry, getAsset }) => {
   const header = getIntro(entry, getAsset)
+  const title = intro.getIn(['data', 'title'])
 
   const entryPersonal = entry.getIn(['data', 'lista-de-personal']) || false
   const personal = entryPersonal ? entryPersonal.toJS() : []
@@ -16,6 +17,7 @@ const PersonalPreview = ({ entry, getAsset }) => {
 
   return (
     <PersonalPageTemplate
+      title={title}
       header={header}
       personal={personal}
     />
