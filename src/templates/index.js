@@ -49,8 +49,6 @@ export default ({ data }) => {
   const images = Array.isArray(slideshow) && slideshow.length > 0 ? slideshow : [data.defaultImage]
   const phrase = objectDeepSearch(data, ['markdownRemark', 'frontmatter', 'phrase'])
 
-  console.log('phrase', data)
-
   return (
     <Layout
       noTitle
