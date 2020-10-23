@@ -2,7 +2,7 @@
 
   &__background{
     @include paddingTopNav(2rem);
-    background-color: col(theme-green);
+    background-color: col(intro-background);
   }
 
   &__intro{

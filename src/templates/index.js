@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/Layout'
 
@@ -12,12 +12,12 @@ import { Index as Background } from '../components/svgr/shapes'
 import { objectDeepSearch } from '../utils'
 
 const MainButton = ({ txt }) => (
-  <button className="btn slide-btn">
+  <Link className="btn slide-btn" to="/sobre-nosotros">
     <span className="slide-btn__content slide-btn__content--first">{txt}</span>
     <span className="slide-btn__slider">
       <span className="slide-btn__content slide-btn__content--last">{txt}</span>
     </span>
-  </button>
+  </Link>
 )
 
 export const IndexPageTemplate = ({ images, phrase }) => (
