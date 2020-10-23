@@ -41,4 +41,14 @@ elegirnos:
 clientes:
   - logo: /img/default-avatar.jpg
     nombre: a a
+lista-de-personal:
+  - nombre: Frank
+    cargo: Programming
+    foto: /img/default-avatar.jpg
+    descripcion: s
+    comunicacion:
+      - url: s
+        site: s
+      - url: s
+        site: s
 ---

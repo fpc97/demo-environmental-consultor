@@ -1,5 +1,4 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Intro from '../components/HeroSection'
@@ -27,15 +26,3 @@ export const ServicioIndividualPageTemplate = ({
     </main>
   </>
 )
-/*
-export const servicioIndividualQuery = graphql`
-  query ServicioIndividualByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      id
-      html
-      frontmatter {
-        title
-      }
-    }
-  }
-`*/

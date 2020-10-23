@@ -46,7 +46,6 @@ export const IndexPageTemplate = ({ images, phrase }) => (
 
 export default ({ data }) => {
   const slideshow = objectDeepSearch(data, ['markdownRemark', 'frontmatter', 'slideshow'])
-  const images = Array.isArray(slideshow) && slideshow.length > 0 ? slideshow : [data.defaultImage]
   const phrase = objectDeepSearch(data, ['markdownRemark', 'frontmatter', 'phrase'])
 
   return (
@@ -57,7 +56,7 @@ export default ({ data }) => {
       title="Principal"
       description="Evelina Cejuela y Asociados. Servicios de Consultoria Ambiental"
     >
-      <IndexPageTemplate images={images} phrase={phrase}/>
+      <IndexPageTemplate images={slideshow} phrase={phrase}/>
     </Layout>
   )
 }
