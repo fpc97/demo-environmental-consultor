@@ -4,6 +4,11 @@ export const objectHasValues = obj => {
 }
 
 export const objectDeepSearch = (obj, navigation) => {
+  if (!obj) {
+    console.warn('objectDeepSearch got empty object')
+    return false
+  }
+
   return navigation.reduce((a, b) => {
     if (typeof a !== 'object') {
       return obj[a] && obj[a][b] ? obj[a][b] : false

@@ -20,7 +20,7 @@ const MainButton = ({ txt }) => (
   </button>
 )
 
-export const IndexPageTemplate = ({ images, introText }) => (
+export const IndexPageTemplate = ({ images, phrase }) => (
   <div>
     <div className="home-background">
       <div className="home-background__slideshow">
@@ -37,7 +37,7 @@ export const IndexPageTemplate = ({ images, introText }) => (
       <Title bottomBar/>
       <h2 className="header__h2"><span className="header__h2--first">BIOLOGIA</span> <br/><span className="header__h2--last">DIGITAL</span></h2>
       <div className="header__bottom-flex">
-        <p className="header__intro">{introText}</p>
+        <p className="header__intro">{phrase}</p>
         <MainButton txt="Saber Más →"/>
       </div>
     </header>
@@ -46,7 +46,7 @@ export const IndexPageTemplate = ({ images, introText }) => (
 
 export default ({ data }) => {
   const images = objectDeepSearch(data, ['markdownRemark', 'frontmatter', 'slideshow'])
-  const introText = objectDeepSearch(data, ['markdownRemark', 'frontmatter', 'intro_phrase'])
+  const phrase = objectDeepSearch(data, ['markdownRemark', 'frontmatter', 'phrase'])
 
   return (
     <Layout
@@ -56,7 +56,7 @@ export default ({ data }) => {
       title="Principal"
       description="Evelina Cejuela y Asociados. Servicios de Consultoria Ambiental"
     >
-      <IndexPageTemplate images={images} introText={introText}/>
+      <IndexPageTemplate images={images} phrase={phrase}/>
     </Layout>
   )
 }
@@ -82,10 +82,10 @@ export const IndexPageQuery = graphql`
     }
   }
 
-  fragment IntroFields on MarkdownRemark {
+  fragment HeaderFields on MarkdownRemark {
     frontmatter {
       title
-      intro_phrase {
+      header {
         principal
         secundario
         lead
@@ -108,7 +108,7 @@ export const IndexPageQuery = graphql`
             ...ArtDirection
           }
         }
-        intro_text
+        phrase
       }
     }
   }

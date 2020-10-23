@@ -12,13 +12,13 @@ import { objectHasValues } from '../utils'
 
 export const SobreNosotrosPageTemplate = ({
   title,
-  intro: introContent,
+  header,
   objetivos = false,
   elegirnos = false,
   clientes = false
 }) => (
   <>
-    {objectHasValues(introContent) && <Intro {...introContent} title={title}/>}
+    {objectHasValues(header) && <Intro {...header} title={title}/>}
     <main>
       {objectHasValues(objetivos) && <NuestrosObjetivos {...objetivos}/>}
       {objectHasValues(elegirnos) && <PorQueElegirnos {...elegirnos}/>}
@@ -27,9 +27,10 @@ export const SobreNosotrosPageTemplate = ({
   </>
 )
 
-const SobreNosotrosPage = ({ data: { markdownRemark: { frontmatter } } }) => (
+const SobreNosotrosPage = ({ data/*: { markdownRemark: { frontmatter } }*/ }) => (
   <Layout title="Sobre Nosotros">
-    <SobreNosotrosPageTemplate {...frontmatter}/>
+    {console.log(data)}
+    <SobreNosotrosPageTemplate {...data.markdownRemark.frontmatter}/>
   </Layout>
 )
 
@@ -40,7 +41,7 @@ query SobreNosotrosPage(
   $id: String!
 ) {
   markdownRemark(id: { eq: $id }) {
-    ...IntroFields
+    ...HeaderFields
     frontmatter {
       objetivos {
         lead

@@ -6,7 +6,7 @@ import Intro from '../components/HeroSection'
 
 const NotFoundPage = () => {
   const [URL, setUrl] = useState(null)
-  useEffect(() => setUrl(window.location.pathname))
+  useEffect(() => setUrl(window.location.pathname), [])
 
   return (
     <Layout>

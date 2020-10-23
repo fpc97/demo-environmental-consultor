@@ -29,7 +29,7 @@ export default TrabajosRealizados
 
 export const TrabajosRealizadosPageTemplate = ({
   title,
-  intro,
+  header,
   lista_de_trabajos
 }) => {
   const [selected, updateSelected] = useState(null)
@@ -103,7 +103,7 @@ export const TrabajosRealizadosPageTemplate = ({
   
   return(
     <>
-      <Intro title={title} {...intro}/>
+      <Intro title={title} {...header}/>
       <main>
         <article className="trabajos-realizados">
           <div className="trabajos-realizados__container container">
@@ -122,7 +122,7 @@ export const TrabajosRealizadosPageQuery = () => graphql`
     $id: String!
   ) {
     markdownRemark(id: { eq: $id }) {
-      ...IntroFields
+      ...HeaderFields
       frontmatter {
         lista_de_trabajos {
           title

@@ -21,11 +21,11 @@ export default Personal
 
 export const PersonalPageTemplate = ({
   title,
-  intro,
+  header,
   personal
 }) => (
   <>
-    <Intro title={title} {...intro} />
+    <Intro title={title} {...header} />
     <main>
       {personal && <article className="personal">
         <div className="personal__container container">
@@ -69,7 +69,7 @@ export const personalPageQuery = graphql`
     $id: String!
   ) {
     markdownRemark(id: { eq: $id }) {
-      ...IntroFields
+      ...HeaderFields
       frontmatter{
         lista_de_personal {
           nombre

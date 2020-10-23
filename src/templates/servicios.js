@@ -23,14 +23,14 @@ export default ServiciosPage
 
 export const ServiciosPageTemplate = ({
   title,
-  intro,
+  header,
   provincias,
   noAnim = false,
   servicios = [],
   defaultImage
 }) => (
   <>
-    {intro && <Intro {...intro} title={title}/>}
+    {header && <Intro {...header} title={title}/>}
     <main>
       {console.log('Serv', servicios)}
       {provincias && <MapaArgentina provincias={provincias} noAnim={noAnim}/>}
@@ -44,7 +44,7 @@ export const serviciosPageQuery = graphql`
     $id: String!
   ) {
     markdownRemark(id: { eq: $id }) {
-      ...IntroFields
+      ...HeaderFields
       frontmatter {
         provincias
       }
@@ -53,7 +53,7 @@ export const serviciosPageQuery = graphql`
     servicios: allMarkdownRemark(sort: {fields: id}, filter: {frontmatter: {templateKey: {eq: "servicio-individual"}}}) {
       edges {
         node {
-          ...IntroFields
+          ...HeaderFields
           fields {
             slug
           }

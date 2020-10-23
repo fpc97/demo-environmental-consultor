@@ -26,7 +26,7 @@ exports.createPages = ({ actions: { createPage }, graphql }) => {
             }
             frontmatter {
               templateKey
-              intro {
+              header {
                 background {
                   relativePath
                 }
@@ -46,8 +46,8 @@ exports.createPages = ({ actions: { createPage }, graphql }) => {
 
     posts.forEach(edge => {
       const id = edge.node.id
-      const background = edge.node.frontmatter.intro ?
-        edge.node.frontmatter.intro.background :
+      const background = edge.node.frontmatter.header ?
+        edge.node.frontmatter.header.background :
         null
       const backgroundRelativePath = background ? background.relativePath : null
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { Link } from 'gatsby'
 
-import { parseGraphQLEdges, isNonDisplay } from '../utils'
+import { parseGraphQLEdges, isNonDisplay, objectDeepSearch } from '../utils'
 import artDirection from '../utils/art-direction'
 import FollowingImage from './FollowingImage'
 
@@ -15,13 +15,13 @@ class Especializamos extends Component{
     const imageLinks = new Map()
     const edges = parseGraphQLEdges(servicios)
 
-    if (edges) edges.forEach(e => {
-      const backgroundImage = e.node.frontmatter.intro.background
+    if (edges) edges.forEach(edge => {
+      const backgroundImage = objectDeepSearch(edge, ['node', 'frontmatter', 'header', 'background'])
 
       const availableBackground = backgroundImage && isNonDisplay(backgroundImage)
 
       imageLinks.set(
-        e.node.frontmatter.title,
+        edge.node.frontmatter.title,
         artDirection(
           availableBackground ?
             backgroundImage :
@@ -56,7 +56,7 @@ class Especializamos extends Component{
     const generateList = () => parseGraphQLEdges(this.props.servicios).map((d, i) => (
       <li key={`serv-${i}`} className="especializamos__item" onMouseEnter={this.switchImage.bind(this, d.node.frontmatter.title)}>
         <h4 className="especializamos__h4">{d.node.frontmatter.title}</h4>
-        {d.node.frontmatter.intro && <p className="especializamos__descripcion">{excerpt(d.node.frontmatter.intro)}</p>}
+        {d.node.frontmatter.header && <p className="especializamos__descripcion">{excerpt(d.node.frontmatter.header)}</p>}
         <Link to={d.node.fields.slug} className="especializamos__leer-mas">Leer más</Link>
       </li>
     ))

@@ -2,14 +2,12 @@ import React from 'react'
 import { IndexPageTemplate } from '../../templates/index'
 
 const IndexPreview = ({ entry }) => {
-  const intro = entry.getIn(['data', 'intro-phrase'])
+  const phrase = entry.getIn(['data', 'phrase'])
   const images = entry.getIn(['data', 'slideshow'])
-
-  console.log(intro)
 
   return (
     <IndexPageTemplate
-      introText={intro}
+      phrase={phrase}
       images={images}
     />
   )

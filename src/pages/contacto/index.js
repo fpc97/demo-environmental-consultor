@@ -18,12 +18,12 @@ const Contacto = () => {
         </div>
         <div className="container">
           <form className="contact-form" method="POST" data-netlify="true">
-            <label className="contact-form__label contact-form__label--nombre">Nombre</label>
-            <input className="contact-form__text contact-form__text--nombre" type="text" id="nombre" name="enviar"/>
-            <label className="contact-form__label contact-form__label--nombre">Direccion de e-mail*</label>
-            <input className="contact-form__text contact-form__text--email" type="email" id="email" name="enviar" required/>
-            <label className="contact-form__label contact-form__label--nombre">Mensaje*</label>
-            <textarea className="contact-form__textarea" type="text" rows="10" cols="30" id="mensaje" name="enviar" required></textarea>
+            <label className="contact-form__label contact-form__label--nombre" for="nombre" id="label-nombre">Nombre</label>
+            <input className="contact-form__text contact-form__text--nombre" type="text" id="nombre" name="nombre"/>
+            <label className="contact-form__label contact-form__label--email" for="email" id="label-email">Direccion de e-mail*</label>
+            <input className="contact-form__text contact-form__text--email" type="email" id="email" name="email" required/>
+            <label className="contact-form__label contact-form__label--mensaje" for="mensaje" id="label-mensaje">Mensaje*</label>
+            <textarea className="contact-form__textarea" type="text" rows="10" cols="30" id="mensaje" name="mensaje" required></textarea>
             <div data-netlify-recaptcha="true"></div>
             <button type="submit" className="contact-form__submit" id="enviar" name="enviar">Enviar</button>
           </form>

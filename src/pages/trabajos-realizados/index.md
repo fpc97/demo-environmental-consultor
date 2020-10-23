@@ -1,8 +1,8 @@
 ---
 templateKey: trabajos-realizados
 title: asdasdasd
-intro:
-  brief: dasdadasd
+header:
+  lead: dasdadasd
   principal: asdawdadwad
   secundario: wad
   background: /img/non-display.png

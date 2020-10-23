@@ -18,7 +18,7 @@ collections:
         name: "index"
         label: "Principal"
         fields:
-          - {label: "Texto introductorio", name: "intro-phrase", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: []}
+          - {label: "Texto introductorio", name: "phrase", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: []}
 #          - {label: "Imagenes de fondo", name: "slideshow", widget: "image", default: /img/default-bat.jpg}
           - label: "Imagenes de fondo"
             name: "slideshow"
@@ -62,7 +62,7 @@ collections:
         fields:
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
-            name: "intro"
+            name: "header"
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
@@ -130,7 +130,7 @@ collections:
         fields:
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
-            name: "intro"
+            name: "header"
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
@@ -177,7 +177,7 @@ collections:
         fields:
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
-            name: "intro"
+            name: "header"
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
@@ -221,7 +221,7 @@ collections:
         fields:
           - {label: "Titulo", name: "title", widget: "string"}
           - label: "Introduccion"
-            name: "intro"
+            name: "header"
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
@@ -244,7 +244,7 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "servicio-individual"}
       - {label: "Titulo", name: "title", widget: "string"}
       - label: "Introduccion"
-        name: "intro"
+        name: "header"
         widget: "object"
         fields:
           - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
