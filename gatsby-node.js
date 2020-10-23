@@ -26,7 +26,9 @@ exports.createPages = ({ actions: { createPage }, graphql }) => {
             }
             frontmatter {
               templateKey
+              title
             }
+            html
           }
         }
       }
@@ -49,13 +51,18 @@ exports.createPages = ({ actions: { createPage }, graphql }) => {
 
       const isIndex = templateName === 'index'
 
+      // Specifics for servicio-individual
+      const html = edge.node.html
+      const title = edge.node.frontmatter ? edge.node.frontmatter.title : false
+
       createPage({
         path: isIndex ? '/' : filePath,
         component: path.resolve(
           `src/templates/${String(templateName)}.js`
         ),
         context: {
-          id
+          id,
+          ...(templateName === 'servicio-individual' ? { html, title } : {})
         }
       })
     })

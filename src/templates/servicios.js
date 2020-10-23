@@ -32,7 +32,6 @@ export const ServiciosPageTemplate = ({
   <>
     {header && <Intro {...header} title={title}/>}
     <main>
-      {console.log('Serv', servicios)}
       {provincias && <MapaArgentina provincias={provincias} noAnim={noAnim}/>}
       {servicios.edges.length && <Especializamos servicios={servicios} defaultImage={defaultImage}/>}
     </main>

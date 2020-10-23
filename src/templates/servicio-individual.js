@@ -6,20 +6,20 @@ import Intro from '../components/HeroSection'
 
 import { HTMLContent } from '../components/Content'
 
-const ServicioIndividual = ({ data: { markdownRemark } }) => (
-  <Layout title={markdownRemark.frontmatter.title}>
-    <ServicioIndividualPageTemplate {...markdownRemark} title={markdownRemark.frontmatter.title}/>
+const ServicioIndividual = ({ pageContext: { html, title } }) => (
+  <Layout title={title}>
+    <ServicioIndividualPageTemplate html={html} title={title}/>
   </Layout>
 )
 
 export default ServicioIndividual
 
 export const ServicioIndividualPageTemplate = ({
-  frontmatter,
+  title,
   html
 }) => (
   <>
-    <Intro title={frontmatter.title}/>
+    <Intro title={title}/>
     <main className="servicio-individual">
       <div className="servicio-individual__container container">
         <HTMLContent content={html}/>
@@ -27,7 +27,7 @@ export const ServicioIndividualPageTemplate = ({
     </main>
   </>
 )
-
+/*
 export const servicioIndividualQuery = graphql`
   query ServicioIndividualByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
@@ -38,4 +38,4 @@ export const servicioIndividualQuery = graphql`
       }
     }
   }
-`
+`*/

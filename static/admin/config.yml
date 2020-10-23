@@ -237,7 +237,7 @@ collections:
   # SERVICIOS INDIVIDUALES -------------------------------------------------------------------------------------------
   - name: "servicios-individuales"
     label: "Servicios individuales"
-    folder: "src/pages/servicios"
+    folder: "src/pages/servicios-individuales"
     create: true
     slug: "{{title}}"
     fields:
