@@ -9,8 +9,8 @@ const PersonalPreview = ({ entry, getAsset }) => {
   const personal = entryPersonal ? entryPersonal.toJS() : []
 
   if (entryPersonal) {
-    entryPersonal.forEach((coco, i) => {
-      personal[i].foto = getAsset(coco.get('foto')).url
+    entryPersonal.forEach((person, i) => {
+      personal[i].foto = getAsset(person.get('foto')).url
     })
   }
 
