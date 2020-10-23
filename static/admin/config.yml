@@ -141,7 +141,7 @@ collections:
             fields:
               - {label: "Titulo", name: "title", widget: "string"}
               - {label: "Cliente", name: "cliente", widget: "string"}
-              - {label: "Portada", name: "portada", widget: "image", default: /img/default-bats.jpg}
+              - {label: "Portada", name: "portada", widget: "image"}
               - {label: "Contenido", name: "contenido", buttons: [bold, italic, link, heading-three, heading-four, heading-five, heading-six], widget: "markdown"}
 
   # EQUIPAMIENTO ---------------------------------------------------------------------------------------------------- file: "src/pages/trabajos-realizados/index.md"
@@ -188,7 +188,7 @@ collections:
             fields:
               - {label: "Nombre", name: "nombre", widget: "string"}
               - {label: "Cargo", name: "cargo", widget: "string", hint: "Que cargo tiene esta persona"}
-              - {label: "Foto", name: "foto", widget: "image", allow_multiple: false, required: false, default: /img/default-avatar.jpg}
+              - {label: "Foto", name: "foto", widget: "image", allow_multiple: false, required: false}
               - {label: "Descripcion", name: "descripcion", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: [], hint: "Descripcion breve de esta persona", required: false}
               - label: "Comunicacion"
                 name: "comunicacion"
