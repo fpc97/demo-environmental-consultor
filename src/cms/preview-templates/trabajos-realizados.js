@@ -4,7 +4,7 @@ import { getIntro } from '../utils'
 import marked from 'marked'
 
 const TrabajosRealizadosPreview = ({ entry, getAsset, widgetsFor }) => {
-  const intro = getIntro(entry, getAsset)
+  const header = getIntro(entry, getAsset)
 
   const title = entry.getIn(['data', 'title'])
 
@@ -18,7 +18,7 @@ const TrabajosRealizadosPreview = ({ entry, getAsset, widgetsFor }) => {
   return (
     <TrabajosRealizadosPageTemplate
       title={title}
-      intro={intro}
+      header={header}
       lista_de_trabajos={trabajos}
     />
   )

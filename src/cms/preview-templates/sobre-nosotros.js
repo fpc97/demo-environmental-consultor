@@ -3,7 +3,7 @@ import { SobreNosotrosPageTemplate } from '../../templates/sobre-nosotros'
 import { getIntro } from '../utils'
 
 const SobreNosotrosPreview = ({ entry, getAsset }) => {
-  const intro = getIntro(entry, getAsset)
+  const header = getIntro(entry, getAsset)
 
   const objetivos = {
     lead: entry.getIn(['data', 'objetivos', 'lead']),
@@ -23,11 +23,11 @@ const SobreNosotrosPreview = ({ entry, getAsset }) => {
   elegirnos.items = elegirnos.items ? elegirnos.items.toJS() : []
   const clientes = clientesList ? clientesList.toJS() : []
 
-  intro.background = intro.background
+  header.background = header.background
 
   return (
     <SobreNosotrosPageTemplate
-      intro={intro}
+      header={header}
       objetivos={objetivos}
       elegirnos={elegirnos}
       clientes={clientes}

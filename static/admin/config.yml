@@ -153,7 +153,7 @@ collections:
 #          # intro (titulo, lead, p1, p2, background)
 #          - {label: "Titulo", name: "title", widget: "string"}
 #          - label: "Introduccion"
-#            name: "intro"
+#            name: "header"
 #            widget: "object"
 #            fields:
 #              - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}

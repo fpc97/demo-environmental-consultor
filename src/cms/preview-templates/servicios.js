@@ -3,7 +3,7 @@ import { ServiciosPageTemplate } from '../../templates/servicios'
 import { getIntro } from '../utils'
 
 const ServiciosPreview = ({ entry, getAsset }) => {
-  const intro = getIntro(entry, getAsset)
+  const header = getIntro(entry, getAsset)
 
   const title = entry.getIn(['data', 'title'])
 
@@ -13,7 +13,7 @@ const ServiciosPreview = ({ entry, getAsset }) => {
   return (
     <ServiciosPageTemplate
       title={title}
-      intro={intro}
+      header={header}
       provincias={provincias}
       noAnim
     />

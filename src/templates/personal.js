@@ -9,11 +9,11 @@ import { SocialMedia } from '../components/Icon'
 
 const Personal = ({ data: { markdownRemark: { frontmatter: {
   title,
-  intro,
+  header,
   lista_de_personal
 }}}}) => (
   <Layout title="Personal">
-    <PersonalPageTemplate title={title} {...intro} personal={lista_de_personal} />
+    <PersonalPageTemplate title={title} {...header} personal={lista_de_personal} />
   </Layout>
 )
 
