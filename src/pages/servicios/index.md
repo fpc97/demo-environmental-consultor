@@ -1,14 +1,12 @@
 ---
-templateKey: servicios
 title: Servicios
 header:
-  lead: Asd dsa dsa das
-  principal: " asdad asd ad ad asd ad ad"
-  secundario: asdasd asd ad ad
-  background: /default-avatar.jpg
+  lead: Asddsa
+  principal: asddasddas
+  secundario: dsadasasd
+  background: /img/untitled.png
 provincias:
-  - Chubut
-  - Buenos Aires
-  - Santa Fe
-  - Corrientes
+  - Chaco
+  - Entre Ríos
+  - Formosa
 ---
