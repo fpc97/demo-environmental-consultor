@@ -26,11 +26,6 @@ exports.createPages = ({ actions: { createPage }, graphql }) => {
             }
             frontmatter {
               templateKey
-              header {
-                background {
-                  relativePath
-                }
-              }
             }
           }
         }
@@ -46,10 +41,6 @@ exports.createPages = ({ actions: { createPage }, graphql }) => {
 
     posts.forEach(edge => {
       const id = edge.node.id
-      const background = edge.node.frontmatter.header ?
-        edge.node.frontmatter.header.background :
-        null
-      const backgroundRelativePath = background ? background.relativePath : null
 
       // If templateKey doesn't exist take the name of the folder containing the .md file
       const templateName = edge.node.frontmatter.templateKey ||
@@ -64,8 +55,7 @@ exports.createPages = ({ actions: { createPage }, graphql }) => {
           `src/templates/${String(templateName)}.js`
         ),
         context: {
-          id,
-          background: backgroundRelativePath
+          id
         }
       })
     })

@@ -1,10 +1,24 @@
 .servicio-individual{
   padding-bottom: 14rem;
 
-  & ol,
-  & ul{
+  /*
+  & ul,
+  & ol{
     padding-left: 4rem;
     margin: 3rem 0 5rem;
+  }*/
+
+  /* Gatsby has an issue with ol's so instead of using the very practical
+  styles I commented out up there I have to do the following: */
+  & li{
+    margin-left: 4rem;
+
+    &:first-of-type{
+      margin-top: 3rem;
+    }
+    &:last-of-type{
+      margin-bottom: 5rem;
+    }
   }
 
   & p,
