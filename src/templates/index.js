@@ -24,7 +24,7 @@ export const IndexPageTemplate = ({ images, phrase }) => (
   <div>
     <div className="home-background">
       <div className="home-background__slideshow">
-        <SlideShow images={images} />
+        <SlideShow images={images}/>
       </div>
       <div className="home-background__blue">
         <div className="home-background__plain">&nbsp;</div>
@@ -45,8 +45,11 @@ export const IndexPageTemplate = ({ images, phrase }) => (
 )
 
 export default ({ data }) => {
-  const images = objectDeepSearch(data, ['markdownRemark', 'frontmatter', 'slideshow'])
+  const slideshow = objectDeepSearch(data, ['markdownRemark', 'frontmatter', 'slideshow'])
+  const images = Array.isArray(slideshow) && slideshow.length > 0 ? slideshow : [data.defaultImage]
   const phrase = objectDeepSearch(data, ['markdownRemark', 'frontmatter', 'phrase'])
+
+  console.log('phrase', data)
 
   return (
     <Layout
@@ -103,13 +106,14 @@ export const IndexPageQuery = graphql`
   ) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
+        phrase
         slideshow {
           childImageSharp {
             ...ArtDirection
           }
         }
-        phrase
       }
     }
+    ...DefaultImage
   }
 `
