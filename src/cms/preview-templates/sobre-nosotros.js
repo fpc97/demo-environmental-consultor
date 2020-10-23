@@ -5,6 +5,8 @@ import { getIntro } from '../utils'
 const SobreNosotrosPreview = ({ entry, getAsset }) => {
   const header = getIntro(entry, getAsset)
 
+  const title = entry.getIn(['data', 'title'])
+
   const objetivos = {
     lead: entry.getIn(['data', 'objetivos', 'lead']),
     principal: entry.getIn(['data', 'objetivos', 'principal']),
@@ -27,6 +29,7 @@ const SobreNosotrosPreview = ({ entry, getAsset }) => {
 
   return (
     <SobreNosotrosPageTemplate
+      title={title}
       header={header}
       objetivos={objetivos}
       elegirnos={elegirnos}

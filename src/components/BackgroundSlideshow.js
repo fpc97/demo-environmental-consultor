@@ -53,6 +53,8 @@ export default ({ images }) => {
 
   if (images.length === 0) images.push(file)
 
+  console.log(file)
+
   useEffect(() => {
     return () => {
       if (interval) clearInterval(interval)
