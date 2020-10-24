@@ -2,9 +2,10 @@ import React from 'react'
 import { ServicioIndividualPageTemplate } from '../../templates/servicio-individual'
 import marked from 'marked'
 
-const ServiciosPreview = ({ entry, widgetFor }) => {
+const ServiciosPreview = ({ entry }) => {
   const title = entry.getIn(['data', 'title'])
-  const html = marked(entry.getIn(['data', 'body']))
+  const markdown = entry.getIn(['data', 'body'])
+  const html = markdown ? marked(markdown) : ''
 
   return (
     <ServicioIndividualPageTemplate

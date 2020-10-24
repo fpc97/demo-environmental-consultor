@@ -121,7 +121,7 @@ const SectionWithButton = ({
 
   return (
     <li className={`${className}${isOn ? ' on' : ''}`}>
-      <i role="button" onClick={handleClick} onKeyDown={handleClick} tabindex="0">&nbsp;</i>
+      <i role="button" onClick={handleClick} onKeyDown={handleClick} tabindex="0" aria-label={`deploy section ${className}`}>&nbsp;</i>
       {children}
     </li>
   )
