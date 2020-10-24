@@ -53,6 +53,7 @@ export default ({ data }) => {
       noTitle
       noFooter
       transparentMobile
+      blueNav
       title="Principal"
       description="Evelina Cejuela y Asociados. Servicios de Consultoria Ambiental"
     >

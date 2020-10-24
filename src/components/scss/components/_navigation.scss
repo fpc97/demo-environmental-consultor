@@ -18,6 +18,10 @@ $transitionduration: .4s;
     min-height: 100vh;
     transition: background-color .001s .4s;
     background-color: col(theme-green);
+
+    .blue-nav &{
+      background-color: col(theme);
+    }
   }
 /*
   @media (min-width: breakpoint(nav)) {
@@ -44,6 +48,10 @@ $transitionduration: .4s;
       top: 0;
       left: 0;
       transform: translate(-50%, -50%);
+
+      .blue-nav &{
+        background-color: col(theme);
+      }
     }
   }
   
@@ -69,6 +77,9 @@ $transitionduration: .4s;
 
     .transparent & {
       background-color: transparent;
+    }
+    .blue-nav &{
+      background-color: col(theme);
     }
   }
 

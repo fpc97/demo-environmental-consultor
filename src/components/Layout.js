@@ -15,9 +15,10 @@ export default ({
   noTitle,
   noFooter,
   transparentMobile,
+  blueNav,
   // SEO
   description,
-  lang,
+  lang = 'es',
   meta,
   title
 }) => {
@@ -43,8 +44,8 @@ export default ({
 
   return (
     <div>
-      <SEO {...{ description, lang: 'es', meta, title }}/>
-      <Navigation noTitle={noTitle} transparentMobile={transparentMobile}/>
+      <SEO {...{ description, lang, meta, title }}/>
+      <Navigation {...{ noTitle, transparentMobile, blueNav }}/>
       {children}
       {!noFooter && <Footer />}
     </div>

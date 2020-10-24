@@ -75,6 +75,18 @@ module.exports = {
         theme_color: `#003575`,
         display: `minimal-ui`,
         icon: `src/img/favicon.png`,
+        /*icons: [
+          {
+            src: `src/img/192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `src/img/512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          }
+        ],*/
         cache_busting_mode: 'none'
       }
     },

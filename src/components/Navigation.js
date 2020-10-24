@@ -10,9 +10,11 @@ const TITLE_HIDE = 1200
 
 const Navigation = ({
   noTitle,
-  transparentMobile
+  transparentMobile,
+  blueNav
 }) => {
   const [isMobile, toggleMobile] = useState(false)
+  const [isInited, initialize] = useState(false)
   const [isLogoHidden, toggleLogo] = useState(false)
 
   useEffect(() => {
@@ -23,15 +25,23 @@ const Navigation = ({
     }
     handleResize()
 
+    initialize(true)
+
     window.addEventListener('resize', handleResize)
 
     return () => window.removeEventListener('resize', handleResize)
   })
 
-  return <>{isMobile ? <MobileNavigation transparent={transparentMobile}/> : <DesktopNavigation noTitle={noTitle || isLogoHidden}/>}</>
+  const currentNavigation = isMobile ?
+    <MobileNavigation transparent={transparentMobile} blueNav={blueNav}/> :
+    <DesktopNavigation noTitle={noTitle || isLogoHidden}/>
+
+  return <>
+    {isInited ? currentNavigation : <span invisible></span>}
+  </>
 }
 
-const MobileNavigation = ({ transparent }) => {
+const MobileNavigation = ({ transparent, blueNav = false }) => {
   const [isBurgerOpen, toggleBurger] = useState(false)
   const [isScrolled, toggleScrolled] = useState(false)
 
@@ -50,7 +60,11 @@ const MobileNavigation = ({ transparent }) => {
   })
 
   return (
-    <div className={`navigation-mobile${isBurgerOpen ? ' open': ' closed'}${transparent || !isScrolled ? ' transparent' : ''}`}>
+    <div
+      className={`navigation-mobile${isBurgerOpen ? ' open': ' closed'}
+      ${transparent || !isScrolled ? ' transparent' : ''}
+      ${blueNav ? ' blue-nav' : ''}`}
+    >
       <i className="navigation-mobile__circle">&nbsp;</i>
       <div className="navigation-mobile__top">
         <div className="navigation-mobile__logo">
