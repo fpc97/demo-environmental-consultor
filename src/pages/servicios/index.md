@@ -4,7 +4,7 @@ header:
   lead: Asddsa
   principal: asddasddas
   secundario: dsadasasd
-  background: /img/untitled.png
+  background: /img/spectr.jpg
 provincias:
   - Chaco
   - Entre Ríos
