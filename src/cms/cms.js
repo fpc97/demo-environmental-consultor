@@ -6,6 +6,7 @@ import ServiciosPageTemplate from './preview-templates/servicios'
 import PersonalPageTemplate from './preview-templates/personal'
 import TrabajosPageTemplate from './preview-templates/trabajos-realizados'
 import IndexPageTemplate from './preview-templates/index'
+import ServicioIndividualPageTemplate from './preview-templates/servicio-individual'
 
 CMS.registerLocale('es', es)
 
@@ -14,3 +15,4 @@ CMS.registerPreviewTemplate('servicios', ServiciosPageTemplate)
 CMS.registerPreviewTemplate('personal', PersonalPageTemplate)
 CMS.registerPreviewTemplate('trabajos-realizados', TrabajosPageTemplate)
 CMS.registerPreviewTemplate('index', IndexPageTemplate)
+CMS.registerPreviewTemplate('servicios-individuales', ServicioIndividualPageTemplate)

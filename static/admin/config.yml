@@ -189,7 +189,7 @@ collections:
               - {label: "Nombre", name: "nombre", widget: "string"}
               - {label: "Cargo", name: "cargo", widget: "string", hint: "Que cargo tiene esta persona"}
               - {label: "Foto", name: "foto", widget: "image", allow_multiple: false, required: false}
-              - {label: "Descripcion", name: "descripcion", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: [], hint: "Descripcion breve de esta persona", required: false}
+              - {label: "Descripcion", name: "descripcion", widget: "text", hint: "Descripcion breve de esta persona", required: false}
               - label: "Comunicacion"
                 name: "comunicacion"
                 hint: "Perfiles o direcciones en donde encontrar a esta persona, redes sociales, mail, etc."
