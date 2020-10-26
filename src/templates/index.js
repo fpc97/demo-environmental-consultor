@@ -63,42 +63,6 @@ export default ({ data }) => {
 }
 
 export const IndexPageQuery = graphql`
-  fragment ArtDirection on ImageSharp {
-    sm: fluid(maxWidth: 426, maxHeight: 240) {
-      ...GatsbyImageSharpFluid
-    }
-    md: fluid(maxWidth: 960, maxHeight: 540) {
-      ...GatsbyImageSharpFluid
-    }
-    lg: fluid(maxWidth: 1920, maxHeight: 1080, quality: 45) {
-      ...GatsbyImageSharpFluid
-    }
-  }
-
-  fragment DefaultImage on Query {
-    defaultImage: file(relativePath: {eq: "default-bat.jpg"}) {
-      childImageSharp {
-        ...ArtDirection
-      }
-    }
-  }
-
-  fragment HeaderFields on MarkdownRemark {
-    frontmatter {
-      title
-      header {
-        principal
-        secundario
-        lead
-        background {
-          childImageSharp {
-            ...ArtDirection
-          }
-        }
-      }
-    }
-  }
-
   query IndexPage(
     $id: String!
   ) {
