@@ -109,6 +109,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }`,
     `type Frontmatter {
       slideshow: [File]! @fileByRelativePath,
+      background: File @fileByRelativePath
     }`
   ]
 
