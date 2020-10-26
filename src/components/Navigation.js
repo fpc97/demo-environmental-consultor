@@ -32,12 +32,9 @@ const Navigation = ({
     return () => window.removeEventListener('resize', handleResize)
   })
 
-  const currentNavigation = isMobile ?
-    <MobileNavigation transparent={transparentMobile} blueNav={blueNav}/> :
-    <DesktopNavigation noTitle={noTitle || isLogoHidden}/>
-
   return <>
-    {isInited ? currentNavigation : <span invisible></span>}
+    {(!isInited || isMobile) && <MobileNavigation transparent={transparentMobile} blueNav={blueNav}/>}
+    {(!isInited || !isMobile) && <DesktopNavigation noTitle={noTitle || isLogoHidden}/>}
   </>
 }
 
