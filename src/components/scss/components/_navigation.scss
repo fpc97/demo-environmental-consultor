@@ -23,10 +23,10 @@ $transitionduration: .4s;
       background-color: col(theme);
     }
   }
-/*
-  @media (min-width: breakpoint(nav)) {
+
+  @media (min-width: 850px) {
     display: none;
-  }*/
+  }
 
   &__circle{
     height: 100%;
@@ -311,6 +311,10 @@ $transitionduration: .4s;
   max-width: 176rem;
   margin: 0 auto;
   height: auto;
+
+  @media (max-width: 851px) {
+    display: none;
+  }
 
   //background-color: col(theme);
 
