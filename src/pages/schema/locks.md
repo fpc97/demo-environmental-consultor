@@ -5,7 +5,7 @@ header:
   lead: a a
   principal: a a
   secundario: a a
-  background: /default-avatar.jpg
+  background: ../../img/default-avatar.jpg
 provincias:
   - Chubut
   - Buenos Aires
