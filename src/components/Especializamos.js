@@ -49,7 +49,7 @@ class Especializamos extends Component{
     const excerpt = intro => {
       if (intro.lead) return intro.lead
       const excerpt = intro.principal || intro.secundario
-      const isLong = excerpt.length > this.state.excerptLength
+      const isLong = excerpt && excerpt.length > this.state.excerptLength
       return `${excerpt.slice(0, this.state.excerptLength)}${isLong ? '...' : ''}`
     }
 
