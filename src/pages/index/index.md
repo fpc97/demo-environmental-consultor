@@ -6,9 +6,8 @@ phrase: Somos un grupo de profesionales cuyo pilar principal es lograr el
 slideshow:
   - /img/p1300564.jpg
 phonenumbers:
-  - "02804356687"
+  - +54 9 280 435 6687
 emailaddresses:
-  - evelina.cejuela@gmail.com
   - evelina.cejuela@gmail.com
 social-media:
   - url: https://www.linkedin.com/in/evelina-cejuela-17ba4214/
