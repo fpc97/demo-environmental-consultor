@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Recaptcha from 'react-google-recaptcha';
+import Recaptcha from 'react-google-recaptcha'
 import { navigate } from 'gatsby-link'
 
 import { encode } from '../../utils'
