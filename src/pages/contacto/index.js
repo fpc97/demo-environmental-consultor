@@ -10,6 +10,86 @@ import ContactBundle from '../../components/ContactBundle'
 
 const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
 
+export default class Contact extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
+  handleRecaptcha = value => {
+    this.setState({ 'g-recaptcha-response': value })
+  }
+
+  handleSubmit = e => {
+    e.preventDefault()
+    console.log(this.state)
+
+    const form = e.target
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...this.state
+      })
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch(error => alert(error))
+  }
+
+  render() {
+    return (
+      <Layout title="Contacto">
+        <main>
+          <div className="contacto__background">
+            <header className="contacto__intro">
+              <div className="container">
+                <h2 className="contacto__h2">Contacto</h2>
+                <p className="contacto__lead lead">Envíenos un mail o contáctenos en nuestras redes sociales</p>
+              </div>
+            </header>
+          </div>
+          <div className="container">
+            <form
+              className="contact-form"
+              name="Contact form"
+              method="POST"
+              action="/contacto/exito"
+              data-netlify="true"
+              data-netlify-recaptcha="true"
+              onSubmit={this.handleSubmit}
+            >
+              <input type="hidden" name="form-name" onSubmit={this.handleChange} value="Contact form"/>
+              <label className="contact-form__label contact-form__label--nombre" for="nombre" id="label-nombre">Nombre</label>
+              <input className="contact-form__text contact-form__text--nombre" onChange={this.handleChange} type="text" id="nombre" name="nombre"/>
+              <label className="contact-form__label contact-form__label--email" for="email" id="label-email">Direccion de e-mail*</label>
+              <input className="contact-form__text contact-form__text--email" onChange={this.handleChange} type="email" id="email" name="email" required/>
+              <label className="contact-form__label contact-form__label--mensaje" for="mensaje" id="label-mensaje">Mensaje*</label>
+              <textarea className="contact-form__textarea" type="text" rows="10" onChange={this.handleChange} cols="30" id="mensaje" name="mensaje" required></textarea>
+              <Recaptcha
+                ref="recaptcha"
+                sitekey={RECAPTCHA_KEY}
+                onChange={this.handleRecaptcha}
+              />
+              <button type="submit" className="contact-form__submit" id="enviar" name="enviar">Enviar</button>
+            </form>
+            <ContactBundle
+              classNamePrefix="contacto"
+              className="contacto__address contacto__social-media contacto__phone-numbers contacto__emails"  
+            />
+          </div>
+        </main>
+      </Layout>
+    )
+  }
+}
+
+/*
 const Contacto = () => {
   const [captchaCode, handleCaptcha] = useState(null)
   const [formContent, addForm] = useState({})
@@ -20,6 +100,8 @@ const Contacto = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
+
+    console.log(formContent)
 
     const form = e.target
 
@@ -32,7 +114,7 @@ const Contacto = () => {
         ...formContent
       })
     })
-    .then(() => navigate(form.getAttribute('action')))
+    .then(() => navigate(form.getAttribute('/sobre-nosotros')))
     .catch(error => alert(error))
   }
 
@@ -57,7 +139,7 @@ const Contacto = () => {
             data-netlify-recaptcha="true"
             onSubmit={handleSubmit}
           >
-            <input type="hidden" name="form-name" onLoad={handleChange} value="Contact form"/>
+            <input type="hidden" name="form-name" onSubmit={handleChange} value="Contact form"/>
             <label className="contact-form__label contact-form__label--nombre" for="nombre" id="label-nombre">Nombre</label>
             <input className="contact-form__text contact-form__text--nombre" onChange={handleChange} type="text" id="nombre" name="nombre"/>
             <label className="contact-form__label contact-form__label--email" for="email" id="label-email">Direccion de e-mail*</label>
@@ -65,6 +147,7 @@ const Contacto = () => {
             <label className="contact-form__label contact-form__label--mensaje" for="mensaje" id="label-mensaje">Mensaje*</label>
             <textarea className="contact-form__textarea" type="text" rows="10" onChange={handleChange} cols="30" id="mensaje" name="mensaje" required></textarea>
             <Recaptcha
+              ref="recaptcha"
               sitekey={RECAPTCHA_KEY}
               onChange={value => handleCaptcha(value)}
             />
@@ -80,4 +163,4 @@ const Contacto = () => {
   )
 }
 
-export default Contacto
+export default Contacto*/
