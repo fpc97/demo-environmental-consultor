@@ -7,7 +7,8 @@ const Exito = () => {
   return (
     <Layout title="Mensaje enviado">
       <Intro
-        title="Su mensaje ha sido enviado!"
+        title="Mensaje enviado con éxito"
+        lead="Gracias por comunicarse con nosotros!"
       />
     </Layout>
   )

@@ -61,3 +61,7 @@ export const isNonDisplay = img => {
 
   return typeof src === 'string' && src.endsWith('non-display.png')
 }
+
+export const encode = data => Object.keys(data)
+  .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+  .join("&");
