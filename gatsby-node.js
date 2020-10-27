@@ -70,8 +70,8 @@ exports.createPages = ({ actions: { createPage }, graphql }) => {
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
+  fmImagesToRelative(node)
   const { createNodeField } = actions
-  fmImagesToRelative(node) // convert image paths for gatsby images
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
@@ -108,8 +108,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       frontmatter: Frontmatter
     }`,
     `type Frontmatter {
-      slideshow: [File]! @fileByRelativePath,
-      background: File @fileByRelativePath
+      slideshow: [File]! @fileByRelativePath
     }`
   ]
 

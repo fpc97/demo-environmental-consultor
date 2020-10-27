@@ -5,7 +5,7 @@ header:
   lead: a a
   principal: a a
   secundario: a a
-  background: ../../img/default-avatar.jpg
+  background: /img/wind-3043896_1920-1-flip.jpg
 provincias:
   - Chubut
   - Buenos Aires

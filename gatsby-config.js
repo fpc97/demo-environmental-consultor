@@ -12,8 +12,6 @@ module.exports = {
     `gatsby-plugin-purgecss`,
 
     // File handling things
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -29,6 +27,8 @@ module.exports = {
         path: `${__dirname}/src/img`
       }
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
 
     {
       resolve: `gatsby-source-filesystem`,

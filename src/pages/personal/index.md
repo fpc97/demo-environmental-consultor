@@ -13,7 +13,6 @@ header:
     mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
     ridiculus mus. Nulla lectus diam, pulvinar et consectetur sit amet, lobortis
     eget nunc. Fusce a augue sit amet erat dapibus hendrerit nec ut eros
-  background: ""
 lista-de-personal:
   - nombre: Evelina Cejuela
     cargo: Lider del proyecto
