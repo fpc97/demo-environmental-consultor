@@ -42,7 +42,7 @@ lista-de-personal:
         site: Linkedin
   - nombre: Francisca Bellusci
     cargo: Asistente de campo
-    foto: /img/franca.jpeg
+    foto: /img/franca.jpg
     descripcion: Soy Técnica Superior en Intervenciones Sociales, Comunitarias e
       Institucionales (Psicología Social), graduada del instituto Patagonico de
       Ciencias Sociales-IPCS- Puerto Madryn, Chubut, y Guía provincial de
