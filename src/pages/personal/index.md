@@ -28,11 +28,13 @@ lista-de-personal:
         site: Linkedin
   - nombre: Nada de nada
     cargo: ddddd
-    foto: /img/wind-3043896_1920-1-flip.jpg
+    foto: /img/anto-2.jpg
     descripcion: adafaseasersesvssdvsfsfs
     comunicacion:
       - url: www.asd.com
         site: Linkedin
       - url: dwadadsdadas.com.ar
+        site: Linkedin
+      - url: https://www.linkedin.com/in/francisca-bellusci-84123a80/
         site: Linkedin
 ---
