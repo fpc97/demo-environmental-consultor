@@ -26,4 +26,13 @@ lista-de-personal:
         site: Facebook
       - url: https://www.linkedin.com/dasd
         site: Linkedin
+  - nombre: HOla
+    cargo: asd
+    foto: /img/def.png
+    descripcion: adafaseasersesvssdvsfsfs
+    comunicacion:
+      - url: www.asd.com
+        site: Linkedin
+      - url: dwadadsdadas.com.ar
+        site: Linkedin
 ---
