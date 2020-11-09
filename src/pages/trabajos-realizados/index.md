@@ -2,23 +2,19 @@
 templateKey: trabajos-realizados
 title: asdasdasd
 header:
-  lead: dasdadasdasdasdasdd
+  lead: dasdadasdasdasdasdd adasdadawda
   principal: asdawdadwad
   secundario: wad
 lista-de-trabajos:
   - title: Trabajo 1
     cliente: ALUAR Aluminio Argention
-    portada: /img/default-bat.jpg
-    contenido: >-
-      ### Hololwlwlwolo asdajdh adhiadha idhad *asdad ads ad
-      ad**dadadawdawdawd*****dadwaddadsadasd**
-
+    portada: /img/cover.jpg
+    contenido: |-
+      ### Hololwlwlwolo asdajdh adhiadha idhad *asdad ads ad ad**dada**
 
       asdawdawd
 
-
       ### wdadsdsd
-
 
       aefefasfefasfasdfadczcf
 ---
