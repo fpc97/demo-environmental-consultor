@@ -18,23 +18,22 @@ lista-de-personal:
     cargo: Líder de Proyecto
     foto: /img/20190715_203548.jpg
     descripcion: Soy Licenciada en Ciencias Biológicas, Graduada de la Universidad
-      Nacional de la Patagonia (Puerto Madryn). Mis áreas de experiencias están
-      en la Comunicación Ambiental, el Turismo Responsable y principalmente en
-      la Evaluación de Impacto Ambiental.
+      Nacional de la Patagonia (Puerto Madryn-Chubut). Mis áreas de experiencias
+      están en la Comunicación Ambiental, el Turismo Responsable y
+      principalmente en la Evaluación de Impacto Ambiental.
     comunicacion:
       - url: https://www.facebook.com/asd
         site: Facebook
       - url: https://www.linkedin.com/dasd
         site: Linkedin
-  - nombre: Nada de nada
-    cargo: ddddd
+  - nombre: Antonella Melisa Lista Sofia
+    cargo: Coordinadora
     foto: /img/anto-2.jpg
-    descripcion: adafaseasersesvssdvsfsfs
+    descripcion: Soy Técnica Universitaria en Protección Ambiental a meses de
+      terminar mi Licenciatura en la Universidad Nacional de la Patagonia, Sede
+      Trelew-Chubut.  Mi área de experiencia es en la Conservación de la flora
+      patagónica y restauración ambiental.
     comunicacion:
-      - url: www.asd.com
-        site: Linkedin
-      - url: dwadadsdadas.com.ar
-        site: Linkedin
-      - url: https://www.linkedin.com/in/francisca-bellusci-84123a80/
+      - url: https://www.linkedin.com/in/antonella-melisa-lista-sofia-b60600127/
         site: Linkedin
 ---
