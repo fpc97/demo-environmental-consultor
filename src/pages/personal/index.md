@@ -15,7 +15,7 @@ header:
     eget nunc. Fusce a augue sit amet erat dapibus hendrerit nec ut eros
 lista-de-personal:
   - nombre: Evelina Cejuela
-    cargo: Lider del proyecto
+    cargo: La mas Mejor
     foto: /img/cocos.png
     descripcion: Evelinatiene años de experiencia trabajando con murcielagos y aves
       etc etc Lorem ipsum dolor sit amet, **consectetur adipiscing elit**. Nulla
