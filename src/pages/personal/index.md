@@ -2,7 +2,7 @@
 templateKey: personal
 title: Nuestro Personal
 header:
-  lead: sususususuusus
+  lead: Somos lo mejor de lo mejor
   principal: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis
     tellus eu tortor mollis eleifend. Donec vitae elementum neque, at tincidunt
     mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
