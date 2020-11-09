@@ -26,9 +26,9 @@ lista-de-personal:
         site: Facebook
       - url: https://www.linkedin.com/dasd
         site: Linkedin
-  - nombre: HOla
-    cargo: asd
-    foto: /img/def.png
+  - nombre: Nada de nada
+    cargo: ddddd
+    foto: /img/wind-3043896_1920-1-flip.jpg
     descripcion: adafaseasersesvssdvsfsfs
     comunicacion:
       - url: www.asd.com
