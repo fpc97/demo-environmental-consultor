@@ -2,7 +2,7 @@
 templateKey: personal
 title: Nuestro Personal
 header:
-  lead: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  lead: sususususuusus
   principal: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis
     tellus eu tortor mollis eleifend. Donec vitae elementum neque, at tincidunt
     mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
@@ -35,5 +35,15 @@ lista-de-personal:
       patagónica y restauración ambiental.
     comunicacion:
       - url: https://www.linkedin.com/in/antonella-melisa-lista-sofia-b60600127/
+        site: Linkedin
+  - nombre: Francisca Bellusci
+    cargo: Asistente de campo
+    foto: /img/franca.jpeg
+    descripcion: Soy Técnica Superior en Intervenciones Sociales, Comunitarias e
+      Institucionales (Psicología Social), graduada del instituto Patagonico de
+      Ciencias Sociales-IPCS- Puerto Madryn, Chubut, y Guía provincial de
+      Turismo.
+    comunicacion:
+      - url: https://www.linkedin.com/in/francisca-bellusci-84123a80/
         site: Linkedin
 ---
