@@ -30,19 +30,9 @@ objetivos:
     accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
     augue duis dolore te feugait nulla facilisi.
   items:
-    - titulo: Responsabilidad
-      descripcion: Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-      icono: Cartas
-    - titulo: Agilidad
-      descripcion: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-        volutpat.
-      icono: Cartas
-    - titulo: Comunicacion
-      descripcion: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-        volutpat. Lorem
-      icono: Cartas
+    - titulo: sdfsdfsd
+      descripcion: fsdfsdf
+      icono: Firma
 elegirnos:
   lead: Somos un equipo multidisciplinario cuyo principal objetivo es etc etc etc
   principal: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
