@@ -20,7 +20,7 @@ header:
 lista-de-personal:
   - nombre: Evelina Cejuela
     cargo: Líder de Proyecto
-    curriculum: /img/dummy.pdf
+    curriculum: /img/23394413909_011_00001_00000002.pdf
     foto: /img/20190715_203548.jpg
     descripcion: Soy Licenciada en Ciencias Biológicas, Graduada de la Universidad
       Nacional de la Patagonia (Puerto Madryn-Chubut). Mis áreas de experiencias
