@@ -31,7 +31,7 @@ export const PersonalPageTemplate = ({
   personal
 }) => (
   <>
-    <Intro title={title} {...header} />
+    <Intro title={title} {...header}/>
     <main>
       {personal && <article className="personal">
         <div className="personal__container container">
@@ -42,7 +42,7 @@ export const PersonalPageTemplate = ({
               <strong className="persona__cargo">{persona.cargo}</strong>
               {persona.curriculum && <a
                 className="persona__curriculum"
-                href={`${persona.curriculum.absolutePath}`}
+                href={persona.curriculum.publicURL}
                 target="blank"
               >CV</a>}
               <ProfilePic pic={persona.foto} className="persona__foto" nombre={persona.nombre}/>
@@ -80,8 +80,7 @@ export const personalPageQuery = graphql`
           cargo
           descripcion
           curriculum {
-            relativePath
-            absolutePath
+            publicURL
           }
           comunicacion {
             site
