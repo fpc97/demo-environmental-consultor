@@ -3,10 +3,10 @@ templateKey: personal
 title: Nuestro Personal
 header:
   lead: >-
-    Cualquier tonto puede decir que hay una crisis cuándo llega. El verdadero
-    servicio ala comunidad, es detectarla en el estado de embrión.
+    "Cualquier tonto puede decir que hay una crisis cuándo llega. El verdadero
+    servicio a la comunidad, es detectarla en el estado de embrión.
 
-    Poder adelantarnos a los problemas, nos dará la oportunidad de enfrentarnos a ellos mejor preparados. (Isaac Asimov)
+    Poder adelantarnos a los problemas, nos dará la oportunidad de enfrentarnos a ellos mejor preparados". (Isaac Asimov)
   principal: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis
     tellus eu tortor mollis eleifend. Donec vitae elementum neque, at tincidunt
     mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
