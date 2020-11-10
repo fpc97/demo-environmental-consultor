@@ -188,6 +188,7 @@ collections:
             fields:
               - {label: "Nombre", name: "nombre", widget: "string"}
               - {label: "Cargo", name: "cargo", widget: "string", hint: "Que cargo tiene esta persona"}
+              - {label: "CV", name: "curriculum", widget: "file", required: false}
               - {label: "Foto", name: "foto", widget: "image", allow_multiple: false, required: false}
               - {label: "Descripcion", name: "descripcion", widget: "text", hint: "Descripcion breve de esta persona", required: false}
               - label: "Comunicacion"

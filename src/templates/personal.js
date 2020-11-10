@@ -40,6 +40,11 @@ export const PersonalPageTemplate = ({
             <li key={i} className="persona">
               <h4 className="persona__nombre">{persona.nombre}</h4>
               <strong className="persona__cargo">{persona.cargo}</strong>
+              {persona.curriculum && <a
+                className="persona__curriculum"
+                href={`${persona.curriculum.absolutePath}`}
+                target="blank"
+              >CV</a>}
               <ProfilePic pic={persona.foto} className="persona__foto" nombre={persona.nombre}/>
               <p className="persona__descripcion">{persona.descripcion}</p>
               {persona.comunicacion && (
@@ -74,6 +79,10 @@ export const personalPageQuery = graphql`
           nombre
           cargo
           descripcion
+          curriculum {
+            relativePath
+            absolutePath
+          }
           comunicacion {
             site
             url
