@@ -3,20 +3,15 @@ templateKey: personal
 title: Nuestro Personal
 header:
   lead: >-
-    "Cualquier tonto puede decir que hay una crisis cuándo llega. El verdadero
-    servicio a la comunidad, es detectarla en el estado de embrión.
+    "Cualquier tonto puede decir que hay una crisis cuándo ésta llega. El
+    verdadero servicio a la comunidad, es detectarla en el estado de embrión.
 
-    Poder adelantarnos a los problemas, nos dará la oportunidad de enfrentarnos a ellos mejor preparados". (Isaac Asimov)
-  principal: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis
-    tellus eu tortor mollis eleifend. Donec vitae elementum neque, at tincidunt
-    mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-    ridiculus mus. Nulla lectus diam, pulvinar et consectetur sit amet, lobortis
-    eget nunc. Fusce a augue sit amet erat dapibus hendrerit nec ut eros
-  secundario: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis
-    tellus eu tortor mollis eleifend. Donec vitae elementum neque, at tincidunt
-    mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-    ridiculus mus. Nulla lectus diam, pulvinar et consectetur sit amet, lobortis
-    eget nunc. Fusce a augue sit amet erat dapibus hendrerit nec ut eros
+    Poder adelantarnos a los problemas, nos dará la oportunidad de enfrentarnos a ellos, mejor preparados".(Isaac Asimov)
+  principal: En EC y Asociados- Biología Digital contamos con un equipo
+    interdisciplinario estable y con profesionales que nos brindan servicios de
+    acuerdo a los requerimientos de los clientes.
+  secundario: "*Nuestra empresa comenzó como un grupo de trabajo de jóvenes
+    emprendedores, con la modesta ambición de generar un espacio*"
 lista-de-personal:
   - nombre: Evelina Cejuela
     cargo: Líder de Proyecto
