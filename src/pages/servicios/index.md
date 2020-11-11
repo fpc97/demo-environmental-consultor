@@ -6,7 +6,10 @@ header:
   secundario: dsadasasd
   background: /img/spectr.jpg
 provincias:
-  - Chaco
-  - Entre Ríos
-  - Formosa
+  - Córdoba
+  - Chubut
+  - Santa Cruz
+  - Buenos Aires
+  - San Juan
+  - Catamarca
 ---
