@@ -11,7 +11,9 @@ header:
     interdisciplinario estable y con profesionales que nos brindan servicios de
     acuerdo a los requerimientos de los clientes.
   secundario: "*Nuestra empresa comenzó como un grupo de trabajo de jóvenes
-    emprendedores, con la modesta ambición de generar un espacio*"
+    emprendedores, con la modesta ambición de generar un espacio a donde se
+    pudieran ofrecer consultorías aplicadas, asesoramientos en el manejo del
+    ambiente, estrategias de*"
 lista-de-personal:
   - nombre: Evelina Cejuela
     cargo: Líder de Proyecto
