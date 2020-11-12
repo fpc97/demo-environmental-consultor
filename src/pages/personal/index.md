@@ -8,12 +8,13 @@ header:
 
     Poder adelantarnos a los problemas, nos dará la oportunidad de enfrentarnos a ellos, mejor preparados".(Isaac Asimov)
   principal: En EC y Asociados- Biología Digital contamos con un equipo
-    interdisciplinario estable y con profesionales que nos brindan servicios de
-    acuerdo a los requerimientos de los clientes.
+    interdisciplinario estable y con profesionales independientes, que nos
+    brindan servicios de acuerdo a los requerimientos de los clientes.
   secundario: "*Nuestra empresa comenzó como un grupo de trabajo de jóvenes
     emprendedores, con la modesta ambición de generar un espacio a donde se
     pudieran ofrecer consultorías aplicadas, asesoramientos en el manejo del
-    ambiente, estrategias de*"
+    ambiente, estrategias de comunicaciòn y, principalmente, asesoramiento en la
+    elaboración de Estudios de Impacto Ambiental*"
 lista-de-personal:
   - nombre: Evelina Cejuela
     cargo: Líder de Proyecto
