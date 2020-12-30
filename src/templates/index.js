@@ -64,10 +64,10 @@ export default ({ data }) => {
 
 export const IndexPageQuery = graphql`
   fragment ArtDirection on ImageSharp {
-    sm: fluid(maxWidth: 426, maxHeight: 240) {
+    sm: fluid(maxWidth: 512, maxHeight: 512, quality: 45) {
       ...GatsbyImageSharpFluid
     }
-    md: fluid(maxWidth: 960, maxHeight: 540) {
+    md: fluid(maxWidth: 960, maxHeight: 960, quality: 45) {
       ...GatsbyImageSharpFluid
     }
     lg: fluid(maxWidth: 1920, maxHeight: 1080, quality: 45) {

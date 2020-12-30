@@ -32,7 +32,11 @@ const HeroSection = ({
   return (
     <header className="hero-section white">
       <Background className="hero-section__svg"/>
-      {formattedBackground}
+      {formattedBackground && (
+        <div className="hero-section__tint">
+          {formattedBackground}
+        </div>
+      )}
       <div className="hero-section__container container">
         <h2 className="hero-section__title">{title}</h2>
         {formattedlead}
