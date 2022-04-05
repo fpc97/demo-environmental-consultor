@@ -18,7 +18,7 @@ export const ServicioIndividualPageTemplate = ({
   html
 }) => (
   <>
-  {console.log(html)}
+  {/* {console.log(html)} */}
     <Intro title={title}/>
     <main className="servicio-individual">
       <div className="servicio-individual__container container">

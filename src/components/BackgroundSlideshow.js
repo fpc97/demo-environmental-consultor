@@ -53,7 +53,7 @@ export default ({ images }) => {
 
   if (images.length === 0) images.push(file)
 
-  console.log(file)
+  // console.log(file)
 
   useEffect(() => {
     return () => {
