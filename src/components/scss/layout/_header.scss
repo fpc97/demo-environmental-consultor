@@ -8,6 +8,7 @@
 
   @media(min-height: breakpoint(h-lg)) {
     //margin-top: calc(20vh - 14rem);
+
     @include marginTopNav(calc(20vh - 14rem));
   }
   
@@ -21,7 +22,7 @@
   }
 
   // 4K
-  @media(min-height: breakpoint(h-max) + 1) {
+  @media(min-height: (breakpoint(h-max) + 1)) {
     max-width: 100%;
   }
   
@@ -83,7 +84,7 @@
     }
 
     // 4K
-    @media(min-height: breakpoint(h-max) + 1) {
+    @media(min-height: (breakpoint(h-max) + 1)) {
       font-size: calc(1.5rem + .3vw);
       line-height: calc(2.8rem + .8vw);
       max-width: calc(38rem + 3.6vw);
