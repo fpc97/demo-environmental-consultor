@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import { GatsbyImage as Img } from "gatsby-plugin-image"
 
 const PreviewCompatibleImage = ({
   imageInfo,
