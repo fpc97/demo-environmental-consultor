@@ -27,6 +27,7 @@ module.exports = {
         path: `${__dirname}/src/img`
       }
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
 
@@ -98,7 +99,7 @@ module.exports = {
         }
       }
     },
-    'gatsby-plugin-preload-link-crossorigin',
+    // 'gatsby-plugin-preload-link-crossorigin',
 
     // Netlify things
     {
