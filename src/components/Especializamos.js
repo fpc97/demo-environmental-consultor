@@ -27,6 +27,7 @@ class Especializamos extends Component{
             backgroundImage :
             defaultImage
         )
+        // backgroundImage
       )
     })
 

@@ -64,15 +64,9 @@ export default ({ data }) => {
 
 export const IndexPageQuery = graphql`
   fragment ArtDirection on ImageSharp {
-    sm: fluid(maxWidth: 512, maxHeight: 512, quality: 45) {
-      ...GatsbyImageSharpFluid
-    }
-    md: fluid(maxWidth: 960, maxHeight: 960, quality: 45) {
-      ...GatsbyImageSharpFluid
-    }
-    lg: fluid(maxWidth: 1920, maxHeight: 1080, quality: 45) {
-      ...GatsbyImageSharpFluid
-    }
+    sm: gatsbyImageData(layout: FULL_WIDTH, height: 512, width: 512, quality: 45)
+    md: gatsbyImageData(layout: FULL_WIDTH, height: 960, width: 960, quality: 45)
+    lg: gatsbyImageData(layout: FULL_WIDTH, height: 1920, width: 1080, quality: 45)
   }
 
   fragment DefaultImage on Query {

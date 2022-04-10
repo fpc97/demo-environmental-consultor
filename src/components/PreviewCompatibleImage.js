@@ -1,29 +1,21 @@
 import React from 'react'
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 
 const PreviewCompatibleImage = ({
   imageInfo,
   className,
   style = {},
   key,
-  sharpType = 'fluid'
+  // defaultImage
+  // sharpType = 'fluid'
 }) => {
   const { alt = '', childImageSharp, image } = imageInfo
+  console.log('INFORMEISHON', imageInfo)
 
-  if (!!image && !!image.childImageSharp) {
-    if (sharpType === 'fluid') {
-      return (
-        <GatsbyImage fluid={image.childImageSharp.fluid} alt={alt} className={className} style={style} key={key}/>
-      )
-    } else {
-      return (
-        <GatsbyImage fixed={image.childImageSharp.fixed} alt={alt} className={className} style={style} key={key}/>
-      )
-    }
+  if (!!image) {
+    return <div style={style}><GatsbyImage image={image} alt={alt} className={className} key={key}/></div>
   } else if (!!childImageSharp) {
-    return <GatsbyImage fluid={childImageSharp.fluid} alt={alt} className={className} style={style} key={key}/>
-  } else if (Array.isArray(image)) {
-    return <GatsbyImage fluid={image} alt={alt} className={className} style={style} key={key}/>
+    return <div style={style}><GatsbyImage image={childImageSharp.gatsbyImageData} alt={alt} className={className} style={style} key={key}/></div>
   } else if (!!image && typeof image === 'string') {
     return <img src={image} alt={alt} className={className} style={style} key={key}/>
   } else {

@@ -64,9 +64,7 @@ query SobreNosotrosPage(
         nombre
         logo {
           childImageSharp {
-            fluid(maxWidth: 400, maxHeight: 400) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH, height: 400, width: 400)
           }
         }
       }

@@ -130,9 +130,7 @@ export const TrabajosRealizadosPageQuery = () => graphql`
           cliente
           portada {
             childImageSharp {
-              fluid(maxWidth: 400, maxHeight: 460, quality: 70) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH, height: 460, width: 400, quality: 70)
             }
           }
         }

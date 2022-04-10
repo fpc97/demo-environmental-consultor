@@ -88,9 +88,7 @@ export const personalPageQuery = graphql`
           }
           foto {
             childImageSharp {
-              fixed(width: 160, height: 160) {
-                ...GatsbyImageSharpFixed
-              }
+              gatsbyImageData(layout: FULL_WIDTH, height: 160, width: 160, quality: 45)
             }
           }
         }
