@@ -1,6 +1,8 @@
 backend:
   name: git-gateway
   branch: master
+  
+#local_backend: true
 
 locale: 'es'
 
@@ -16,7 +18,7 @@ collections:
         name: "index"
         label: "Principal"
         fields:
-          - {label: "Texto introductorio", name: "phrase", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: []}
+          - {label: "Texto introductorio", name: "phrase", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: ['raw']}
 #          - {label: "Imagenes de fondo", name: "slideshow", widget: "image", default: /img/default-bat.jpg}
           - label: "Imagenes de fondo"
             name: "slideshow"
@@ -64,8 +66,8 @@ collections:
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
-              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
-              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: ['raw'], widget: "markdown", hint: "La descripcion principal", required: false}
+              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: ['raw'], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
               - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false, hint: "Asegurarse de que sea lo suficientemente oscura para que el texto sea legible", default: /img/non-display.png}
           # nuestros objetivos (lead, p1, items)
           - label: "Objetivos"
@@ -73,7 +75,7 @@ collections:
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones"}
-              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal"}
+              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: ['raw'], widget: "markdown", hint: "La descripcion principal"}
               # items (titulo, p1, icono)
               - label: "Lista de items"
                 name: "items"
@@ -81,7 +83,7 @@ collections:
                 hint: "Lista de consignas breves que ilustren mejor los objetivos. Deben ser por lo menos 3 y no mas de 4"
                 fields:
                   - {label: "Titulo", name: "titulo", widget: "string", hint: "Deberia ser una sola palabra, P.ej: 'Responsabilidad', 'Accesibilidad', 'Seguridad'"}
-                  - {label: "Descripcion", name: "descripcion", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: [], hint: "Descripcion breve, entre 3 y 6 renglones"}
+                  - {label: "Descripcion", name: "descripcion", widget: "markdown", buttons: [bold, italic, link], editor_components: [], modes: ['raw'], hint: "Descripcion breve, entre 3 y 6 renglones"}
                   - label: "Icono"
                     name: "icono"
                     widget: "select"
@@ -97,7 +99,7 @@ collections:
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
-              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal"}
+              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: ['raw'], widget: "markdown", hint: "La descripcion principal"}
               - label: "Lista de items"
                 name: "items"
                 widget: "list"
@@ -132,8 +134,8 @@ collections:
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
-              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
-              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: ['raw'], widget: "markdown", hint: "La descripcion principal", required: false}
+              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: ['raw'], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
               - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false, hint: "Asegurarse de que sea lo suficientemente oscura para que el texto sea legible", default: /img/non-display.png}
           - label: "Lista de trabajos"
             name: "lista-de-trabajos"
@@ -157,8 +159,8 @@ collections:
 #            widget: "object"
 #            fields:
 #              - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
-#              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
-#              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+#              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: ['raw'], widget: "markdown", hint: "La descripcion principal", required: false}
+#              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: ['raw'], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
 #              - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false, hint: "Asegurarse de que sea lo suficientemente oscura para que el texto sea legible"}
 #          - label: "Lista de equipamiento"
 #            name: "lista-de-equipamiento"
@@ -179,8 +181,8 @@ collections:
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
-              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
-              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: ['raw'], widget: "markdown", hint: "La descripcion principal", required: false}
+              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: ['raw'], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
               - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false, hint: "Asegurarse de que sea lo suficientemente oscura para que el texto sea legible", default: /img/non-display.png}
           - label: "Lista de personal"
             name: "lista-de-personal"
@@ -224,8 +226,8 @@ collections:
             widget: "object"
             fields:
               - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: false}
-              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "La descripcion principal", required: false}
-              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: [], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
+              - {label: "Parrafo principal", name: "principal", buttons: [bold, italic, link], editor_components: [], modes: ['raw'], widget: "markdown", hint: "La descripcion principal", required: false}
+              - {label: "Parrafo secundario", name: "secundario", buttons: [bold, italic, link], editor_components: [], modes: ['raw'], widget: "markdown", hint: "Una descripcion secundaria que agregue algo o aclare algo de la descripcion principal, no debe ser muy larga", required: false}
               - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false, hint: "Asegurarse de que sea lo suficientemente oscura para que el texto sea legible", default: /img/non-display.png}
           - label: "Provincias en las que trabajamos"
             name: "provincias"
