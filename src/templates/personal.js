@@ -30,7 +30,6 @@ export const PersonalPageTemplate = ({
   header,
   personal
 }) => (
-  console.log(header),
   <>
     <Intro title={title} {...header}/>
     <main>

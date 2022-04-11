@@ -1,4 +1,5 @@
 import React from 'react'
+import { objectDeepSearch } from '../utils'
 
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
@@ -12,11 +13,12 @@ const Clientes = ({ lista }) => {
         <h3 className="clientes__h3">Our clients</h3>
         <ul className="clientes__ul">
           {lista.map((c, i) => (
+            console.log(c),
           <li key={i} className="clientes__li">
             <PreviewCompatibleImage
               imageInfo={{
-                image: c.logo,
-                alt: `Logo de ${c.nombre}`
+                childImageSharp: objectDeepSearch(c, ['logo', 'childImageSharp']),
+                alt: `Logo for ${c.nombre}`
               }}
               className="clientes__img"
             />

@@ -47,11 +47,6 @@ elegirnos:
     accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
     augue duis dolore te feugait nulla facilisi.
   items:
-    - titulo: Clients first approach
-      descripcion: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-        volutpat
-      icono: Sonrisa
     - titulo: Responsibility
       descripcion: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
         nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
@@ -62,7 +57,12 @@ elegirnos:
         nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
         volutpat
       icono: Cohete
+    - titulo: Clients first approach
+      descripcion: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+        volutpat
+      icono: Sonrisa
 clientes:
-  - logo: /img/default-avatar.jpg
-    nombre: ALUAR Aluminio Argentino
+  - logo: /img/wind-3043896_1920-1-flip.jpg
+    nombre: Aluar
 ---

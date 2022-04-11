@@ -17,6 +17,7 @@ export const SobreNosotrosPageTemplate = ({
   elegirnos = false,
   clientes = false
 }) => (
+  console.log(clientes),
   <>
     {objectHasValues(header) && <Intro {...header} title={title}/>}
     <main>
@@ -59,14 +60,6 @@ query SobreNosotrosPage(
           icono
         }
         principal
-      }
-      clientes {
-        nombre
-        logo {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH, height: 400, width: 400)
-          }
-        }
       }
     }
     id
