@@ -1,20 +1,26 @@
 ---
 templateKey: personal
-title: Nuestro Personal
+title: Our team
 header:
   lead: >-
-    "Cualquier tonto puede decir que hay una crisis cuándo ésta llega. El
-    verdadero servicio a la comunidad, es detectarla en el estado de embrión.
-
-    Poder adelantarnos a los problemas, nos dará la oportunidad de enfrentarnos a ellos, mejor preparados".(Isaac Asimov)
-  principal: En EC y Asociados- Biología Digital contamos con un equipo
-    interdisciplinario estable y con profesionales independientes, que nos
-    brindan servicios de acuerdo a los requerimientos de los clientes.
-  secundario: "*Nuestra empresa comenzó como un grupo de trabajo de jóvenes
-    emprendedores, con la modesta ambición de generar un espacio a donde se
-    pudieran ofrecer consultorías aplicadas, asesoramientos en el manejo del
-    ambiente, estrategias de comunicaciòn y, principalmente, asesoramiento en la
-    elaboración de Estudios de Impacto Ambiental*"
+    Our team draws on broad industry experience and networks to produce unique
+    and cost-effective solutions for our clients
+  principal: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+    volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+    ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis
+    autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+    consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+    accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+    augue duis dolore te feugait nulla facilisi.
+  secundario: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+    volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+    ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis
+    autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+    consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+    accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+    augue duis dolore te feugait nulla facilisi.
 lista-de-personal:
   - nombre: Evelina Cejuela
     cargo: Líder de Proyecto

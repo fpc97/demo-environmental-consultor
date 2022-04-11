@@ -14,7 +14,7 @@ const ServiciosPage = ({
     defaultImage
   }
 }) => (
-  <Layout title="Servicios">
+  <Layout title="Services">
     <ServiciosPageTemplate {...frontmatter} defaultImage={defaultImage} servicios={servicios} />
   </Layout>
 )

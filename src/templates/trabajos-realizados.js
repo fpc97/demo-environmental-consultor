@@ -19,7 +19,7 @@ const TrabajosRealizados = ({ data: { markdownRemark: { frontmatter, fields } } 
   }
 
   return (
-    <Layout title="Trabajos Realizados">
+    <Layout title="Work">
       <TrabajosRealizadosPageTemplate {...frontmatter}/>
     </Layout>
   )
@@ -70,10 +70,7 @@ export const TrabajosRealizadosPageTemplate = ({
         >
           <PreviewCompatibleImage
             className="trabajo__portada"
-            imageInfo={{
-              image: t.portada,
-              alt: ''
-            }}
+            imageInfo={t.portada}
           />
           <div className="trabajo__meta">
             <h3 className="trabajo__titulo trabajo__titulo--portada">{t.title}</h3>
@@ -83,13 +80,11 @@ export const TrabajosRealizadosPageTemplate = ({
         {(selected !== null && textPos === i) && (
         <li className="extracto" key={textPos}>
           <SlideDown className="extracto__container">
-            <PreviewCompatibleImage
-              className="extracto__portada"
-              imageInfo={{
-                image: textContents.portada,
-                alt: ''
-              }}
-            />
+            <div className="extracto__portada">
+              <PreviewCompatibleImage
+                imageInfo={textContents.portada}
+              />
+            </div>
             <div className="extracto__texto">
               <h3 className="extracto__titulo">{textContents.title}</h3>
               {<HTMLContent content={textContents.contenido}/>}

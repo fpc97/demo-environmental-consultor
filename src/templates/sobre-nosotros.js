@@ -28,7 +28,7 @@ export const SobreNosotrosPageTemplate = ({
 )
 
 const SobreNosotrosPage = ({ data/*: { markdownRemark: { frontmatter } }*/ }) => (
-  <Layout title="Sobre Nosotros">
+  <Layout title="About us">
     <SobreNosotrosPageTemplate {...data.markdownRemark.frontmatter}/>
   </Layout>
 )

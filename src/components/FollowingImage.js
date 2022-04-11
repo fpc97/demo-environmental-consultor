@@ -57,14 +57,10 @@ class FollowingImage extends Component {
 
   render() {
     const generateImgs = () => this.props.imgList.map((img, i) => {
-      // console.log('da image', img)
       const style = {
         transition: `opacity .6s`,
         opacity: this.props.currentImg === img[0] ? 1 : 0
       }
-
-      console.log(this.props.currentImg, img[0])
-      console.log(this.props.currentImg === img[0], style)
       
       return <PreviewCompatibleImage
         imageInfo={{

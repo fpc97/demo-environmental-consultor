@@ -65,7 +65,7 @@ class Especializamos extends Component{
     return (
       <article className="especializamos" id="especializamos">
         <div className="especializamos__container container">
-          <h3 className="especializamos__titulo">Áreas en las que Nos Especializamos</h3>
+          <h3 className="especializamos__titulo">Areas we specialize in</h3>
           <ul className="especializamos__lista">
             { this.state.isDataLoaded && generateList() }
           </ul>

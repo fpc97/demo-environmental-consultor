@@ -12,7 +12,6 @@ const HeroSection = ({
   secundario,
   background
 }) => {
-  console.log('BACROUN', background)
   const formattedlead = lead ? <p className="hero-section__lead lead">{lead}</p> : null
   const formattedCol1 = principal ? <p className="hero-section__col hero-section__col--first">{principal}</p> : null
   const formattedCol2 = secundario ? <p className="hero-section__col hero-section__col--last">{secundario}</p> : null

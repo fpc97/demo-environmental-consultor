@@ -15,7 +15,7 @@ const NuestrosObjetivos = ({
       <Background className="generic-background objetivos__background"/>
       <Background className="generic-background generic-background--invert objetivos__background"/>
       <div className="container objetivos__container">
-        <h3 className="objetivos__h3">Nuestros objetivos</h3>
+        <h3 className="objetivos__h3">Our Goals</h3>
 
         {(lead || principal) && (
         <section className="objetivos__intro">

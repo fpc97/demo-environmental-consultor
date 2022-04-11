@@ -12,7 +12,7 @@ const PorQueElegirnos = ({
     <article className="elegirnos white" id="elegirnos">
       <Background className="elegirnos__background" />
       <div className="container elegirnos__container">
-        <h3 className="elegirnos__h3">¿Por qué elegirnos?</h3>
+        <h3 className="elegirnos__h3">Why choose us?</h3>
 
         {(lead || principal) && (
         <section className="elegirnos__intro">

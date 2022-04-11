@@ -18,8 +18,8 @@ const Personal = ({ data:
     }
   }
 }) => (
-  <Layout title="Personal">
-    <PersonalPageTemplate title={title} {...header} personal={lista_de_personal} />
+  <Layout title="Our team">
+    <PersonalPageTemplate title={title} header={header} personal={lista_de_personal} />
   </Layout>
 )
 
@@ -30,6 +30,7 @@ export const PersonalPageTemplate = ({
   header,
   personal
 }) => (
+  console.log(header),
   <>
     <Intro title={title} {...header}/>
     <main>

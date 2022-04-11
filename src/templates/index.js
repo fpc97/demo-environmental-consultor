@@ -35,10 +35,10 @@ export const IndexPageTemplate = ({ images, phrase }) => (
     
     <header className="header white">
       <Title bottomBar/>
-      <h2 className="header__h2"><span className="header__h2--first">BIOLOGIA</span> <br/><span className="header__h2--last">DIGITAL</span></h2>
+      <h2 className="header__h2">Transition is<br/> Innovation</h2>
       <div className="header__bottom-flex">
         <p className="header__intro">{phrase}</p>
-        <MainButton txt="Saber Más →"/>
+        <MainButton txt="Learn more →"/>
       </div>
     </header>
   </div>
@@ -54,8 +54,8 @@ export default ({ data }) => {
       noFooter
       transparentMobile
       blueNav
-      title="Principal"
-      description="Evelina Cejuela y Asociados. Servicios de Consultoria Ambiental"
+      title="Home"
+      description="Sustainable Development. Environmental consulting services"
     >
       <IndexPageTemplate images={slideshow} phrase={phrase}/>
     </Layout>

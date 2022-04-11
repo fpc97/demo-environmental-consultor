@@ -2,19 +2,19 @@ import React, { useState } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
 const routeMap = {
-  "Servicios": {
+  "Services": {
     "index": '/servicios',
     "templateKeyMap": "servicio-individual"
   },
-  "Sobre Nosotros": {
+  "About us": {
     "index": '/sobre-nosotros',
-    "Por Qué Elegirnos": "/sobre-nosotros#elegirnos",
-    "Nuestros Objetivos": "/sobre-nosotros#nuestros-objetivos",
-    "Dónde Trabajamos": "/servicios#encontrarnos",
-    "Nuestro Personal": "/personal"
+    "Why H&A": "/sobre-nosotros#elegirnos",
+    "Our goals": "/sobre-nosotros#nuestros-objetivos",
+    "Where we work": "/servicios#encontrarnos",
+    "Our team": "/personal"
   },
-  "Trabajos Realizados": "/trabajos-realizados",
-  "Contacto": "/contacto"
+  "Work": "/trabajos-realizados",
+  "Contact": "/contacto"
 }
 
 export default ({

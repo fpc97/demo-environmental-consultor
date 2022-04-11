@@ -32,7 +32,7 @@ collections:
             field: {label: "Direccion de email", name: "singleemailaddress", widget: string}
           - label: "Redes sociales"
             name: "social-media"
-            hint: "Redes sociales de Evelina Cejuela y Asociados"
+            hint: "Sustainable Development social media"
             widget: "list"
             fields:
               - {label: "URL", name: "url", widget: "string", default: "vacio"}

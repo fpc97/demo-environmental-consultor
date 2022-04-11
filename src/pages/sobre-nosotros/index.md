@@ -1,7 +1,8 @@
 ---
-title: Quiénes somos
+title: Who we are
 header:
-  lead: Somos un equipo multidisciplinario cuyo principal objetivo es etc etc etc
+  lead: We are a multidisciplinary team investigating risks, impacts and
+    adaptation options to climate impact
   principal: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
     nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
     volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
@@ -20,7 +21,8 @@ header:
     augue duis dolore te feugait nulla facilisi.
   background: /img/wind-3043896_1920-1-flip.jpg
 objetivos:
-  lead: Somos un equipo multidisciplinario cuyo principal objetivo es etc etc etc
+  lead: We strive to help clients navigate environmental and social challenges
+    and deliver sustainable value for a prosperous and resilient develompent
   principal: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
     nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
     volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
@@ -34,7 +36,8 @@ objetivos:
       descripcion: fsdfsdf
       icono: Firma
 elegirnos:
-  lead: Somos un equipo multidisciplinario cuyo principal objetivo es etc etc etc
+  lead: Hard work, experience, and diligence are the defining traits H&A
+    follows vehemently to ensure your project is successfully completed
   principal: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
     nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
     volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
@@ -44,21 +47,21 @@ elegirnos:
     accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
     augue duis dolore te feugait nulla facilisi.
   items:
-    - titulo: Responsabilidad
+    - titulo: Clients first approach
       descripcion: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
         nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
         volutpat
-      icono: Cartas
-    - titulo: Accesibilidad
+      icono: Sonrisa
+    - titulo: Responsibility
       descripcion: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
         nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
         volutpat
-      icono: Atomo
-    - titulo: Responsabilidad
+      icono: Reloj
+    - titulo: Delivery
       descripcion: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
         nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
         volutpat
-      icono: Cartas
+      icono: Cohete
 clientes:
   - logo: /img/default-avatar.jpg
     nombre: ALUAR Aluminio Argentino

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Evelina Cejuela y Asociados`,
-    description: `Servicios de Consultoria Ambiental`,
+    title: `Sustainable Development`,
+    description: `Environmental consulting services`,
     author: `@fpece_`,
   },
   plugins: [

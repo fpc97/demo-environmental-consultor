@@ -34,36 +34,38 @@
 
     margin-top: 2rem;
     font-family: "Raleway", serif;
-    font-weight: 100;
+    font-weight: 900;
 
-    &--first{
-      letter-spacing: calc(3.3vw - .36rem);
-    }
-    &--last{
-      letter-spacing: calc(5.6vw - .3rem);
-    }
+    // &--first{
+    //   letter-spacing: calc(3.3vw - .36rem);
+    // }
+    // &--last{
+    //   letter-spacing: calc(5.6vw - .3rem);
+    // }
 
     @include mq(sm) {
       font-size: 5.5rem;
       
-      &--first{
-        letter-spacing: .96rem;
-      }
-      &--last{
-        letter-spacing: 1.9rem;
-      }
+      // &--first{
+      //   letter-spacing: .96rem;
+      // }
+      // &--last{
+      //   letter-spacing: 1.9rem;
+      // }
+
+      margin-bottom: 3rem;
     }
     
     @media (min-width: breakpoint(w-md)) and (min-height: breakpoint(h-lg)) {
       font-size: 5.6rem;
       font-size: calc(12vh - 3rem);
 
-      &--first{
-        letter-spacing: calc(1.25vh + .4rem);
-      }
-      &--last{
-        letter-spacing: 3.2vh;
-      }
+      // &--first{
+      //   letter-spacing: calc(1.25vh + .4rem);
+      // }
+      // &--last{
+      //   letter-spacing: 3.2vh;
+      // }
     }
   }
 

@@ -20,7 +20,7 @@ const Footer = () => (
     />
     <div className="foot__bottom">
       <p className="foot__copyright">
-        © {new Date().getFullYear()} Evelina Cejuela y Asociados
+        © {new Date().getFullYear()} Francisco Perez Cejuela
       </p>
     </div>
   </footer>
