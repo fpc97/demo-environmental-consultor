@@ -5,9 +5,9 @@ import Intro from '../components/HeroSection'
 
 import { HTMLContent } from '../components/Content'
 
-const ServicioIndividual = ({ pageContext: { html, title } }) => (
-  <Layout title={title}>
-    <ServicioIndividualPageTemplate html={html} title={title}/>
+const ServicioIndividual = ({ pageContext }) => (
+  <Layout title={pageContext.title}>
+    <ServicioIndividualPageTemplate html={pageContext.html} header={pageContext.header} title={pageContext.title}/>
   </Layout>
 )
 
@@ -15,10 +15,11 @@ export default ServicioIndividual
 
 export const ServicioIndividualPageTemplate = ({
   title,
+  header,
   html
 }) => (
   <>
-    <Intro title={title}/>
+    <Intro {...header} title={title}/>
     <main className="servicio-individual">
       <div className="servicio-individual__container container">
         <HTMLContent content={html}/>

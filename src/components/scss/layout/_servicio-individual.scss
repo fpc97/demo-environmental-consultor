@@ -1,5 +1,5 @@
 .servicio-individual{
-  padding-bottom: 14rem;
+  padding: 6rem 0 14rem;
 
   /*
   & ul,
@@ -26,6 +26,10 @@
     font-size: 1.8rem;
   }
 
+  & p + p{
+    margin-top: 3rem;
+  }
+
   & li{
     margin-top: 2rem;
   }
@@ -47,6 +51,7 @@
 
   & img{
     width: 100%;
+    object-fit: cover;
 
     @include mq(md) {
       max-height: 60vh;

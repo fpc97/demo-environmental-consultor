@@ -2,8 +2,7 @@
 templateKey: personal
 title: Our team
 header:
-  lead: >-
-    Our team draws on broad industry experience and networks to produce unique
+  lead: Our team draws on broad industry experience and networks to produce unique
     and cost-effective solutions for our clients
   principal: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
     nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
@@ -22,37 +21,45 @@ header:
     accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
     augue duis dolore te feugait nulla facilisi.
 lista-de-personal:
-  - nombre: Evelina Cejuela
-    cargo: Líder de Proyecto
-    curriculum: /img/2020-curriculum-evc.pdf
-    foto: /img/20190715_203548.jpg
-    descripcion: Soy Licenciada en Ciencias Biológicas, Graduada de la Universidad
-      Nacional de la Patagonia (Puerto Madryn-Chubut). Mis áreas de experiencias
-      están en la Comunicación Ambiental, el Turismo Responsable y
-      principalmente en la Evaluación de Impacto Ambiental.
+  - nombre: Jane Doe
+    cargo: CEO - Project Lead
+    curriculum: /img/blank.pdf
+    foto: /img/woman-gc4b83006a_640.jpg
+    descripcion: Pellentesque vitae quam magna. Donec suscipit sodales augue ac
+      sollicitudin. Vivamus rhoncus purus et nunc iaculis tempor. Donec libero
+      ipsum, hendrerit lacinia sapien ut, molestie mollis tortor. Integer vitae
+      eros vitae risus gravida laoreet. Quisque neque est, elementum ac
+      fringilla eget, rhoncus a elit
     comunicacion:
-      - url: https://www.facebook.com/asd
+      - url: https://google.com
         site: Facebook
-      - url: https://www.linkedin.com/dasd
+      - url: https://google.com
         site: Linkedin
-  - nombre: Antonella Melisa Lista Sofia
-    cargo: Coordinadora
-    foto: /img/anto-2.jpg
-    descripcion: Soy Técnica Universitaria en Protección Ambiental a meses de
-      terminar mi Licenciatura en la Universidad Nacional de la Patagonia, Sede
-      Trelew-Chubut.  Mi área de experiencia es en la Conservación de la flora
-      patagónica y restauración ambiental.
+  - nombre: Sam Smith
+    cargo: Coordinator
+    foto: /img/pexels-andrea-piacquadio-3777570.jpg
+    descripcion: Maecenas vehicula odio augue. Maecenas eget iaculis sapien, sit
+      amet egestas diam. Morbi sit amet nulla semper, convallis augue ac,
+      posuere nibh. Donec id interdum justo. Nam rhoncus dignissim lacus, ac
+      eleifend odio. Quisque in tempus nibh. Maecenas eu purus eleifend,
+      malesuada risus a, sollicitudin tortor.
     comunicacion:
-      - url: https://www.linkedin.com/in/antonella-melisa-lista-sofia-b60600127/
+      - url: https://google.com
         site: Linkedin
-  - nombre: Francisca Bellusci
-    cargo: Asistente de campo
-    foto: /img/franca.jpg
-    descripcion: Soy Técnica Superior en Intervenciones Sociales, Comunitarias e
-      Institucionales (Psicología Social), graduada del instituto Patagonico de
-      Ciencias Sociales-IPCS- Puerto Madryn, Chubut, y Guía provincial de
-      Turismo.
+    curriculum: /img/blank.pdf
+  - nombre: Jane Smith
+    cargo: Assistant
+    foto: /img/woman-gf225b7d80_1280.jpg
+    descripcion: "Cras ut feugiat neque. Morbi consectetur nulla tincidunt leo
+      iaculis sollicitudin. Aliquam condimentum orci quam, sed vehicula ipsum
+      fermentum id. Donec et elit metus. Quisque sed egestas tortor. Vestibulum
+      ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+      curae; Donec tristique ornare dolor non sollicitudin. Vestibulum molestie
+      ultricies leo vitae vehicula. "
     comunicacion:
-      - url: https://www.linkedin.com/in/francisca-bellusci-84123a80/
+      - url: https://google.com
         site: Linkedin
+      - url: https://google.com
+        site: Google+
+    curriculum: /img/2020-curriculum-evc.pdf
 ---

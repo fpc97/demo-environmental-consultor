@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: master
   
-#local_backend: true
+local_backend: true
 
 locale: 'es'
 
@@ -242,6 +242,12 @@ collections:
     create: true
     slug: "{{title}}"
     fields:
+      - label: "Introduccion"
+        name: "header"
+        widget: "object"
+        fields:
+          - {label: "Frase introductoria", name: "lead", widget: "text", hint: "Una frase de no mas de dos renglones", required: true}
+          - {label: "Imagen de fondo", name: "background", widget: "image", required: false, allow_multiple: false, hint: "Asegurarse de que sea lo suficientemente oscura para que el texto sea legible", default: /img/non-display.png}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "servicio-individual"}
       - {label: "Titulo", name: "title", widget: "string"}
       - {label: "Cuerpo", name: "body", widget: "markdown", buttons: [bold, italic, code, link, heading-three, heading-four, heading-five, heading-six, quote, bulleted-list, numbered-list]}

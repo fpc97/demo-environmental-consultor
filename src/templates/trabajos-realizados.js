@@ -82,6 +82,7 @@ export const TrabajosRealizadosPageTemplate = ({
           <SlideDown className="extracto__container">
             <div className="extracto__portada">
               <PreviewCompatibleImage
+                style={{ height: '100%' }}
                 imageInfo={textContents.portada}
               />
             </div>

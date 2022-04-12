@@ -71,5 +71,5 @@ yarn-error.log
 
 # My stuff...
 design/
-*.md
+# *.md
 !locks.md

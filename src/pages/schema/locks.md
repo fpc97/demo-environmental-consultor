@@ -45,6 +45,7 @@ lista-de-personal:
   - nombre: Frank
     cargo: Programming
     foto: /img/default-avatar.jpg
+    curriculum: /img/blank.pdf
     descripcion: s
     comunicacion:
       - url: s

@@ -27,6 +27,16 @@ exports.createPages = ({ actions: { createPage }, graphql }) => {
             frontmatter {
               templateKey
               title
+              header {
+                lead
+                background {
+                  childImageSharp {
+                    sm: gatsbyImageData(layout: FULL_WIDTH, height: 512, width: 512, quality: 45)
+                    md: gatsbyImageData(layout: FULL_WIDTH, height: 960, width: 960, quality: 45)
+                    lg: gatsbyImageData(layout: FULL_WIDTH, height: 1920, width: 1080, quality: 45)
+                  }
+                }
+              }
             }
             html
           }
@@ -53,6 +63,7 @@ exports.createPages = ({ actions: { createPage }, graphql }) => {
 
       // Specifics for servicio-individual
       const html = edge.node.html
+      const header = edge.node.frontmatter ? edge.node.frontmatter.header : false
       const title = edge.node.frontmatter ? edge.node.frontmatter.title : false
 
       createPage({
@@ -62,7 +73,7 @@ exports.createPages = ({ actions: { createPage }, graphql }) => {
         ),
         context: {
           id,
-          ...(templateName === 'servicio-individual' ? { html, title } : {})
+          ...(templateName === 'servicio-individual' ? { html, title, header } : {})
         }
       })
     })

@@ -18,7 +18,7 @@ class Especializamos extends Component{
     if (edges) edges.forEach(edge => {
       const backgroundImage = objectDeepSearch(edge, ['node', 'frontmatter', 'header', 'background'])
 
-      const availableBackground = backgroundImage && isNonDisplay(backgroundImage)
+      const availableBackground = backgroundImage && !isNonDisplay(backgroundImage)
 
       imageLinks.set(
         edge.node.frontmatter.title,
@@ -58,7 +58,7 @@ class Especializamos extends Component{
       <li key={`serv-${i}`} className="especializamos__item" onMouseEnter={this.switchImage.bind(this, d.node.frontmatter.title)}>
         <h4 className="especializamos__h4">{d.node.frontmatter.title}</h4>
         {d.node.frontmatter.header && <p className="especializamos__descripcion">{excerpt(d.node.frontmatter.header)}</p>}
-        <Link to={d.node.fields.slug} className="especializamos__leer-mas">Leer más</Link>
+        <Link to={d.node.fields.slug} className="especializamos__leer-mas">Read more</Link>
       </li>
     ))
 

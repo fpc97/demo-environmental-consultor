@@ -8,7 +8,7 @@ const routeMap = {
   },
   "About us": {
     "index": '/sobre-nosotros',
-    "Why H&A": "/sobre-nosotros#elegirnos",
+    "Why choose us?": "/sobre-nosotros#elegirnos",
     "Our goals": "/sobre-nosotros#nuestros-objetivos",
     "Where we work": "/servicios#encontrarnos",
     "Our team": "/personal"

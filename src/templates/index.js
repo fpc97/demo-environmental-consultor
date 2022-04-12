@@ -23,7 +23,7 @@ const MainButton = ({ txt }) => (
 export const IndexPageTemplate = ({ images, phrase }) => (
   <div>
     <div className="home-background">
-      <div className="home-background__slideshow">
+      <div className="home-background__slideshow" style={{ background: 'black' }}>
         <SlideShow images={images}/>
       </div>
       <div className="home-background__blue">

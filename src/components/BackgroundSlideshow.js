@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 import { useStaticQuery, graphql } from 'gatsby'
 
@@ -20,11 +20,11 @@ const imageStyle = {
 let isCycleStarted = false
 let interval
 
-function startCycle(e) {
+function startCycle(slideShow) {
   if (isCycleStarted) return
   isCycleStarted = true
 
-  const imageList = e.currentTarget.children,
+  const imageList = slideShow.children,
     listLength = imageList.length
 
   if (listLength <= 1) return
@@ -52,15 +52,18 @@ export default ({ images }) => {
   const { file } = data
 
   if (images.length === 0) images.push(file)
+  const slideShowRef = useRef(null)
 
   useEffect(() => {
+    startCycle(slideShowRef.current)
+
     return () => {
       if (interval) clearInterval(interval)
     }
   })
 
   return (
-    <div className="slideshow" onLoad={startCycle}>
+    <div className="slideshow" ref={slideShowRef} style={{ opacity: .85 }}>
       {images.map((img, i) => <PreviewCompatibleImage imageInfo={{ image: artDirection(img) }} key={i} style={imageStyle}/>)}
     </div>
   )
