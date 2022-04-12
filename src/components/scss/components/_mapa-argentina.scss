@@ -20,13 +20,6 @@
     }
     max-height: 200rem;
   }
-  &__path{
-    opacity: 0;
-    transition: opacity .6s;
-  }
-  &.on &__path{
-    opacity: 1;
-  }
 
   .no-anim &__path{
     opacity: 1;

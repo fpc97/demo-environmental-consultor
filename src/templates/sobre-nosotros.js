@@ -17,7 +17,6 @@ export const SobreNosotrosPageTemplate = ({
   elegirnos = false,
   clientes = false
 }) => (
-  console.log(clientes),
   <>
     {objectHasValues(header) && <Intro {...header} title={title}/>}
     <main>

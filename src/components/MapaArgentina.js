@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 
 import { Generic1 as Background} from './svgr/backgrounds'
 
@@ -11,22 +11,57 @@ const MapaArgentina = ({
   provincias: selected,
   noAnim
 }) => {
+  // 0. Provinces animations are handled manually (opacity is incremented via interval)
+  //    since browsers seem to have trouble with multiple concurrent transitions
+  const provincesRef = useRef([])
   const mapRef = useRef(null)
+  const textRef = useRef(null)
   let finalDelay
 
+  // 4. Mount component
   useEffect(() => {
+    const timeouts = []
+    const intervals = []
+
     const handleScroll = () => {
       const map = mapRef.current
 
-      if (map.getBoundingClientRect().top < 200) {
-        map.classList.add('on')
+      // 6. Start sequence
+      if (map.getBoundingClientRect().top < 100) {
+        const visualElementRefs = [...provincesRef.current, textRef.current]
+
+        visualElementRefs.map(([visualElement, animationDelay]) => {
+
+          // 6.1. The delay is handled by a timeout
+          const timeoutId = setTimeout(() => {
+            let opacity = 0
+            
+            // 6.2. The animation itself is handled by an interval started by the timeout
+            const intervalId = setInterval(() => {
+              visualElement.style.opacity = opacity += .09
+
+              if (opacity >= 1) {
+                opacity = 1
+                clearInterval(intervalId)
+              }
+            })
+          }, animationDelay * 1000)
+
+          timeouts.push(timeoutId)
+        })
+
         window.removeEventListener('scroll', handleScroll)
       }
     }
 
+    // 5. Listen for scrolling
     window.addEventListener('scroll', handleScroll)
 
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => (
+      window.removeEventListener('scroll', handleScroll),
+      timeouts.forEach(timeoutId => clearTimeout(timeoutId)),
+      intervals.forEach(intervalId => clearInterval(intervalId))
+    )
   })
 
   const createProvinces = () => {
@@ -47,14 +82,17 @@ const MapaArgentina = ({
     finalDelay = selectedAmount * animationSettings.intervalDuration + animationSettings.separation
     
     return orderedProvinces.flat().map((province, i) => {
+      // 1. Apply delay differential only to selected provinces
       const isSelected = i < selectedAmount
 
       const fill = isSelected ? '#006FBB' : '#E0E0E0'
 
+      // 2. Calculate individual delay time
       const delaySeconds = isSelected ?
         i * animationSettings.intervalDuration :
         finalDelay
 
+      // 3. Save element ref in tuple with corresponding delay time 
       return (<path
         key={i}
         d={province[1]}
@@ -62,8 +100,9 @@ const MapaArgentina = ({
         fill={fill}
         className="mapa-argentina__path"
         style={{
-          transitionDelay: `${delaySeconds}s`
+          opacity: 0
         }}
+        ref={el => provincesRef.current[i] = [el, delaySeconds]}
       />)
     })
   }
@@ -86,7 +125,7 @@ const MapaArgentina = ({
         <svg className="mapa-argentina__svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 294 568" style={{fill:'gray',stroke:'#fff',strokeWidth:.5,strokeMiterlimit:10}}>
           { createProvinces() }
         </svg>
-        <p className="mapa-argentina__p" style={{ transitionDelay: `${ finalDelay + .3 }s` }}>
+        <p className="mapa-argentina__p" ref={el => textRef.current = [el, finalDelay]}>
           <span className="mapa-argentina__half mapa-argentina__half--first">We work in</span>
           <span className="mapa-argentina__half mapa-argentina__half--last">{ parseProvinceNames() }</span>
         </p>

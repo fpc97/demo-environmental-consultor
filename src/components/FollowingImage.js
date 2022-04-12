@@ -56,7 +56,6 @@ class FollowingImage extends Component {
   }
 
   render() {
-    console.log(this.props.imgList)
     const generateImgs = () => this.props.imgList.map((img, i) => {
       const style = {
         transition: `opacity .6s`,
