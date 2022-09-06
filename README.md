@@ -2,4 +2,4 @@
 
 Demo template of a site for environmental consulting businesses
 
-[Live demo](https://calc-generator.netlify.app)
+[Live demo](https://sustainable-develop.netlify.app/)
